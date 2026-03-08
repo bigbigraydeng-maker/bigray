@@ -524,42 +524,36 @@ export const content = {
 export const galleryImages = [
   {
     id: 1,
-    src: '/images/gallery/event-1.jpg',
     alt: 'Business Conference 2024',
     caption: 'Speaking at Cross-border Business Conference',
     captionZh: '在跨境商业会议上演讲',
   },
   {
     id: 2,
-    src: '/images/gallery/event-2.jpg',
     alt: 'Team Meeting',
     caption: 'Strategy session with the team',
     captionZh: '团队战略会议',
   },
   {
     id: 3,
-    src: '/images/gallery/event-3.jpg',
     alt: 'Award Ceremony',
     caption: 'NZCTA Award Recognition',
     captionZh: 'NZCTA 颁奖典礼',
   },
   {
     id: 4,
-    src: '/images/gallery/event-4.jpg',
     alt: 'Office Opening',
     caption: 'New office opening in Auckland',
     captionZh: '奥克兰新办公室开业',
   },
   {
     id: 5,
-    src: '/images/gallery/event-5.jpg',
     alt: 'Partnership Signing',
     caption: 'Strategic partnership signing ceremony',
     captionZh: '战略合作签约仪式',
   },
   {
     id: 6,
-    src: '/images/gallery/event-6.jpg',
     alt: 'Industry Panel',
     caption: 'Industry panel discussion',
     captionZh: '行业圆桌讨论',
