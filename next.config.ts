@@ -1,10 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export',
-  distDir: 'dist',
+  output: 'standalone',
   images: {
     unoptimized: true,
+  },
+  env: {
+    DATABASE_URL: process.env.DATABASE_URL,
   },
 };
 

@@ -2,30 +2,58 @@
 
 import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
-import { content } from '../data/content';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Navigation() {
   const { language, toggleLanguage } = useLanguage();
-  const t = content[language].nav;
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  const navItems = {
+    en: [
+      { label: 'Home', href: '/' },
+      { label: 'About', href: '/about' },
+      { label: 'Ventures', href: '/ventures' },
+      { label: 'Media', href: '/media' },
+      { label: 'Honors', href: '/honors' },
+      { label: 'Public', href: '/public' },
+      { label: 'Contact', href: '/contact' },
+    ],
+    zh: [
+      { label: '首页', href: '/' },
+      { label: '关于', href: '/about' },
+      { label: '项目', href: '/ventures' },
+      { label: '媒体', href: '/media' },
+      { label: '荣誉', href: '/honors' },
+      { label: '公开', href: '/public' },
+      { label: '联系', href: '/contact' },
+    ],
+  };
+
+  const items = navItems[language];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass">
       <div className="container-custom">
         <div className="flex justify-between items-center h-16">
-          <a href="#" className="text-xl font-bold gradient-text">Ray Deng</a>
+          <Link href="/" className="text-xl font-bold gradient-text">Ray Deng</Link>
           
-          <div className="hidden md:flex items-center gap-8">
-            {Object.entries(t).map(([key, label]) => (
-              <a
-                key={key}
-                href={key === 'home' ? '#' : `#${key}`}
-                className="text-slate-300 hover:text-blue-400 text-sm transition-colors"
+          <div className="hidden md:flex items-center gap-6">
+            {items.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`text-sm transition-colors ${
+                  pathname === item.href
+                    ? 'text-blue-400'
+                    : 'text-slate-300 hover:text-blue-400'
+                }`}
               >
-                {label}
-              </a>
+                {item.label}
+              </Link>
             ))}
             <button
               onClick={toggleLanguage}
@@ -49,15 +77,19 @@ export default function Navigation() {
             animate={{ opacity: 1, y: 0 }}
             className="md:hidden py-4 border-t border-slate-700"
           >
-            {Object.entries(t).map(([key, label]) => (
-              <a
-                key={key}
-                href={key === 'home' ? '#' : `#${key}`}
-                className="block py-2 text-slate-300 hover:text-blue-400 transition-colors"
+            {items.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`block py-2 transition-colors ${
+                  pathname === item.href
+                    ? 'text-blue-400'
+                    : 'text-slate-300 hover:text-blue-400'
+                }`}
                 onClick={() => setIsOpen(false)}
               >
-                {label}
-              </a>
+                {item.label}
+              </Link>
             ))}
             <button
               onClick={toggleLanguage}

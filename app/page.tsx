@@ -1,4 +1,3 @@
-import Navigation from "./components/Navigation";
 import Hero from "./components/Hero";
 import Founder from "./components/Founder";
 import Ventures from "./components/Venues";
@@ -8,6 +7,7 @@ import Media from "./components/Media";
 import Timeline from "./components/Timeline";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Navigation from "./components/Navigation";
 
 export default function Home() {
   return (
