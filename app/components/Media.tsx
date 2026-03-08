@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Image as ImageIcon } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { content } from '../data/content';
 
@@ -40,18 +40,25 @@ export default function Media() {
               viewport={{ once: true }}
               className="glass rounded-xl p-6 hover:border-blue-500/50 transition-all block group"
             >
-              <div className="flex justify-between items-start mb-3">
-                <h3 className="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">
-                  {item.title}
-                </h3>
-                <ExternalLink className="w-5 h-5 text-slate-500 group-hover:text-blue-400 transition-colors" />
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-20 h-16 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <ImageIcon className="w-6 h-6 text-slate-400" />
+                </div>
+                <div className="flex-1">
+                  <div className="flex justify-between items-start mb-2">
+                    <h3 className="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">
+                      {item.title}
+                    </h3>
+                    <ExternalLink className="w-5 h-5 text-slate-500 group-hover:text-blue-400 transition-colors" />
+                  </div>
+                  <p className="text-sm text-blue-400 mb-2">
+                    {item.source} · {item.date}
+                  </p>
+                  <p className="text-sm text-slate-400">
+                    {item.summary}
+                  </p>
+                </div>
               </div>
-              <p className="text-sm text-blue-400 mb-2">
-                {item.source} · {item.date}
-              </p>
-              <p className="text-sm text-slate-400">
-                {item.summary}
-              </p>
             </motion.a>
           ))}
         </div>

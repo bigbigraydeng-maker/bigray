@@ -2,12 +2,9 @@ export const content = {
   en: {
     nav: {
       home: 'Home',
-      ventures: 'Ventures',
-      media: 'Media',
-      honors: 'Honors',
       gallery: 'Gallery',
       articles: 'Articles',
-      about: 'About',
+      media: 'Media',
       contact: 'Contact',
     },
     hero: {
@@ -265,12 +262,9 @@ export const content = {
   zh: {
     nav: {
       home: '首页',
-      ventures: '项目',
-      media: '媒体',
-      honors: '荣誉',
       gallery: '图册',
       articles: '文章',
-      about: '关于',
+      media: '媒体',
       contact: '联系',
     },
     hero: {
