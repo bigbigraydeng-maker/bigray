@@ -212,14 +212,10 @@
             background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
             opacity: 0;
             transition: opacity 0.3s ease;
+            pointer-events: none;
         }
         .gallery-item:hover .overlay {
             opacity: 1;
-        }
-        .gallery-item .overlay-text {
-            color: white;
-            font-size: 1rem;
-            font-weight: 600;
         }
 
         @media (max-width: 1024px) {
@@ -449,9 +445,7 @@
                     <h3>Compass</h3>
                     <span class="tag">房产科技</span>
                     <p>面向布里斯班华人投资者的AI驱动房产投资平台。智能房产分析和机会发现。</p>
-                    <span class="status status-live">已上线</span>
-                    <br><br>
-                    <a href="https://compass-1-kvdb.onrender.com/" target="_blank">访问网站 →</a>
+                    <span class="status status-development">开发中</span>
                 </div>
                 <div class="venture">
                     <h3>MoveHub</h3>
@@ -475,34 +469,24 @@
             <p>商业活动、会议和里程碑的照片集锦。点击图片查看大图。</p>
             <div class="gallery-masonry" id="gallery-grid">
                 <div class="gallery-item" onclick="openLightbox(0)">
-                    <img src="images/event-1.jpg" alt="团队合影">
-                    <div class="overlay">
-                        <div class="overlay-text">团队合影</div>
-                    </div>
+                    <img src="images/event-1.jpg" alt="Event 1">
+                    <div class="overlay"></div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(1)">
-                    <img src="images/event-2.jpg" alt="商务活动">
-                    <div class="overlay">
-                        <div class="overlay-text">商务活动</div>
-                    </div>
+                    <img src="images/event-2.jpg" alt="Event 2">
+                    <div class="overlay"></div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(2)">
-                    <img src="images/event-3.jpg" alt="圆桌讨论">
-                    <div class="overlay">
-                        <div class="overlay-text">圆桌讨论</div>
-                    </div>
+                    <img src="images/event-3.jpg" alt="Event 3">
+                    <div class="overlay"></div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(3)">
-                    <img src="images/event-4.jpg" alt="颁奖典礼">
-                    <div class="overlay">
-                        <div class="overlay-text">颁奖典礼</div>
-                    </div>
+                    <img src="images/event-4.jpg" alt="Event 4">
+                    <div class="overlay"></div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(4)">
-                    <img src="images/event-5.jpg" alt="大会演讲">
-                    <div class="overlay">
-                        <div class="overlay-text">大会演讲</div>
-                    </div>
+                    <img src="images/event-5.jpg" alt="Event 5">
+                    <div class="overlay"></div>
                 </div>
             </div>
         </div>
@@ -589,11 +573,11 @@
 
     <script>
         const images = [
-            { src: 'images/event-1.jpg', caption: '团队合影' },
-            { src: 'images/event-2.jpg', caption: '商务活动' },
-            { src: 'images/event-3.jpg', caption: '圆桌讨论' },
-            { src: 'images/event-4.jpg', caption: '颁奖典礼' },
-            { src: 'images/event-5.jpg', caption: '大会演讲' }
+            { src: 'images/event-1.jpg', caption: '' },
+            { src: 'images/event-2.jpg', caption: '' },
+            { src: 'images/event-3.jpg', caption: '' },
+            { src: 'images/event-4.jpg', caption: '' },
+            { src: 'images/event-5.jpg', caption: '' }
         ];
 
         let currentIndex = 0;
