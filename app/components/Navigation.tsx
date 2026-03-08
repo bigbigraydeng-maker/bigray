@@ -17,14 +17,12 @@ export default function Navigation() {
     en: [
       { label: 'Home', href: '/' },
       { label: 'Gallery', href: '/#gallery' },
-      { label: 'Articles', href: '/#articles' },
       { label: 'Media', href: '/#media' },
       { label: 'Contact', href: '/#contact' },
     ],
     zh: [
       { label: '首页', href: '/' },
       { label: '图册', href: '/#gallery' },
-      { label: '文章', href: '/#articles' },
       { label: '媒体', href: '/#media' },
       { label: '联系', href: '/#contact' },
     ],
