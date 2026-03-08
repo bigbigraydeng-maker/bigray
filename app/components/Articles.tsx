@@ -1,16 +1,34 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Tag } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { content } from '../data/content';
 
-export default function Media() {
+export default function Articles() {
   const { language } = useLanguage();
-  const t = content[language].media;
+  const t = content[language].articles;
+
+  const getCategoryColor = (category: string) => {
+    switch (category) {
+      case 'Ecommerce':
+      case '电商':
+        return 'bg-blue-500/20 text-blue-400 border-blue-500/30';
+      case 'Technology':
+      case '技术':
+        return 'bg-green-500/20 text-green-400 border-green-500/30';
+      case 'Business':
+      case '商业':
+        return 'bg-purple-500/20 text-purple-400 border-purple-500/30';
+      case 'AI':
+        return 'bg-orange-500/20 text-orange-400 border-orange-500/30';
+      default:
+        return 'bg-slate-500/20 text-slate-400 border-slate-500/30';
+    }
+  };
 
   return (
-    <section id="media" className="py-20 relative">
+    <section id="articles" className="py-20 relative">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -28,10 +46,10 @@ export default function Media() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          {t.items.map((item, index) => (
+          {t.items.map((article, index) => (
             <motion.a
               key={index}
-              href={item.link}
+              href={article.link}
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
@@ -41,16 +59,19 @@ export default function Media() {
               className="glass rounded-xl p-6 hover:border-blue-500/50 transition-all block group"
             >
               <div className="flex justify-between items-start mb-3">
-                <h3 className="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">
-                  {item.title}
-                </h3>
+                <span className={`px-3 py-1 rounded-full text-xs border ${getCategoryColor(article.category)}`}>
+                  {article.category}
+                </span>
                 <ExternalLink className="w-5 h-5 text-slate-500 group-hover:text-blue-400 transition-colors" />
               </div>
+              <h3 className="text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                {article.title}
+              </h3>
               <p className="text-sm text-blue-400 mb-2">
-                {item.source} · {item.date}
+                {article.source} · {article.date}
               </p>
-              <p className="text-sm text-slate-400">
-                {item.summary}
+              <p className="text-sm text-slate-400 line-clamp-3">
+                {article.summary}
               </p>
             </motion.a>
           ))}

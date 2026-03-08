@@ -2,10 +2,11 @@
 
 import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
-import { Menu, X } from 'lucide-react';
-import { useState } from 'react';
+import { content } from '../data/content';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { Menu, X } from 'lucide-react';
+import { useState } from 'react';
 
 export default function Navigation() {
   const { language, toggleLanguage } = useLanguage();
@@ -15,21 +16,17 @@ export default function Navigation() {
   const navItems = {
     en: [
       { label: 'Home', href: '/' },
-      { label: 'About', href: '/about' },
-      { label: 'Ventures', href: '/ventures' },
-      { label: 'Media', href: '/media' },
-      { label: 'Honors', href: '/honors' },
-      { label: 'Public', href: '/public' },
-      { label: 'Contact', href: '/contact' },
+      { label: 'Gallery', href: '/#gallery' },
+      { label: 'Articles', href: '/#articles' },
+      { label: 'Media', href: '/#media' },
+      { label: 'Contact', href: '/#contact' },
     ],
     zh: [
       { label: '首页', href: '/' },
-      { label: '关于', href: '/about' },
-      { label: '项目', href: '/ventures' },
-      { label: '媒体', href: '/media' },
-      { label: '荣誉', href: '/honors' },
-      { label: '公开', href: '/public' },
-      { label: '联系', href: '/contact' },
+      { label: '图册', href: '/#gallery' },
+      { label: '文章', href: '/#articles' },
+      { label: '媒体', href: '/#media' },
+      { label: '联系', href: '/#contact' },
     ],
   };
 
@@ -39,11 +36,11 @@ export default function Navigation() {
     <nav className="fixed top-0 left-0 right-0 z-50 glass">
       <div className="container-custom">
         <div className="flex justify-between items-center h-16">
-          <Link href="/" className="text-xl font-bold gradient-text">Ray Deng</Link>
+          <a href="/" className="text-xl font-bold gradient-text">Ray Deng</a>
           
           <div className="hidden md:flex items-center gap-6">
             {items.map((item) => (
-              <Link
+              <a
                 key={item.href}
                 href={item.href}
                 className={`text-sm transition-colors ${
@@ -53,7 +50,7 @@ export default function Navigation() {
                 }`}
               >
                 {item.label}
-              </Link>
+              </a>
             ))}
             <button
               onClick={toggleLanguage}
@@ -78,7 +75,7 @@ export default function Navigation() {
             className="md:hidden py-4 border-t border-slate-700"
           >
             {items.map((item) => (
-              <Link
+              <a
                 key={item.href}
                 href={item.href}
                 className={`block py-2 transition-colors ${
@@ -89,7 +86,7 @@ export default function Navigation() {
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}
-              </Link>
+              </a>
             ))}
             <button
               onClick={toggleLanguage}
