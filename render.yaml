@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: bigray
+    runtime: static
+    plan: free
+    buildCommand: npm run build
+    publishPath: ./dist
+    envVars:
+      - key: NODE_VERSION
+        value: 18
