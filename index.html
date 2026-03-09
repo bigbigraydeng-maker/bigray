@@ -92,14 +92,13 @@
             text-align: center;
             padding: 60px 20px;
             background: 
-                radial-gradient(ellipse at top, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
-                radial-gradient(ellipse at bottom right, rgba(139, 92, 246, 0.06) 0%, transparent 40%),
-                linear-gradient(135deg, rgba(15, 23, 42, 0.97) 0%, rgba(15, 23, 42, 0.95) 50%, rgba(30, 41, 59, 0.93) 100%),
-                url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
-            background-size: cover, cover, cover, cover;
-            background-position: center;
-            background-attachment: fixed;
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.12) 0%, transparent 50%),
+                radial-gradient(ellipse 60% 40% at 80% 60%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse 50% 30% at 20% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+                linear-gradient(180deg, #0f172a 0%, #0f172a 50%, #1e293b 100%);
+            background-size: 100% 100%;
             position: relative;
+            overflow: hidden;
         }
         
         .hero::before {
@@ -109,7 +108,23 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(ellipse at center, transparent 0%, rgba(15, 23, 42, 0.4) 100%);
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+            opacity: 0.5;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 800px;
+            height: 800px;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.03) 0%, transparent 70%);
             pointer-events: none;
         }
         
@@ -699,6 +714,13 @@
                 font-size: 16px;
             }
         }
+        
+        .hero-trust {
+            margin-top: 48px;
+            font-size: 0.85rem;
+            color: rgba(148, 163, 184, 0.6);
+            letter-spacing: 0.3px;
+        }
 
         html[lang="en"] [data-lang="en"] {
             display: inline;
@@ -1021,11 +1043,46 @@
             text-decoration: none;
             font-weight: 600;
         }
+        /* Media Strip - Trust Bar */
+        .media-strip {
+            padding: 60px 20px;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(30, 41, 59, 0.15) 50%, rgba(15, 23, 42, 0) 100%);
+        }
+        
+        .media-strip-title {
+            font-size: 0.8rem;
+            color: rgba(148, 163, 184, 0.6);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+        
+        .media-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .media-logo {
+            font-size: 0.95rem;
+            color: rgba(148, 163, 184, 0.5);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+        
+        .media-logo:hover {
+            color: rgba(148, 163, 184, 0.8);
+        }
+        
         /* Contact CTA Section - Business Partnership Style */
         .contact {
             text-align: center;
-            padding: 100px 20px;
-            background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(30, 41, 59, 0.5) 50%, rgba(15, 23, 42, 0) 100%);
+            padding: 100px 20px 120px;
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(30, 41, 59, 0.3) 100%);
             position: relative;
         }
         
@@ -1041,60 +1098,37 @@
         }
         
         .contact h2 {
-            font-size: 3rem;
-            margin-bottom: 16px;
+            font-size: 2.5rem;
+            margin-bottom: 12px;
             background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-weight: 700;
+            font-weight: 600;
         }
         
-        .contact > .container > p {
-            color: #94a3b8;
-            max-width: 600px;
+        .contact-intro {
+            color: rgba(148, 163, 184, 0.8);
+            max-width: 500px;
             margin: 0 auto 50px;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
         }
         
         .contact-cta {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 20px;
-            padding: 50px 40px;
-            max-width: 700px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 40px 50px;
+            max-width: 600px;
             margin: 0 auto;
             position: relative;
-            overflow: hidden;
-        }
-        
-        .contact-cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.5), transparent);
-        }
-        
-        .contact-cta h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: #f8fafc;
-        }
-        
-        .contact-cta > p {
-            color: #94a3b8;
-            margin-bottom: 16px;
-            line-height: 1.7;
         }
         
         .contact-details {
             display: flex;
             justify-content: center;
-            gap: 40px;
-            margin: 30px 0;
+            gap: 60px;
+            margin-bottom: 24px;
             flex-wrap: wrap;
         }
         
@@ -1102,49 +1136,51 @@
             text-align: center;
         }
         
-        .contact-item .label {
-            font-size: 0.8rem;
-            color: #64748b;
+        .contact-label {
+            display: block;
+            font-size: 0.7rem;
+            color: rgba(100, 116, 139, 0.8);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             margin-bottom: 8px;
         }
         
-        .contact-item .value a {
-            color: #f8fafc;
+        .contact-value {
+            color: rgba(248, 250, 252, 0.9);
             text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 600;
+            font-size: 1rem;
+            font-weight: 500;
             transition: color 0.3s;
         }
         
-        .contact-item .value a:hover {
-            color: #60a5fa;
+        .contact-value:hover {
+            color: rgba(96, 165, 250, 1);
         }
         
-        .contact .location {
-            color: #64748b;
-            font-size: 0.9rem;
-            margin: 24px 0 32px;
+        .contact-location {
+            color: rgba(100, 116, 139, 0.7);
+            font-size: 0.85rem;
+            margin-bottom: 30px;
         }
         
         .contact .btn-primary {
             display: inline-block;
-            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.9) 0%, rgba(139, 92, 246, 0.9) 100%);
             color: white;
-            padding: 14px 32px;
+            padding: 14px 36px;
             border-radius: 10px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
         }
         
         .contact .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.25);
         }
+        
         footer {
             text-align: center;
             padding: 40px 20px;
@@ -1215,6 +1251,10 @@
                     <span data-lang="zh">联系</span>
                 </a>
             </div>
+            <p class="hero-trust">
+                <span data-lang="en">Focused on AI systems, migration, property, and cross-border ventures.</span>
+                <span data-lang="zh">聚焦 AI 系统、移民服务、房产科技与跨境创业。</span>
+            </p>
         </div>
     </section>
 
@@ -1551,36 +1591,57 @@
         </div>
     </section>
 
+    <section class="media-strip" id="media-strip">
+        <div class="container">
+            <p class="media-strip-title">
+                <span data-lang="en">Featured In</span>
+                <span data-lang="zh">媒体报道</span>
+            </p>
+            <div class="media-logos">
+                <div class="media-logo">NZ Herald</div>
+                <div class="media-logo">Chinese Herald</div>
+                <div class="media-logo">Xinhua</div>
+                <div class="media-logo">21 Finance</div>
+            </div>
+        </div>
+    </section>
+
     <section class="contact" id="contact">
         <div class="container">
-            <h2 data-lang="en">Let's Collaborate</h2>
-            <h2 data-lang="zh">让我们合作</h2>
-            <p data-lang="en">Open to strategic partnerships, venture building, and cross-border opportunities.</p>
-            <p data-lang="zh">开放战略合作、创业构建和跨境机会。</p>
+            <h2>
+                <span data-lang="en">Let's Build Together</span>
+                <span data-lang="zh">一起构建</span>
+            </h2>
+            <p class="contact-intro">
+                <span data-lang="en">Open to partnerships in AI, migration, property, and cross-border ventures.</span>
+                <span data-lang="zh">开放 AI、移民、房产和跨境创业领域的合作。</span>
+            </p>
             
             <div class="contact-cta">
-                <h3 data-lang="en">Ready to Build Together?</h3>
-                <h3 data-lang="zh">准备好一起构建了吗？</h3>
-                <p data-lang="en">Whether you're exploring strategic partnerships, seeking venture collaboration, or looking to leverage cross-border opportunities, I'd love to hear from you. Let's discuss how we can create value together.</p>
-                <p data-lang="zh">无论您是在探索战略合作、寻求创业合作，还是希望利用跨境机会，我都很乐意听到您的声音。让我们讨论如何共同创造价值。</p>
-                <p data-lang="en">Open to partnerships in AI systems, migration-related ventures, property technology, digital growth, and cross-border business development.</p>
-                <p data-lang="zh">开放AI系统、移民相关业务、房产技术、数字增长和跨境业务开发等领域的合作。</p>
                 <div class="contact-details">
                     <div class="contact-item">
-                        <div class="label" data-lang="en">Phone</div>
-                        <div class="label" data-lang="zh">电话</div>
-                        <div class="value"><a href="tel:+64277520888">+64 27 7520 888</a></div>
+                        <span class="contact-label">
+                            <span data-lang="en">Email</span>
+                            <span data-lang="zh">邮箱</span>
+                        </span>
+                        <a href="mailto:bigbigraydeng@gmail.com" class="contact-value">bigbigraydeng@gmail.com</a>
                     </div>
                     <div class="contact-item">
-                        <div class="label" data-lang="en">Email</div>
-                        <div class="label" data-lang="zh">邮箱</div>
-                        <div class="value"><a href="mailto:bigbigraydeng@gmail.com">bigbigraydeng@gmail.com</a></div>
+                        <span class="contact-label">
+                            <span data-lang="en">Phone</span>
+                            <span data-lang="zh">电话</span>
+                        </span>
+                        <a href="tel:+64277520888" class="contact-value">+64 27 7520 888</a>
                     </div>
                 </div>
-                <div class="location" data-lang="en">Auckland, New Zealand · English, Chinese · Typically respond within 24-48 hours</div>
-                <div class="location" data-lang="zh">新西兰奥克兰 · 英文、中文 · 通常在24-48小时内回复</div>
-                <a href="mailto:bigbigraydeng@gmail.com" class="btn btn-primary" data-lang="en">Get in Touch</a>
-                <a href="mailto:bigbigraydeng@gmail.com" class="btn btn-primary" data-lang="zh">取得联系</a>
+                <div class="contact-location">
+                    <span data-lang="en">Auckland, New Zealand</span>
+                    <span data-lang="zh">新西兰奥克兰</span>
+                </div>
+                <a href="mailto:bigbigraydeng@gmail.com" class="btn btn-primary">
+                    <span data-lang="en">Start a Conversation</span>
+                    <span data-lang="zh">开始对话</span>
+                </a>
             </div>
         </div>
     </section>
