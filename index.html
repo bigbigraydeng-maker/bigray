@@ -488,6 +488,95 @@
             display: none;
         }
 
+        /* Hero Styles */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 20px 80px;
+        }
+        
+        .hero-name {
+            font-size: 64px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            background: linear-gradient(90deg, #5b8cff, #8c6bff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
+        }
+        
+        .hero-tagline {
+            font-size: 22px;
+            opacity: 0.8;
+            max-width: 700px;
+            margin: 0 auto 16px;
+            line-height: 1.5;
+            color: #f8fafc;
+        }
+        
+        .hero-subline {
+            font-size: 18px;
+            opacity: 0.7;
+            margin-bottom: 40px;
+            color: #94a3b8;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .hero-buttons .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .hero-buttons .btn-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            color: white;
+            border: none;
+        }
+        
+        .hero-buttons .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+        }
+        
+        .hero-buttons .btn-secondary {
+            background: transparent;
+            color: #f8fafc;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .hero-buttons .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-name {
+                font-size: 42px;
+            }
+            .hero-tagline {
+                font-size: 18px;
+            }
+            .hero-subline {
+                font-size: 16px;
+            }
+        }
+
         html[lang="en"] [data-lang="en"] {
             display: inline;
         }
@@ -813,44 +902,26 @@
     <main>
         <section class="hero">
         <div class="container">
-            <h1>
+            <h1 class="hero-name">
                 <span data-lang="en">Ray Deng</span>
-                <span data-lang="zh">大瑞 Ray Deng</span>
+                <span data-lang="zh">Ray Deng</span>
             </h1>
-            <h2>
-                <span data-lang="en">Founder · Operator · Cross-border Builder</span>
-                <span data-lang="zh">创始人 · 操盘者 · 跨境构建者</span>
-            </h2>
-            <p>
-                <span data-lang="en">Building ventures across China, New Zealand, and Australia. 20+ years in New Zealand. Focused on AI-powered systems, workforce mobility platforms, and cross-border business infrastructure.<br><br>New Zealand-based Chinese entrepreneur building AI-driven ventures across migration, property, and cross-border business.</span>
-                <span data-lang="zh">构建跨越中国、新西兰和澳大利亚的创业项目。在新西兰20余年。专注于AI赋能系统、劳动力流动平台和跨境商业基础设施建设。<br><br>新西兰华人企业家，致力于构建 AI 驱动的跨境业务，涵盖移民、房产和跨境商业领域。</span>
+            <p class="hero-tagline">
+                <span data-lang="en">AI Entrepreneur building cross-border systems between China, New Zealand, and Australia</span>
+                <span data-lang="zh">AI 创业者，构建中国、新西兰与澳大利亚之间的跨境系统</span>
             </p>
-            <div class="tags">
-                <span class="tag">
-                    <span data-lang="en">China × New Zealand × Australia</span>
-                    <span data-lang="zh">中国 × 新西兰 × 澳大利亚</span>
-                </span>
-                <span class="tag">
-                    <span data-lang="en">AI Systems</span>
-                    <span data-lang="zh">AI系统</span>
-                </span>
-                <span class="tag">
-                    <span data-lang="en">Workforce Mobility</span>
-                    <span data-lang="zh">劳动力流动</span>
-                </span>
-                <span class="tag">
-                    <span data-lang="en">Venture Building</span>
-                    <span data-lang="zh">创业构建</span>
-                </span>
-            </div>
-            <div class="buttons">
+            <p class="hero-subline">
+                <span data-lang="en">Founder of MoveHub · Compass AI · WorkVisas.work</span>
+                <span data-lang="zh">MoveHub · Compass AI · WorkVisas.work 创始人</span>
+            </p>
+            <div class="hero-buttons">
                 <a href="#ventures" class="btn btn-primary">
-                    <span data-lang="en">Explore Projects</span>
-                    <span data-lang="zh">探索项目</span>
+                    <span data-lang="en">View Projects</span>
+                    <span data-lang="zh">查看项目</span>
                 </a>
                 <a href="#contact" class="btn btn-secondary">
-                    <span data-lang="en">Let's Talk</span>
-                    <span data-lang="zh">合作洽谈</span>
+                    <span data-lang="en">Contact</span>
+                    <span data-lang="zh">联系</span>
                 </a>
             </div>
         </div>
