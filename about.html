@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Ray Deng | Big Ray</title>
     <meta name="description" content="Learn more about Ray Deng, also known as Big Ray, a New Zealand-based Chinese entrepreneur building AI-driven ventures across migration, property, and cross-border business.">
     <meta name="keywords" content="Ray Deng, Big Ray, 大瑞老师, About, Background, Experience, AI Entrepreneur, New Zealand Chinese Entrepreneur, Cross-border Business, AI Strategy, Founder">
+    <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://bigray.onrender.com/about.html">
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -16,7 +17,7 @@
     <meta property="og:url" content="https://bigray.onrender.com/about.html">
     <meta property="og:site_name" content="Ray Deng">
     <meta property="og:locale" content="en_NZ">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=630&fit=crop">
+    <meta property="og:image" content="https://bigray.onrender.com/images/og-cover.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="About Ray Deng | Big Ray">
@@ -24,7 +25,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="About Ray Deng | Big Ray">
     <meta name="twitter:description" content="Learn more about Ray Deng, also known as Big Ray, a New Zealand-based Chinese entrepreneur building AI-driven ventures across migration, property, and cross-border business.">
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=630&fit=crop">
+    <meta name="twitter:image" content="https://bigray.onrender.com/images/og-cover.jpg">
     
     <script type="application/ld+json">
     {
@@ -47,24 +48,6 @@
             "Labor mobility",
             "Digital transformation",
             "Entrepreneurship"
-        ],
-        "worksFor": [
-            {
-                "@type": "Organization",
-                "name": "WorkVisas.work"
-            },
-            {
-                "@type": "Organization",
-                "name": "Compass"
-            },
-            {
-                "@type": "Organization",
-                "name": "MoveHub"
-            },
-            {
-                "@type": "Organization",
-                "name": "Magic Lamp"
-            }
         ]
     }
     </script>
@@ -148,130 +131,50 @@
             padding: 80px 20px;
         }
         .section h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
             background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
         .section p {
-            text-align: center;
-            color: #94a3b8;
-            max-width: 600px;
-            margin: 0 auto 60px;
+            color: #cbd5e1;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
         }
         .about-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            margin-top: 40px;
+            margin-bottom: 50px;
         }
-        .about-content h3 {
-            font-size: 1.8rem;
-            color: #f8fafc;
-            margin-bottom: 20px;
-        }
-        .about-content p {
-            text-align: left;
-            color: #cbd5e1;
-            margin-bottom: 20px;
-            max-width: none;
-        }
-        .about-content .highlight {
-            color: #60a5fa;
-            font-weight: 600;
-        }
-        .focus-areas {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .focus-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 12px;
-            transition: all 0.3s;
-        }
-        .focus-card:hover {
-            border-color: rgba(59, 130, 246, 0.5);
-            transform: translateY(-5px);
-        }
-        .focus-card h3 {
+        .about-section h3 {
             font-size: 1.3rem;
-            color: #f8fafc;
+            color: #60a5fa;
             margin-bottom: 15px;
         }
-        .focus-card p {
-            text-align: left;
+        .about-section p {
             color: #cbd5e1;
-            margin: 0;
-            max-width: none;
+            margin-bottom: 15px;
         }
-        .contact-cta {
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            border-radius: 16px;
-            padding: 60px 40px;
-            margin-top: 40px;
+        .about-section ul {
+            list-style: none;
+            padding: 0;
         }
-        .contact-cta h3 {
-            font-size: 2rem;
-            color: #f8fafc;
-            margin-bottom: 20px;
-        }
-        .contact-cta p {
-            text-align: center;
+        .about-section ul li {
             color: #cbd5e1;
-            margin-bottom: 30px;
-            max-width: 600px;
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
         }
-        .lang-switch {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-            display: flex;
-            gap: 10px;
-            background: rgba(15, 23, 42, 0.9);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            border-radius: 8px;
-            padding: 5px;
-            backdrop-filter: blur(10px);
-        }
-        .lang-switch button {
-            background: transparent;
-            border: none;
-            color: #94a3b8;
-            padding: 8px 16px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-        .lang-switch button:hover {
-            color: #f8fafc;
-        }
-        .lang-switch button.active {
-            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-            color: white;
-        }
-        [data-lang="zh"] {
-            display: none;
-        }
-        html[lang="zh"] [data-lang="en"] {
-            display: none;
-        }
-        html[lang="zh"] [data-lang="zh"] {
-            display: block;
-        }
-        html[lang="en"] [data-lang="en"] {
-            display: block;
+        .about-section ul li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
         }
         .nav {
             position: fixed;
@@ -279,9 +182,8 @@
             left: 0;
             right: 0;
             background: rgba(15, 23, 42, 0.95);
-            border-bottom: 1px solid rgba(59, 130, 246, 0.3);
-            z-index: 999;
             backdrop-filter: blur(10px);
+            z-index: 100;
             padding: 15px 0;
         }
         .nav-container {
@@ -316,28 +218,74 @@
         .nav-menu li a.active {
             color: #60a5fa;
         }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #f8fafc;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
         footer {
             text-align: center;
             padding: 40px 20px;
-            color: #94a3b8;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #64748b;
+        }
+        .lang-switch {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            z-index: 99;
+            display: flex;
+            gap: 5px;
+        }
+        .lang-switch button {
+            padding: 8px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(15, 23, 42, 0.8);
+            color: #94a3b8;
+            cursor: pointer;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .lang-switch button:hover {
+            background: rgba(59, 130, 246, 0.2);
+            color: #60a5fa;
+        }
+        .lang-switch button.active {
+            background: rgba(59, 130, 246, 0.3);
+            color: #60a5fa;
+            border-color: rgba(59, 130, 246, 0.5);
         }
         @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(15, 23, 42, 0.98);
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+            }
+            .nav-menu.active {
+                display: flex;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
             .hero h1 {
                 font-size: 2rem;
             }
             .hero h2 {
                 font-size: 1.2rem;
             }
-            .section h2 {
-                font-size: 2rem;
-            }
-            .about-section {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            .nav-menu {
-                display: none;
+            .lang-switch {
+                top: 70px;
+                right: 10px;
             }
         }
     </style>
@@ -346,7 +294,8 @@
     <nav class="nav">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">Ray Deng</a>
-            <ul class="nav-menu">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html"><span data-lang="en">Home</span><span data-lang="zh">首页</span></a></li>
                 <li><a href="about.html" class="active"><span data-lang="en">About</span><span data-lang="zh">关于</span></a></li>
                 <li><a href="projects.html"><span data-lang="en">Projects</span><span data-lang="zh">项目</span></a></li>
@@ -366,129 +315,44 @@
             <div class="container">
                 <h1 data-lang="en">About Ray Deng</h1>
                 <h1 data-lang="zh">关于 Ray Deng</h1>
-                <h2 data-lang="en">Entrepreneur, operator, and cross-border builder based in New Zealand.</h2>
-                <h2 data-lang="zh">常驻新西兰的创业者、操盘者与跨境构建者。</h2>
-                <p data-lang="en">20+ years of experience building AI-driven ventures across China, New Zealand, and Australia, with a focus on migration, property technology, and cross-border business infrastructure.</p>
-                <p data-lang="zh">20多年经验，在中国、新西兰和澳大利亚构建AI驱动的创业项目，专注于移民、房产技术和跨境商业基础设施。</p>
-                <a href="index.html#contact" class="btn btn-primary" data-lang="en">Get in Touch</a>
-                <a href="index.html#contact" class="btn btn-primary" data-lang="zh">联系我们</a>
+                <h2 data-lang="en">Entrepreneur based in New Zealand, working on AI-driven ventures across migration, property, and cross-border business.</h2>
+                <h2 data-lang="zh">常驻新西兰的创业者，从事移民、房产和跨境商业领域的 AI 驱动项目。</h2>
+                <p data-lang="en">Building practical solutions that connect markets and create value across China, New Zealand, and Australia.</p>
+                <p data-lang="zh">构建连接市场、在中国、新西兰和澳大利亚创造价值的实用解决方案。</p>
             </div>
         </section>
 
         <section class="section">
             <div class="container">
-                <h2 data-lang="en">Introduction</h2>
-                <h2 data-lang="zh">简介</h2>
-                <div class="about-section">
-                    <div class="about-content">
-                        <h3 data-lang="en">Ray Deng | Big Ray</h3>
-                        <h3 data-lang="zh">Ray Deng | 大瑞</h3>
-                        <p data-lang="en">Based in <span class="highlight">Auckland, New Zealand</span>, Ray Deng (also known as Big Ray) is a visionary entrepreneur building AI-driven ventures that bridge <span class="highlight">China × New Zealand × Australia</span> markets. With over two decades of experience in cross-border business, Ray has established himself as a leader in <span class="highlight">AI systems</span>, <span class="highlight">migration and labor mobility</span>, <span class="highlight">property technology</span>, and <span class="highlight">cross-border business building</span>.</p>
-                        <p data-lang="zh">Ray Deng（也被称为大瑞）常驻 <span class="highlight">新西兰奥克兰</span>，是一位有远见的企业家，构建连接 <span class="highlight">中国 × 新西兰 × 澳大利亚</span> 市场的 AI 驱动创业项目。拥有超过二十年的跨境商业经验，Ray 已成为 <span class="highlight">AI 系统</span>、<span class="highlight">移民和劳动力流动</span>、<span class="highlight">房产技术</span> 和 <span class="highlight">跨境商业构建</span> 领域的领导者。</p>
+                <h2 data-lang="en">Background</h2>
+                <h2 data-lang="zh">背景</h2>
+                <div class="about-content">
+                    <div class="about-section">
+                        <h3 data-lang="en">What I Do</h3>
+                        <h3 data-lang="zh">我的工作</h3>
+                        <p data-lang="en">I work on building AI-driven ventures that address real market needs across migration, property technology, and cross-border business. My focus is on creating practical solutions that connect Chinese and Australasian markets.</p>
+                        <p data-lang="zh">我致力于构建满足移民、房产技术和跨境商业领域真实市场需求的 AI 驱动项目。我的重点是创建连接中国与澳新市场的实用解决方案。</p>
                     </div>
-                    <div class="about-content">
-                        <h3 data-lang="en">Experience & Background</h3>
-                        <h3 data-lang="zh">经验与背景</h3>
-                        <p data-lang="en">With <span class="highlight">20+ years in New Zealand</span>, Ray brings deep local market knowledge combined with global perspectives. His <span class="highlight">cross-border business experience</span> spans multiple industries, with a proven track record in <span class="highlight">strategic execution</span> and <span class="highlight">venture building</span>. Ray's approach combines innovative thinking with practical implementation, creating sustainable businesses that address real market needs.</p>
-                        <p data-lang="zh">在 <span class="highlight">新西兰20多年</span> 的经验，使 Ray 兼具深厚的本地市场知识和全球视野。他的 <span class="highlight">跨境商业经验</span> 横跨多个行业，在 <span class="highlight">战略执行</span> 和 <span class="highlight">创业构建</span> 方面拥有良好的记录。Ray 的方法结合了创新思维和实际实施，创建满足真实市场需求的可持续企业。</p>
+                    <div class="about-section">
+                        <h3 data-lang="en">Experience</h3>
+                        <h3 data-lang="zh">经验</h3>
+                        <p data-lang="en">Over the years, I've built and operated several ventures across China, New Zealand, and Australia. This includes platforms for workforce mobility, property investment technology, and cross-border business automation.</p>
+                        <p data-lang="zh">多年来，我在中国、新西兰和澳大利亚建立并运营了多个项目。这包括劳动力流动平台、房产投资技术和跨境商业自动化。</p>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <h2 data-lang="en">What I Focus On</h2>
-                <h2 data-lang="zh">我的专注领域</h2>
-                <p data-lang="en">Key areas driving innovation and creating value across cross-border markets.</p>
-                <p data-lang="zh">推动创新并在跨境市场创造价值的关键领域。</p>
-                <div class="focus-areas">
-                    <div class="focus-card">
-                        <h3 data-lang="en">AI Strategy</h3>
-                        <h3 data-lang="zh">AI 战略</h3>
-                        <p data-lang="en">Developing AI-driven solutions that transform business operations and create competitive advantage. From machine learning models to natural language processing, building intelligent systems that enhance decision-making.</p>
-                        <p data-lang="zh">开发改变业务运营并创造竞争优势的 AI 驱动解决方案。从机器学习模型到自然语言处理，构建增强决策能力的智能系统。</p>
+                    <div class="about-section">
+                        <h3 data-lang="en">Focus Areas</h3>
+                        <h3 data-lang="zh">专注领域</h3>
+                        <ul>
+                            <li data-lang="en">AI strategy and implementation for business operations</li>
+                            <li data-lang="zh">商业运营的 AI 战略与实施</li>
+                            <li data-lang="en">Cross-border business development between China and Australasia</li>
+                            <li data-lang="zh">中国与澳新之间的跨境商业发展</li>
+                            <li data-lang="en">Property technology and investment platforms</li>
+                            <li data-lang="zh">房产技术与投资平台</li>
+                            <li data-lang="en">Workforce mobility and migration solutions</li>
+                            <li data-lang="zh">劳动力流动与移民解决方案</li>
+                        </ul>
                     </div>
-                    <div class="focus-card">
-                        <h3 data-lang="en">Cross-border Business</h3>
-                        <h3 data-lang="zh">跨境商业</h3>
-                        <p data-lang="en">Building bridges between Chinese and Australasian markets. Identifying opportunities for trade, investment, and collaboration while navigating regulatory frameworks and cultural nuances.</p>
-                        <p data-lang="zh">构建中国与澳新市场之间的桥梁。在应对监管框架和文化差异的同时，识别贸易、投资和合作机会。</p>
-                    </div>
-                    <div class="focus-card">
-                        <h3 data-lang="en">Workforce Mobility</h3>
-                        <h3 data-lang="zh">劳动力流动</h3>
-                        <p data-lang="en">Creating platforms that connect talent with opportunities across borders. Simplifying visa processes, job matching, and workforce integration for international professionals.</p>
-                        <p data-lang="zh">创建连接跨境人才与机会的平台。为国际专业人士简化签证流程、工作匹配和劳动力整合。</p>
-                    </div>
-                    <div class="focus-card">
-                        <h3 data-lang="en">Property Technology</h3>
-                        <h3 data-lang="zh">房产技术</h3>
-                        <p data-lang="en">Leveraging AI and data analytics to revolutionize property investment. Providing intelligent insights for investors navigating the Australian and New Zealand real estate markets.</p>
-                        <p data-lang="zh">利用 AI 和数据分析革新房产投资。为在澳大利亚和新西兰房地产市场导航的投资者提供智能洞察。</p>
-                    </div>
-                    <div class="focus-card">
-                        <h3 data-lang="en">Startup Building</h3>
-                        <h3 data-lang="zh">创业构建</h3>
-                        <p data-lang="en">From ideation to execution, building scalable startups that address real market needs. Combining strategic vision with operational excellence to create sustainable businesses.</p>
-                        <p data-lang="zh">从创意到执行，构建满足真实市场需求的可扩展创业项目。结合战略视野和卓越运营，创建可持续企业。</p>
-                    </div>
-                    <div class="focus-card">
-                        <h3 data-lang="en">Digital Transformation</h3>
-                        <h3 data-lang="zh">数字化转型</h3>
-                        <p data-lang="en">Helping traditional businesses embrace digital innovation. Implementing modern technologies and processes to enhance efficiency, customer experience, and competitive advantage.</p>
-                        <p data-lang="zh">帮助传统企业拥抱数字创新。实施现代技术和流程，提升效率、客户体验和竞争优势。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <h2 data-lang="en">Who I Work With</h2>
-                <h2 data-lang="zh">我的合作对象</h2>
-                <p data-lang="en">Partners and clients I collaborate with to build innovative solutions.</p>
-                <p data-lang="zh">我合作构建创新解决方案的合作伙伴和客户。</p>
-                <div class="about-section">
-                    <div class="about-content">
-                        <h3 data-lang="en">Founders & Entrepreneurs</h3>
-                        <h3 data-lang="zh">创始人与企业家</h3>
-                        <p data-lang="en">Working with visionary founders to turn ideas into executable ventures. Providing strategic guidance, operational expertise, and AI-driven solutions to accelerate growth.</p>
-                        <p data-lang="zh">与有远见的创始人合作，将想法转化为可执行的创业项目。提供战略指导、运营专业知识和 AI 驱动解决方案，加速增长。</p>
-                    </div>
-                    <div class="about-content">
-                        <h3 data-lang="en">Investors & Partners</h3>
-                        <h3 data-lang="zh">投资者与合作伙伴</h3>
-                        <p data-lang="en">Collaborating with investors and strategic partners to identify and capitalize on cross-border opportunities. Building ecosystems that create value for all stakeholders.</p>
-                        <p data-lang="zh">与投资者和战略合作伙伴合作，识别并利用跨境机会。构建为所有利益相关者创造价值的生态系统。</p>
-                    </div>
-                </div>
-                <div class="about-section">
-                    <div class="about-content">
-                        <h3 data-lang="en">Migration-related Businesses</h3>
-                        <h3 data-lang="zh">移民相关企业</h3>
-                        <p data-lang="en">Partnering with immigration services, education providers, and workforce agencies to create technology-driven solutions that streamline processes and enhance outcomes.</p>
-                        <p data-lang="zh">与移民服务、教育机构和劳动力机构合作，创建技术驱动的解决方案，简化流程并提升成果。</p>
-                    </div>
-                    <div class="about-content">
-                        <h3 data-lang="en">Cross-border Project Partners</h3>
-                        <h3 data-lang="zh">跨境项目合作伙伴</h3>
-                        <p data-lang="en">Working with businesses looking to expand across China, New Zealand, and Australia. Providing market insights, regulatory guidance, and operational support for successful expansion.</p>
-                        <p data-lang="zh">与寻求在中国、新西兰和澳大利亚扩张的企业合作。为成功扩张提供市场洞察、监管指导和运营支持。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <div class="contact-cta">
-                    <h3 data-lang="en">Let's Collaborate</h3>
-                    <h3 data-lang="zh">合作洽谈</h3>
-                    <p data-lang="en">Open to partnerships in AI systems, migration-related ventures, property technology, digital growth, and cross-border business development.</p>
-                    <p data-lang="zh">开放AI系统、移民相关业务、房产技术、数字增长和跨境业务开发等领域的合作。</p>
-                    <a href="index.html#contact" class="btn btn-primary" data-lang="en">Get in Touch</a>
-                    <a href="index.html#contact" class="btn btn-primary" data-lang="zh">联系我们</a>
                 </div>
             </div>
         </section>
@@ -496,7 +360,7 @@
 
     <footer>
         <div class="container">
-            <p>© 2024 大瑞 Ray Deng. 版权所有。</p>
+            <p>© 2024 Ray Deng. All rights reserved.</p>
         </div>
     </footer>
 
@@ -512,10 +376,25 @@
             document.getElementById('btn-' + lang).classList.add('active');
         }
 
-        // Check for language preference
-        const savedLang = localStorage.getItem('language');
-        if (savedLang) {
-            setLanguage(savedLang);
+        function toggleMobileMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+
+        // Initialize language
+        function initLanguage() {
+            const savedLang = localStorage.getItem('language');
+            if (savedLang && (savedLang === 'en' || savedLang === 'zh')) {
+                setLanguage(savedLang);
+            } else {
+                // Check browser language
+                const browserLang = navigator.language || navigator.userLanguage;
+                if (browserLang && browserLang.toLowerCase().startsWith('zh')) {
+                    setLanguage('zh');
+                } else {
+                    setLanguage('en');
+                }
+            }
         }
 
         // Save language preference
@@ -528,6 +407,9 @@
             setLanguage('zh');
             localStorage.setItem('language', 'zh');
         });
+
+        // Initialize on page load
+        initLanguage();
     </script>
 </body>
 </html>
