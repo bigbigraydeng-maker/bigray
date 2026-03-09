@@ -71,8 +71,8 @@
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: #f8fafc;
+            background: linear-gradient(135deg, #0b0b0d 0%, #111113 100%);
+            color: #e6e6e6;
             line-height: 1.7;
         }
         .container {
@@ -89,10 +89,9 @@
             text-align: center;
             padding: 60px 20px;
             background: 
-                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.12) 0%, transparent 50%),
-                radial-gradient(ellipse 60% 40% at 80% 60%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
-                radial-gradient(ellipse 50% 30% at 20% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
-                linear-gradient(180deg, #0f172a 0%, #0f172a 50%, #1e293b 100%);
+                radial-gradient(circle at 20% 20%, rgba(212,165,116,0.08), transparent 40%),
+                radial-gradient(circle at 80% 60%, rgba(212,165,116,0.06), transparent 40%),
+                linear-gradient(180deg, #0b0b0d 0%, #0f0f11 100%);
             background-size: 100% 100%;
             position: relative;
             overflow: hidden;
@@ -121,7 +120,7 @@
             width: 800px;
             height: 800px;
             transform: translate(-50%, -50%);
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.03) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(212,165,116,0.03) 0%, transparent 70%);
             pointer-events: none;
         }
         
@@ -132,8 +131,8 @@
         
         .hero .tag {
             display: inline-block;
-            background: rgba(139, 92, 246, 0.15);
-            color: #a78bfa;
+            background: rgba(212,165,116,0.15);
+            color: #d4a574;
             padding: 6px 14px;
             border-radius: 20px;
             font-size: 0.75rem;
@@ -147,7 +146,7 @@
             font-size: 2.2rem;
             font-weight: 600;
             margin-bottom: 16px;
-            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            background: linear-gradient(135deg, #d4a574 0%, #f5cfa0 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -209,14 +208,14 @@
         }
         
         .toc-list li a:hover {
-            color: #60a5fa;
+            color: #d4a574;
         }
         
         .toc-list li a::before {
             content: '';
             width: 6px;
             height: 6px;
-            background: rgba(59, 130, 246, 0.5);
+            background: rgba(212,165,116,0.5);
             border-radius: 50%;
         }
         
@@ -233,14 +232,14 @@
             letter-spacing: 0.3px;
         }
         .btn-primary {
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.9) 0%, rgba(139, 92, 246, 0.9) 100%);
-            color: white;
+            background: linear-gradient(135deg, #d4a574 0%, #f5cfa0 100%);
+            color: #111;
             border: none;
-            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+            box-shadow: 0 2px 8px rgba(212,165,116,0.2), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
         }
         .btn-primary:hover {
             transform: translateY(-1px);
-            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+            box-shadow: 0 8px 24px rgba(212,165,116,0.25), 0 0 0 1px rgba(255, 255, 255, 0.15) inset;
         }
         .btn-secondary {
             background: transparent;
@@ -423,10 +422,10 @@
             font-size: 0.9rem;
         }
         .nav-menu li a:hover {
-            color: #60a5fa;
+            color: #d4a574;
         }
         .nav-menu li a.active {
-            color: #60a5fa;
+            color: #d4a574;
         }
         .mobile-menu-btn {
             display: none;
@@ -450,8 +449,8 @@
             z-index: 1000;
             display: flex;
             gap: 10px;
-            background: rgba(15, 23, 42, 0.9);
-            border: 1px solid rgba(59, 130, 246, 0.3);
+            background: rgba(11, 11, 13, 0.9);
+            border: 1px solid rgba(212,165,116,0.3);
             border-radius: 8px;
             padding: 5px;
         }
@@ -470,8 +469,8 @@
             color: #f8fafc;
         }
         .lang-switch button.active {
-            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-            color: white;
+            background: linear-gradient(135deg, #d4a574 0%, #f5cfa0 100%);
+            color: #111;
         }
         
         [data-lang] {
