@@ -91,10 +91,31 @@
             align-items: center;
             text-align: center;
             padding: 60px 20px;
-            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(30, 41, 59, 0.85)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
-            background-size: cover;
+            background: 
+                radial-gradient(ellipse at top, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom right, rgba(139, 92, 246, 0.06) 0%, transparent 40%),
+                linear-gradient(135deg, rgba(15, 23, 42, 0.97) 0%, rgba(15, 23, 42, 0.95) 50%, rgba(30, 41, 59, 0.93) 100%),
+                url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover, cover, cover, cover;
             background-position: center;
             background-attachment: fixed;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, transparent 0%, rgba(15, 23, 42, 0.4) 100%);
+            pointer-events: none;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 1;
         }
         .hero h1 {
             font-size: 3rem;
@@ -138,29 +159,41 @@
             flex-wrap: wrap;
         }
         .btn {
-            padding: 12px 30px;
-            border-radius: 8px;
+            padding: 14px 32px;
+            border-radius: 10px;
             text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            display: inline-block;
+            font-weight: 500;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
         }
+        
         .btn-primary {
-            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.9) 0%, rgba(139, 92, 246, 0.9) 100%);
             color: white;
             border: none;
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
         }
+        
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 1) 0%, rgba(139, 92, 246, 1) 100%);
         }
+        
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            color: #f8fafc;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: transparent;
+            color: rgba(248, 250, 252, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.12);
         }
+        
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.2);
+            color: rgba(248, 250, 252, 1);
         }
         .section[aria-label="Introduction"] {
             padding: 40px 20px;
@@ -195,50 +228,136 @@
             margin: 0 auto 60px;
         }
         
-        .about-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            margin-top: 40px;
+        /* About Section - Premium Layout */
+        .section-about {
+            padding: 120px 20px;
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(30, 41, 59, 0.2) 50%, rgba(15, 23, 42, 0) 100%);
         }
         
-        .about-content h3 {
-            font-size: 1.8rem;
-            color: #f8fafc;
-            margin-bottom: 20px;
+        .about-header {
+            text-align: center;
+            margin-bottom: 80px;
         }
         
-        .about-content p {
-            text-align: left;
-            color: #cbd5e1;
-            margin-bottom: 20px;
-            max-width: none;
-        }
-        
-        .about-content .highlight {
-            color: #60a5fa;
+        .about-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             font-weight: 600;
         }
         
-        .value-proposition {
-            margin-top: 50px;
+        .about-lead {
+            font-size: 1.25rem;
+            color: rgba(248, 250, 252, 0.7);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .about-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
             padding: 40px;
-            background: rgba(96, 165, 250, 0.1);
-            border: 1px solid rgba(96, 165, 250, 0.3);
-            border-radius: 12px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
         }
         
-        .value-proposition h3 {
-            font-size: 1.6rem;
-            color: #60a5fa;
-            margin-bottom: 15px;
+        .about-card:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-4px);
         }
         
-        .value-proposition p {
-            color: #cbd5e1;
+        .about-card-number {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: rgba(96, 165, 250, 0.6);
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .about-card h3 {
+            font-size: 1.3rem;
+            color: rgba(248, 250, 252, 0.95);
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        
+        .about-card p {
+            text-align: left;
+            color: rgba(148, 163, 184, 0.9);
+            margin: 0;
+            max-width: none;
+            line-height: 1.75;
+            font-size: 0.95rem;
+        }
+        
+        .about-card .highlight {
+            color: rgba(96, 165, 250, 0.95);
+            font-weight: 500;
+        }
+        
+        .value-card {
+            max-width: 800px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(139, 92, 246, 0.05) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.15);
+            border-radius: 20px;
+            padding: 50px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.5), transparent);
+        }
+        
+        .value-card-content h3 {
             font-size: 1.1rem;
+            color: rgba(96, 165, 250, 0.9);
+            margin-bottom: 12px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .value-card-content p {
+            color: rgba(248, 250, 252, 0.85);
+            font-size: 1.15rem;
             line-height: 1.7;
+            margin: 0;
+            max-width: none;
+        }
+        
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-card {
+                padding: 30px;
+            }
+            .value-card {
+                padding: 35px 30px;
+            }
         }
         
         .focus-areas {
@@ -1079,8 +1198,8 @@
                 <span data-lang="zh">大瑞 Ray Deng</span>
             </h1>
             <p class="hero-tagline">
-                <span data-lang="en">AI entrepreneur building cross-border systems across China, New Zealand, and Australia.</span>
-                <span data-lang="zh">AI 创业者，构建连接中国、新西兰与澳大利亚的跨境系统。</span>
+                <span data-lang="en">Building AI-driven cross-border systems across China, New Zealand, and Australia.</span>
+                <span data-lang="zh">构建连接中国、新西兰与澳大利亚的 AI 驱动跨境系统。</span>
             </p>
             <p class="hero-subline">
                 <span data-lang="en">Founder of MoveHub · Compass AI · WorkVisas.work</span>
@@ -1099,55 +1218,56 @@
         </div>
     </section>
 
-    <section class="section" id="about">
+    <section class="section section-about" id="about">
         <div class="container">
-            <h2>
-                <span data-lang="en">About Ray</span>
-                <span data-lang="zh">关于 Ray</span>
-            </h2>
-            <p>
-                <span data-lang="en">Building bridges across China, New Zealand, and Australia through AI-driven innovation.</span>
-                <span data-lang="zh">通过AI驱动的创新，构建中国、新西兰和澳大利亚之间的桥梁。</span>
-            </p>
-            <div class="about-section">
-                <div class="about-content">
+            <div class="about-header">
+                <h2>
+                    <span data-lang="en">About</span>
+                    <span data-lang="zh">关于</span>
+                </h2>
+                <p class="about-lead">
+                    <span data-lang="en">Two decades building across the China–New Zealand–Australia corridor.</span>
+                    <span data-lang="zh">二十年来，深耕中国—新西兰—澳大利亚走廊。</span>
+                </p>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-card-number">01</div>
                     <h3>
-                        <span data-lang="en">20+ Years of Cross-Border Experience</span>
-                        <span data-lang="zh">20+ 年跨境经验</span>
+                        <span data-lang="en">Cross-Border Builder</span>
+                        <span data-lang="zh">跨境构建者</span>
                     </h3>
                     <p>
-                        <span data-lang="en">Ray Deng, also known as Big Ray, has been building businesses across the China-New Zealand-Australia corridor for over two decades. Based in Auckland, New Zealand, Ray combines deep local market knowledge with global perspectives to create innovative solutions in <span class="highlight">AI systems</span>, <span class="highlight">labor mobility</span>, and <span class="highlight">cross-border commerce</span>.</span>
-                        <span data-lang="zh">Ray Deng，也被称为大瑞，二十多年来一直在中国-新西兰-澳大利亚走廊建立业务。Ray 位于新西兰奥克兰，结合深厚的本地市场知识和全球视野，在 <span class="highlight">AI 系统</span>、<span class="highlight">劳动力流动</span> 和 <span class="highlight">跨境商业</span> 领域创造创新解决方案。</span>
-                    </p>
-                    <p>
-                        <span data-lang="en">As a serial entrepreneur and strategic operator, Ray focuses on leveraging AI and automation to solve complex business challenges. His ventures span workforce migration platforms, property technology, and intelligent business systems that connect markets and create opportunities across borders.</span>
-                        <span data-lang="zh">作为连续创业者和战略运营者，Ray 专注于利用 AI 和自动化解决复杂的商业挑战。他的业务涵盖劳动力迁移平台、房产技术和智能商业系统，连接市场并创造跨境机会。</span>
+                        <span data-lang="en">Based in Auckland, combining deep local expertise with global perspective to create solutions in <span class="highlight">AI systems</span>, <span class="highlight">workforce mobility</span>, and <span class="highlight">cross-border commerce</span>.</span>
+                        <span data-lang="zh">立足奥克兰，结合深厚的本地专业知识与全球视野，在<span class="highlight">AI 系统</span>、<span class="highlight">劳动力流动</span>和<span class="highlight">跨境商业</span>领域创造解决方案。</span>
                     </p>
                 </div>
-                <div class="about-content">
+                
+                <div class="about-card">
+                    <div class="about-card-number">02</div>
                     <h3>
-                        <span data-lang="en">Strategic Vision & Execution</span>
-                        <span data-lang="zh">战略视野与执行</span>
+                        <span data-lang="en">Strategic Operator</span>
+                        <span data-lang="zh">战略运营者</span>
                     </h3>
                     <p>
-                        <span data-lang="en">Ray's approach combines <span class="highlight">strategic thinking</span> with hands-on execution. He identifies market gaps in cross-border business and builds practical solutions that address real needs. From workforce mobility solutions to AI-powered property platforms, each venture is designed to create measurable impact.</span>
-                        <span data-lang="zh">Ray 的方法结合了 <span class="highlight">战略思维</span> 和实际执行。他识别跨境商业中的市场空白，并构建解决实际需求的实用解决方案。从劳动力流动解决方案到 AI 驱动的房产平台，每个项目都旨在产生可衡量的影响。</span>
-                    </p>
-                    <p>
-                        <span data-lang="en">Featured in major media outlets including NZ Herald, Chinese Herald, and Xinhua News, Ray is recognized for his contributions to strengthening business ties between China and New Zealand. His work has been highlighted for its innovation in <span class="highlight">cross-border trade</span> and <span class="highlight">digital transformation</span>.</span>
-                        <span data-lang="zh">Ray 的贡献因加强中国和新西兰之间的商业联系而受到认可，曾被 NZ Herald、Chinese Herald 和新华社等主要媒体报道。他的工作因在 <span class="highlight">跨境贸易</span> 和 <span class="highlight">数字化转型</span> 方面的创新而受到关注。</span>
+                        <span data-lang="en">Bridging <span class="highlight">strategic vision</span> with hands-on execution. Identifying market gaps and building practical systems that create measurable impact across borders.</span>
+                        <span data-lang="zh">将<span class="highlight">战略愿景</span>与实际执行相结合。识别市场空白，构建实用的系统，在跨境领域产生可衡量的影响。</span>
                     </p>
                 </div>
             </div>
-            <div class="value-proposition">
-                <h3>
-                    <span data-lang="en">What I Can Offer</span>
-                    <span data-lang="zh">我能提供的价值</span>
-                </h3>
-                <p>
-                    <span data-lang="en">Ray works with founders, investors, migration-related businesses, and cross-border operators who want to build practical systems, validate new opportunities, and turn complex ideas into executable ventures.</span>
-                    <span data-lang="zh">Ray 与创始人、投资者、移民相关企业和跨境运营商合作，帮助构建实用系统、验证新机会，并将复杂想法转化为可执行的创业项目。</span>
-                </p>
+            
+            <div class="value-card">
+                <div class="value-card-content">
+                    <h3>
+                        <span data-lang="en">Partnership</span>
+                        <span data-lang="zh">合作</span>
+                    </h3>
+                    <p>
+                        <span data-lang="en">Working with founders, investors, and cross-border operators to turn complex ideas into executable ventures.</span>
+                        <span data-lang="zh">与创始人、投资者和跨境运营商合作，将复杂的想法转化为可执行的创业项目。</span>
+                    </p>
+                </div>
             </div>
         </div>
     </section>
