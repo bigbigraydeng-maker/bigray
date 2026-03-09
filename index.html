@@ -178,6 +178,126 @@
             max-width: 600px;
             margin: 0 auto 60px;
         }
+        
+        .about-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-top: 40px;
+        }
+        
+        .about-content h3 {
+            font-size: 1.8rem;
+            color: #f8fafc;
+            margin-bottom: 20px;
+        }
+        
+        .about-content p {
+            text-align: left;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            max-width: none;
+        }
+        
+        .about-content .highlight {
+            color: #60a5fa;
+            font-weight: 600;
+        }
+        
+        .focus-areas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .focus-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+        
+        .focus-card:hover {
+            border-color: rgba(59, 130, 246, 0.5);
+            transform: translateY(-5px);
+        }
+        
+        .focus-card h3 {
+            font-size: 1.3rem;
+            color: #f8fafc;
+            margin-bottom: 15px;
+        }
+        
+        .focus-card p {
+            text-align: left;
+            color: #cbd5e1;
+            margin: 0;
+            max-width: none;
+        }
+        
+        .contact-cta {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 16px;
+            padding: 60px 40px;
+            margin-top: 40px;
+        }
+        
+        .contact-cta h3 {
+            font-size: 2rem;
+            color: #f8fafc;
+            margin-bottom: 20px;
+        }
+        
+        .contact-cta p {
+            text-align: center;
+            color: #cbd5e1;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+        
+        .contact-cta .contact-details {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .contact-cta .contact-item {
+            text-align: center;
+        }
+        
+        .contact-cta .contact-item .label {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        
+        .contact-cta .contact-item .value {
+            color: #60a5fa;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .contact-cta .location {
+            color: #cbd5e1;
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .about-section {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .contact-cta .contact-details {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
         .ventures {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -492,15 +612,34 @@
         </div>
     </section>
 
+    <section class="section" id="about">
+        <div class="container">
+            <h2>About Ray</h2>
+            <p>Building bridges across China, New Zealand, and Australia through AI-driven innovation.</p>
+            <div class="about-section">
+                <div class="about-content">
+                    <h3>20+ Years of Cross-Border Experience</h3>
+                    <p>Ray Deng, also known as Big Ray, has been building businesses across the China-New Zealand-Australia corridor for over two decades. Based in Auckland, New Zealand, Ray combines deep local market knowledge with global perspectives to create innovative solutions in <span class="highlight">AI systems</span>, <span class="highlight">labor mobility</span>, and <span class="highlight">cross-border commerce</span>.</p>
+                    <p>As a serial entrepreneur and strategic operator, Ray focuses on leveraging AI and automation to solve complex business challenges. His ventures span workforce migration platforms, property technology, and intelligent business systems that connect markets and create opportunities across borders.</p>
+                </div>
+                <div class="about-content">
+                    <h3>Strategic Vision & Execution</h3>
+                    <p>Ray's approach combines <span class="highlight">strategic thinking</span> with hands-on execution. He identifies market gaps in cross-border business and builds practical solutions that address real needs. From workforce mobility solutions to AI-powered property platforms, each venture is designed to create measurable impact.</p>
+                    <p>Featured in major media outlets including NZ Herald, Chinese Herald, and Xinhua News, Ray is recognized for his contributions to strengthening business ties between China and New Zealand. His work has been highlighted for its innovation in <span class="highlight">cross-border trade</span> and <span class="highlight">digital transformation</span>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="section" id="ventures">
         <div class="container">
-            <h2>当前项目</h2>
-            <p>活跃于劳动力流动、房产科技、AI系统和跨境商业领域的项目。</p>
+            <h2>What I Build</h2>
+            <p>Creating AI-driven solutions that connect markets and empower cross-border business.</p>
             <div class="ventures">
                 <div class="venture">
                     <h3>WorkVisas.work</h3>
                     <span class="tag">劳动力流动</span>
-                    <p>连接人才与澳大利亚和新西兰机会的移民和劳动力解决方案平台。</p>
+                    <p>A comprehensive immigration and workforce solution platform connecting talent with opportunities in Australia and New Zealand. The platform streamlines visa applications, job matching, and employer compliance.</p>
                     <span class="status status-live">已上线</span>
                     <br><br>
                     <a href="https://workvisas.work" target="_blank">访问网站 →</a>
@@ -508,20 +647,53 @@
                 <div class="venture">
                     <h3>Compass</h3>
                     <span class="tag">房产科技</span>
-                    <p>面向布里斯班华人投资者的AI驱动房产投资平台。智能房产分析和机会发现。</p>
+                    <p>An AI-driven property investment platform for Chinese investors in Brisbane. Features intelligent property analysis, market insights, and opportunity discovery powered by advanced machine learning algorithms.</p>
                     <span class="status status-development">开发中</span>
                 </div>
                 <div class="venture">
                     <h3>MoveHub</h3>
                     <span class="tag">搬迁服务</span>
-                    <p>为跨境搬迁的个人和家庭提供全面的搬迁和定居平台。</p>
+                    <p>A comprehensive relocation and settlement platform for individuals and families moving across borders. Provides end-to-end support from visa processing to community integration.</p>
                     <span class="status status-development">开发中</span>
                 </div>
                 <div class="venture">
                     <h3>Magic Lamp / Aladdin</h3>
                     <span class="tag">AI系统</span>
-                    <p>用于跨境贸易的AI赋能电商和业务自动化系统。</p>
+                    <p>An AI-powered e-commerce and business automation system for cross-border trade. Leverages natural language processing and predictive analytics to optimize supply chains and customer experiences.</p>
                     <span class="status status-live">已上线</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="focus">
+        <div class="container">
+            <h2>What I Work On</h2>
+            <p>Strategic focus areas driving innovation and growth across cross-border markets.</p>
+            <div class="focus-areas">
+                <div class="focus-card">
+                    <h3>AI Strategy & Implementation</h3>
+                    <p>Developing and implementing AI strategies that transform business operations. From machine learning models to natural language processing, creating intelligent systems that enhance decision-making and automate complex workflows.</p>
+                </div>
+                <div class="focus-card">
+                    <h3>Cross-Border Business</h3>
+                    <p>Building bridges between Chinese and Australasian markets. Identifying opportunities for trade, investment, and collaboration while navigating regulatory frameworks and cultural nuances.</p>
+                </div>
+                <div class="focus-card">
+                    <h3>Labor Mobility Solutions</h3>
+                    <p>Creating platforms that connect talent with opportunities across borders. Simplifying visa processes, job matching, and workforce integration for international professionals.</p>
+                </div>
+                <div class="focus-card">
+                    <h3>Property Technology</h3>
+                    <p>Leveraging AI and data analytics to revolutionize property investment. Providing intelligent insights for investors navigating the Australian and New Zealand real estate markets.</p>
+                </div>
+                <div class="focus-card">
+                    <h3>Startup Building</h3>
+                    <p>From ideation to execution, building scalable startups that address real market needs. Combining strategic vision with operational excellence to create sustainable businesses.</p>
+                </div>
+                <div class="focus-card">
+                    <h3>Digital Transformation</h3>
+                    <p>Helping traditional businesses embrace digital innovation. Implementing modern technologies and processes to enhance efficiency, customer experience, and competitive advantage.</p>
                 </div>
             </div>
         </div>
@@ -642,14 +814,26 @@
         </div>
     </section>
 
-    <section class="contact" id="contact">
+    <section class="section" id="contact">
         <div class="container">
-            <h2>与大瑞合作</h2>
-            <p>开放战略合作、创业构建和跨境机会。</p>
-            <div class="phone">0064 27 7520 888</div>
-            <div class="email">bigbigraydeng@gmail.com</div>
-            <div class="info">新西兰奥克兰 · 英文、中文 · 通常在24-48小时内回复</div>
-            <a href="mailto:bigbigraydeng@gmail.com" class="btn btn-primary">取得联系</a>
+            <h2>Let's Collaborate</h2>
+            <p>Open to strategic partnerships, startup ventures, and cross-border opportunities.</p>
+            <div class="contact-cta">
+                <h3>Ready to Build Something Together?</h3>
+                <p>Whether you're exploring strategic partnerships, seeking startup collaboration, or looking to leverage cross-border opportunities, I'd love to hear from you. Let's discuss how we can create value together.</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="label">Phone</div>
+                        <div class="value">+64 27 7520 888</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="label">Email</div>
+                        <div class="value">bigbigraydeng@gmail.com</div>
+                    </div>
+                </div>
+                <div class="location">Auckland, New Zealand · English, Chinese · Typically responds within 24-48 hours</div>
+                <a href="mailto:bigbigraydeng@gmail.com" class="btn btn-primary">Get in Touch</a>
+            </div>
         </div>
     </section>
 
