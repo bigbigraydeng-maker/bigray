@@ -292,6 +292,57 @@
                 gap: 20px;
             }
         }
+        
+        .lang-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 10px;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 8px;
+            padding: 5px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .lang-switch button {
+            background: transparent;
+            border: none;
+            color: #94a3b8;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .lang-switch button:hover {
+            color: #f8fafc;
+        }
+        
+        .lang-switch button.active {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            color: white;
+        }
+        
+        [data-lang="zh"] {
+            display: none;
+        }
+        
+        html[lang="zh"] [data-lang="en"] {
+            display: none;
+        }
+        
+        html[lang="zh"] [data-lang="zh"] {
+            display: block;
+        }
+        
+        html[lang="en"] [data-lang="en"] {
+            display: block;
+        }
         .ventures {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -588,38 +639,60 @@
     </style>
 </head>
 <body>
+    <div class="lang-switch">
+        <button onclick="setLanguage('en')" class="active" id="btn-en">EN</button>
+        <button onclick="setLanguage('zh')" id="btn-zh">中文</button>
+    </div>
+    
     <section class="hero">
         <div class="container">
-            <h1>大瑞 Ray Deng</h1>
-            <h2>创始人 · 操盘者 · 跨境构建者</h2>
-            <p>构建跨越中国、新西兰和澳大利亚的创业项目。在新西兰20余年。专注于AI赋能系统、劳动力流动平台和跨境商业基础设施建设。</p>
+            <h1 data-lang="en">Ray Deng</h1>
+            <h1 data-lang="zh">大瑞 Ray Deng</h1>
+            <h2 data-lang="en">Founder · Operator · Cross-border Builder</h2>
+            <h2 data-lang="zh">创始人 · 操盘者 · 跨境构建者</h2>
+            <p data-lang="en">Building ventures across China, New Zealand, and Australia. 20+ years in New Zealand. Focused on AI-powered systems, workforce mobility platforms, and cross-border business infrastructure.</p>
+            <p data-lang="zh">构建跨越中国、新西兰和澳大利亚的创业项目。在新西兰20余年。专注于AI赋能系统、劳动力流动平台和跨境商业基础设施建设。</p>
             <div class="tags">
-                <span class="tag">中国 × 新西兰 × 澳大利亚</span>
-                <span class="tag">AI系统</span>
-                <span class="tag">劳动力流动</span>
-                <span class="tag">创业构建</span>
+                <span class="tag" data-lang="en">China × New Zealand × Australia</span>
+                <span class="tag" data-lang="zh">中国 × 新西兰 × 澳大利亚</span>
+                <span class="tag" data-lang="en">AI Systems</span>
+                <span class="tag" data-lang="zh">AI系统</span>
+                <span class="tag" data-lang="en">Workforce Mobility</span>
+                <span class="tag" data-lang="zh">劳动力流动</span>
+                <span class="tag" data-lang="en">Venture Building</span>
+                <span class="tag" data-lang="zh">创业构建</span>
             </div>
             <div class="buttons">
-                <a href="#ventures" class="btn btn-primary">探索项目</a>
-                <a href="#contact" class="btn btn-secondary">合作洽谈</a>
+                <a href="#ventures" class="btn btn-primary" data-lang="en">Explore Projects</a>
+                <a href="#ventures" class="btn btn-primary" data-lang="zh">探索项目</a>
+                <a href="#contact" class="btn btn-secondary" data-lang="en">Let's Talk</a>
+                <a href="#contact" class="btn btn-secondary" data-lang="zh">合作洽谈</a>
             </div>
         </div>
     </section>
 
     <section class="section" id="about">
         <div class="container">
-            <h2>About Ray</h2>
-            <p>Building bridges across China, New Zealand, and Australia through AI-driven innovation.</p>
+            <h2 data-lang="en">About Ray</h2>
+            <h2 data-lang="zh">关于 Ray</h2>
+            <p data-lang="en">Building bridges across China, New Zealand, and Australia through AI-driven innovation.</p>
+            <p data-lang="zh">通过AI驱动的创新，构建中国、新西兰和澳大利亚之间的桥梁。</p>
             <div class="about-section">
                 <div class="about-content">
-                    <h3>20+ Years of Cross-Border Experience</h3>
-                    <p>Ray Deng, also known as Big Ray, has been building businesses across the China-New Zealand-Australia corridor for over two decades. Based in Auckland, New Zealand, Ray combines deep local market knowledge with global perspectives to create innovative solutions in <span class="highlight">AI systems</span>, <span class="highlight">labor mobility</span>, and <span class="highlight">cross-border commerce</span>.</p>
-                    <p>As a serial entrepreneur and strategic operator, Ray focuses on leveraging AI and automation to solve complex business challenges. His ventures span workforce migration platforms, property technology, and intelligent business systems that connect markets and create opportunities across borders.</p>
+                    <h3 data-lang="en">20+ Years of Cross-Border Experience</h3>
+                    <h3 data-lang="zh">20+ 年跨境经验</h3>
+                    <p data-lang="en">Ray Deng, also known as Big Ray, has been building businesses across the China-New Zealand-Australia corridor for over two decades. Based in Auckland, New Zealand, Ray combines deep local market knowledge with global perspectives to create innovative solutions in <span class="highlight">AI systems</span>, <span class="highlight">labor mobility</span>, and <span class="highlight">cross-border commerce</span>.</p>
+                    <p data-lang="zh">Ray Deng，也被称为大瑞，二十多年来一直在中国-新西兰-澳大利亚走廊建立业务。Ray 位于新西兰奥克兰，结合深厚的本地市场知识和全球视野，在 <span class="highlight">AI 系统</span>、<span class="highlight">劳动力流动</span> 和 <span class="highlight">跨境商业</span> 领域创造创新解决方案。</p>
+                    <p data-lang="en">As a serial entrepreneur and strategic operator, Ray focuses on leveraging AI and automation to solve complex business challenges. His ventures span workforce migration platforms, property technology, and intelligent business systems that connect markets and create opportunities across borders.</p>
+                    <p data-lang="zh">作为连续创业者和战略运营者，Ray 专注于利用 AI 和自动化解决复杂的商业挑战。他的业务涵盖劳动力迁移平台、房产技术和智能商业系统，连接市场并创造跨境机会。</p>
                 </div>
                 <div class="about-content">
-                    <h3>Strategic Vision & Execution</h3>
-                    <p>Ray's approach combines <span class="highlight">strategic thinking</span> with hands-on execution. He identifies market gaps in cross-border business and builds practical solutions that address real needs. From workforce mobility solutions to AI-powered property platforms, each venture is designed to create measurable impact.</p>
-                    <p>Featured in major media outlets including NZ Herald, Chinese Herald, and Xinhua News, Ray is recognized for his contributions to strengthening business ties between China and New Zealand. His work has been highlighted for its innovation in <span class="highlight">cross-border trade</span> and <span class="highlight">digital transformation</span>.</p>
+                    <h3 data-lang="en">Strategic Vision & Execution</h3>
+                    <h3 data-lang="zh">战略视野与执行</h3>
+                    <p data-lang="en">Ray's approach combines <span class="highlight">strategic thinking</span> with hands-on execution. He identifies market gaps in cross-border business and builds practical solutions that address real needs. From workforce mobility solutions to AI-powered property platforms, each venture is designed to create measurable impact.</p>
+                    <p data-lang="zh">Ray 的方法结合了 <span class="highlight">战略思维</span> 和实际执行。他识别跨境商业中的市场空白，并构建解决实际需求的实用解决方案。从劳动力流动解决方案到 AI 驱动的房产平台，每个项目都旨在产生可衡量的影响。</p>
+                    <p data-lang="en">Featured in major media outlets including NZ Herald, Chinese Herald, and Xinhua News, Ray is recognized for his contributions to strengthening business ties between China and New Zealand. His work has been highlighted for its innovation in <span class="highlight">cross-border trade</span> and <span class="highlight">digital transformation</span>.</p>
+                    <p data-lang="zh">Ray 的贡献因加强中国和新西兰之间的商业联系而受到认可，曾被 NZ Herald、Chinese Herald 和新华社等主要媒体报道。他的工作因在 <span class="highlight">跨境贸易</span> 和 <span class="highlight">数字化转型</span> 方面的创新而受到关注。</p>
                 </div>
             </div>
         </div>
@@ -627,34 +700,49 @@
 
     <section class="section" id="ventures">
         <div class="container">
-            <h2>What I Build</h2>
-            <p>Creating AI-driven solutions that connect markets and empower cross-border business.</p>
+            <h2 data-lang="en">What I Build</h2>
+            <h2 data-lang="zh">我构建的项目</h2>
+            <p data-lang="en">Creating AI-driven solutions that connect markets and empower cross-border business.</p>
+            <p data-lang="zh">创建连接市场并赋能跨境业务的 AI 驱动解决方案。</p>
             <div class="ventures">
                 <div class="venture">
                     <h3>WorkVisas.work</h3>
-                    <span class="tag">劳动力流动</span>
-                    <p>A comprehensive immigration and workforce solution platform connecting talent with opportunities in Australia and New Zealand. The platform streamlines visa applications, job matching, and employer compliance.</p>
-                    <span class="status status-live">已上线</span>
+                    <span class="tag" data-lang="en">Workforce Mobility</span>
+                    <span class="tag" data-lang="zh">劳动力流动</span>
+                    <p data-lang="en">A comprehensive immigration and workforce solution platform connecting talent with opportunities in Australia and New Zealand. The platform streamlines visa applications, job matching, and employer compliance.</p>
+                    <p data-lang="zh">一个全面的移民和劳动力解决方案平台，连接人才与澳大利亚和新西兰的机会。该平台简化签证申请、工作匹配和雇主合规。</p>
+                    <span class="status status-live" data-lang="en">Live</span>
+                    <span class="status status-live" data-lang="zh">已上线</span>
                     <br><br>
-                    <a href="https://workvisas.work" target="_blank">访问网站 →</a>
+                    <a href="https://workvisas.work" target="_blank" data-lang="en">Visit Website →</a>
+                    <a href="https://workvisas.work" target="_blank" data-lang="zh">访问网站 →</a>
                 </div>
                 <div class="venture">
                     <h3>Compass</h3>
-                    <span class="tag">房产科技</span>
-                    <p>An AI-driven property investment platform for Chinese investors in Brisbane. Features intelligent property analysis, market insights, and opportunity discovery powered by advanced machine learning algorithms.</p>
-                    <span class="status status-development">开发中</span>
+                    <span class="tag" data-lang="en">Property Technology</span>
+                    <span class="tag" data-lang="zh">房产科技</span>
+                    <p data-lang="en">An AI-driven property investment platform for Chinese investors in Brisbane. Features intelligent property analysis, market insights, and opportunity discovery powered by advanced machine learning algorithms.</p>
+                    <p data-lang="zh">面向布里斯班华人投资者的 AI 驱动房产投资平台。具有智能房产分析、市场洞察和机会发现功能，由先进的机器学习算法驱动。</p>
+                    <span class="status status-development" data-lang="en">In Development</span>
+                    <span class="status status-development" data-lang="zh">开发中</span>
                 </div>
                 <div class="venture">
                     <h3>MoveHub</h3>
-                    <span class="tag">搬迁服务</span>
-                    <p>A comprehensive relocation and settlement platform for individuals and families moving across borders. Provides end-to-end support from visa processing to community integration.</p>
-                    <span class="status status-development">开发中</span>
+                    <span class="tag" data-lang="en">Relocation Services</span>
+                    <span class="tag" data-lang="zh">搬迁服务</span>
+                    <p data-lang="en">A comprehensive relocation and settlement platform for individuals and families moving across borders. Provides end-to-end support from visa processing to community integration.</p>
+                    <p data-lang="zh">为跨境搬迁的个人和家庭提供全面的搬迁和定居平台。从签证处理到社区整合，提供端到端支持。</p>
+                    <span class="status status-development" data-lang="en">In Development</span>
+                    <span class="status status-development" data-lang="zh">开发中</span>
                 </div>
                 <div class="venture">
                     <h3>Magic Lamp / Aladdin</h3>
-                    <span class="tag">AI系统</span>
-                    <p>An AI-powered e-commerce and business automation system for cross-border trade. Leverages natural language processing and predictive analytics to optimize supply chains and customer experiences.</p>
-                    <span class="status status-live">已上线</span>
+                    <span class="tag" data-lang="en">AI Systems</span>
+                    <span class="tag" data-lang="zh">AI系统</span>
+                    <p data-lang="en">An AI-powered e-commerce and business automation system for cross-border trade. Leverages natural language processing and predictive analytics to optimize supply chains and customer experiences.</p>
+                    <p data-lang="zh">用于跨境贸易的 AI 驱动电商和业务自动化系统。利用自然语言处理和预测分析来优化供应链和客户体验。</p>
+                    <span class="status status-live" data-lang="en">Live</span>
+                    <span class="status status-live" data-lang="zh">已上线</span>
                 </div>
             </div>
         </div>
@@ -695,8 +783,10 @@
 
     <section class="section" id="gallery">
         <div class="container">
-            <h2>图册</h2>
-            <p>商业活动、会议和里程碑的照片集锦。点击图片查看大图。</p>
+            <h2 data-lang="en">Gallery</h2>
+            <h2 data-lang="zh">图册</h2>
+            <p data-lang="en">Photo collection of business events, conferences, and milestones. Click to view larger images.</p>
+            <p data-lang="zh">商业活动、会议和里程碑的照片集锦。点击图片查看大图。</p>
             <div class="gallery-masonry" id="gallery-grid">
                 <div class="gallery-item" onclick="openLightbox(0)">
                     <img src="images/event-1.jpg" alt="Event 1">
@@ -759,50 +849,76 @@
 
     <section class="section" id="media">
         <div class="container">
-            <h2>媒体报道</h2>
-            <p>精选媒体露面与报道。</p>
+            <h2 data-lang="en">Media Coverage</h2>
+            <h2 data-lang="zh">媒体报道</h2>
+            <p data-lang="en">Featured media appearances and coverage.</p>
+            <p data-lang="zh">精选媒体露面与报道。</p>
             <div class="media">
                 <div class="media-item">
-                    <h3>构建桥梁：新中商业关系</h3>
-                    <div class="source">新西兰先驱报 · 2024</div>
-                    <p>关于跨境创业和商业生态系统发展的专题报道。</p>
+                    <h3 data-lang="en">Building Bridges: NZ-China Business Relations</h3>
+                    <h3 data-lang="zh">构建桥梁：新中商业关系</h3>
+                    <div class="source" data-lang="en">NZ Herald · 2024</div>
+                    <div class="source" data-lang="zh">新西兰先驱报 · 2024</div>
+                    <p data-lang="en">Feature on cross-border entrepreneurship and business ecosystem development.</p>
+                    <p data-lang="zh">关于跨境创业和商业生态系统发展的专题报道。</p>
                     <br>
-                    <a href="https://www.nzherald.co.nz/business/online-venture-opens-door-to-chinese-market/WATM534BFCN5C4GC2JPKHZSEZM/" target="_blank">阅读原文 →</a>
+                    <a href="https://www.nzherald.co.nz/business/online-venture-opens-door-to-chinese-market/WATM534BFCN5C4GC2JPKHZSEZM/" target="_blank" data-lang="en">Read Article →</a>
+                    <a href="https://www.nzherald.co.nz/business/online-venture-opens-door-to-chinese-market/WATM534BFCN5C4GC2JPKHZSEZM/" target="_blank" data-lang="zh">阅读原文 →</a>
                 </div>
                 <div class="media-item">
-                    <h3>中文先驱报专访</h3>
-                    <div class="source">中文先驱报 · 2023</div>
-                    <p>关于跨境商业之旅和见解的深度专访。</p>
+                    <h3 data-lang="en">Chinese Herald Interview</h3>
+                    <h3 data-lang="zh">中文先驱报专访</h3>
+                    <div class="source" data-lang="en">Chinese Herald · 2023</div>
+                    <div class="source" data-lang="zh">中文先驱报 · 2023</div>
+                    <p data-lang="en">In-depth interview on cross-border business journey and insights.</p>
+                    <p data-lang="zh">关于跨境商业之旅和见解的深度专访。</p>
                     <br>
-                    <a href="https://www.chineseherald.co.nz/news/lifestyle/aladdin/" target="_blank">阅读原文 →</a>
+                    <a href="https://www.chineseherald.co.nz/news/lifestyle/aladdin/" target="_blank" data-lang="en">Read Article →</a>
+                    <a href="https://www.chineseherald.co.nz/news/lifestyle/aladdin/" target="_blank" data-lang="zh">阅读原文 →</a>
                 </div>
                 <div class="media-item">
-                    <h3>ChineseNZHerald 专访</h3>
-                    <div class="source">ChineseNZHerald · 2017</div>
-                    <p>关于跨境商业之旅和见解的深度专访。</p>
+                    <h3 data-lang="en">ChineseNZHerald Interview</h3>
+                    <h3 data-lang="zh">ChineseNZHerald 专访</h3>
+                    <div class="source" data-lang="en">ChineseNZHerald · 2017</div>
+                    <div class="source" data-lang="zh">ChineseNZHerald · 2017</div>
+                    <p data-lang="en">In-depth interview on cross-border business journey and insights.</p>
+                    <p data-lang="zh">关于跨境商业之旅和见解的深度专访。</p>
                     <br>
-                    <a href="https://www.chinesenzherald.com/Html/2017-6-2/News_153080.html" target="_blank">阅读原文 →</a>
+                    <a href="https://www.chinesenzherald.com/Html/2017-6-2/News_153080.html" target="_blank" data-lang="en">Read Article →</a>
+                    <a href="https://www.chinesenzherald.com/Html/2017-6-2/News_153080.html" target="_blank" data-lang="zh">阅读原文 →</a>
                 </div>
                 <div class="media-item">
-                    <h3>跨境电商的未来</h3>
-                    <div class="source">10100 / 大数跨境 · 2023</div>
-                    <p>关于国际贸易和数字商业基础设施的见解。</p>
+                    <h3 data-lang="en">Future of Cross-border E-commerce</h3>
+                    <h3 data-lang="zh">跨境电商的未来</h3>
+                    <div class="source" data-lang="en">10100 / Big Data Cross-border · 2023</div>
+                    <div class="source" data-lang="zh">10100 / 大数跨境 · 2023</div>
+                    <p data-lang="en">Insights on international trade and digital business infrastructure.</p>
+                    <p data-lang="zh">关于国际贸易和数字商业基础设施的见解。</p>
                     <br>
-                    <a href="https://m.10100.com/article/22346104" target="_blank">阅读原文 →</a>
+                    <a href="https://m.10100.com/article/22346104" target="_blank" data-lang="en">Read Article →</a>
+                    <a href="https://m.10100.com/article/22346104" target="_blank" data-lang="zh">阅读原文 →</a>
                 </div>
                 <div class="media-item">
-                    <h3>新西兰作为门户市场</h3>
-                    <div class="source">21财经 · 2025</div>
-                    <p>分析新西兰在中澳商业走廊中的作用。</p>
+                    <h3 data-lang="en">New Zealand as Gateway Market</h3>
+                    <h3 data-lang="zh">新西兰作为门户市场</h3>
+                    <div class="source" data-lang="en">21 Finance · 2025</div>
+                    <div class="source" data-lang="zh">21财经 · 2025</div>
+                    <p data-lang="en">Analysis of New Zealand's role in the China-Australia business corridor.</p>
+                    <p data-lang="zh">分析新西兰在中澳商业走廊中的作用。</p>
                     <br>
-                    <a href="https://www.21jingji.com/article/20250126/herald/ca4fd7a49986a3cfac8bc4fff97ce001.html" target="_blank">阅读原文 →</a>
+                    <a href="https://www.21jingji.com/article/20250126/herald/ca4fd7a49986a3cfac8bc4fff97ce001.html" target="_blank" data-lang="en">Read Article →</a>
+                    <a href="https://www.21jingji.com/article/20250126/herald/ca4fd7a49986a3cfac8bc4fff97ce001.html" target="_blank" data-lang="zh">阅读原文 →</a>
                 </div>
                 <div class="media-item">
-                    <h3>新华社报道</h3>
-                    <div class="source">新华社 · 2021</div>
-                    <p>关于跨境商业成就和贡献的报道。</p>
+                    <h3 data-lang="en">Xinhua News Coverage</h3>
+                    <h3 data-lang="zh">新华社报道</h3>
+                    <div class="source" data-lang="en">Xinhua News · 2021</div>
+                    <div class="source" data-lang="zh">新华社 · 2021</div>
+                    <p data-lang="en">Coverage of cross-border business achievements and contributions.</p>
+                    <p data-lang="zh">关于跨境商业成就和贡献的报道。</p>
                     <br>
-                    <a href="https://www.news.cn/asia/2021-08/01/c_1127718816.htm" target="_blank">阅读原文 →</a>
+                    <a href="https://www.news.cn/asia/2021-08/01/c_1127718816.htm" target="_blank" data-lang="en">Read Article →</a>
+                    <a href="https://www.news.cn/asia/2021-08/01/c_1127718816.htm" target="_blank" data-lang="zh">阅读原文 →</a>
                 </div>
             </div>
         </div>
@@ -810,23 +926,31 @@
 
     <section class="section" id="contact">
         <div class="container">
-            <h2>Let's Collaborate</h2>
-            <p>Open to strategic partnerships, startup ventures, and cross-border opportunities.</p>
+            <h2 data-lang="en">Let's Collaborate</h2>
+            <h2 data-lang="zh">让我们合作</h2>
+            <p data-lang="en">Open to strategic partnerships, startup ventures, and cross-border opportunities.</p>
+            <p data-lang="zh">开放战略合作、创业构建和跨境机会。</p>
             <div class="contact-cta">
-                <h3>Ready to Build Something Together?</h3>
-                <p>Whether you're exploring strategic partnerships, seeking startup collaboration, or looking to leverage cross-border opportunities, I'd love to hear from you. Let's discuss how we can create value together.</p>
+                <h3 data-lang="en">Ready to Build Something Together?</h3>
+                <h3 data-lang="zh">准备好一起构建了吗？</h3>
+                <p data-lang="en">Whether you're exploring strategic partnerships, seeking startup collaboration, or looking to leverage cross-border opportunities, I'd love to hear from you. Let's discuss how we can create value together.</p>
+                <p data-lang="zh">无论您是在探索战略合作、寻求创业合作，还是希望利用跨境机会，我都很乐意听到您的声音。让我们讨论如何共同创造价值。</p>
                 <div class="contact-details">
                     <div class="contact-item">
-                        <div class="label">Phone</div>
+                        <div class="label" data-lang="en">Phone</div>
+                        <div class="label" data-lang="zh">电话</div>
                         <div class="value">+64 27 7520 888</div>
                     </div>
                     <div class="contact-item">
-                        <div class="label">Email</div>
+                        <div class="label" data-lang="en">Email</div>
+                        <div class="label" data-lang="zh">邮箱</div>
                         <div class="value">bigbigraydeng@gmail.com</div>
                     </div>
                 </div>
-                <div class="location">Auckland, New Zealand · English, Chinese · Typically responds within 24-48 hours</div>
-                <a href="mailto:bigbigraydeng@gmail.com" class="btn btn-primary">Get in Touch</a>
+                <div class="location" data-lang="en">Auckland, New Zealand · English, Chinese · Typically responds within 24-48 hours</div>
+                <div class="location" data-lang="zh">新西兰奥克兰 · 英文、中文 · 通常在24-48小时内回复</div>
+                <a href="mailto:bigbigraydeng@gmail.com" class="btn btn-primary" data-lang="en">Get in Touch</a>
+                <a href="mailto:bigbigraydeng@gmail.com" class="btn btn-primary" data-lang="zh">取得联系</a>
             </div>
         </div>
     </section>
@@ -838,6 +962,42 @@
     </footer>
 
     <script>
+        let currentLang = 'en';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang;
+            
+            const btnEn = document.getElementById('btn-en');
+            const btnZh = document.getElementById('btn-zh');
+            
+            if (lang === 'en') {
+                btnEn.classList.add('active');
+                btnZh.classList.remove('active');
+            } else {
+                btnZh.classList.add('active');
+                btnEn.classList.remove('active');
+            }
+            
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        function initLanguage() {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang) {
+                setLanguage(savedLang);
+            } else {
+                const browserLang = navigator.language || navigator.userLanguage;
+                if (browserLang && browserLang.startsWith('zh')) {
+                    setLanguage('zh');
+                } else {
+                    setLanguage('en');
+                }
+            }
+        }
+
+        initLanguage();
+
         const images = [
             { src: 'images/event-1.jpg', caption: '' },
             { src: 'images/event-2.jpg', caption: '' },
