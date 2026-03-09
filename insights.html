@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights | Ray Deng</title>
+    <meta name="description" content="Insights from Ray Deng on AI, cross-border business, migration, property technology, and venture building across China, New Zealand, and Australia.">
+    <meta name="keywords" content="Ray Deng, Big Ray, 大瑞老师, Insights, AI, Cross-border Business, Migration, Property Technology, Venture Building, Entrepreneurship, New Zealand, China, Australia">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bigray.onrender.com/insights.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+    <meta property="og:title" content="Insights | Ray Deng">
+    <meta property="og:description" content="Insights from Ray Deng on AI, cross-border business, migration, property technology, and venture building across China, New Zealand, and Australia.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bigray.onrender.com/insights.html">
+    <meta property="og:site_name" content="Ray Deng">
+    <meta property="og:locale" content="en_NZ">
+    <meta property="og:image" content="https://bigray.onrender.com/images/og-cover.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Insights | Ray Deng">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Insights | Ray Deng">
+    <meta name="twitter:description" content="Insights from Ray Deng on AI, cross-border business, migration, property technology, and venture building across China, New Zealand, and Australia.">
+    <meta name="twitter:image" content="https://bigray.onrender.com/images/og-cover.jpg">
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Insights",
+        "description": "Insights from Ray Deng on AI, cross-border business, migration, property technology, and venture building across China, New Zealand, and Australia.",
+        "author": {
+            "@type": "Person",
+            "name": "Ray Deng",
+            "alternateName": ["Big Ray", "大瑞老师"],
+            "jobTitle": "AI Entrepreneur",
+            "url": "https://bigray.onrender.com/"
+        },
+        "mainEntity": {
+            "@type": "ItemList",
+            "name": "Insights Collection",
+            "description": "Articles and frameworks on AI, cross-border business, and venture building."
+        }
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #f8fafc;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+            background: 
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.12) 0%, transparent 50%),
+                radial-gradient(ellipse 60% 40% at 80% 60%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse 50% 30% at 20% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+                linear-gradient(180deg, #0f172a 0%, #0f172a 50%, #1e293b 100%);
+            background-size: 100% 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+            opacity: 0.5;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 800px;
+            height: 800px;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.03) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero h2 {
+            font-size: 1.15rem;
+            color: rgba(148, 163, 184, 0.8);
+            margin-bottom: 20px;
+            font-weight: 400;
+            max-width: 600px;
+        }
+        .hero p {
+            font-size: 1rem;
+            color: rgba(148, 163, 184, 0.6);
+            max-width: 500px;
+        }
+        .btn {
+            padding: 14px 32px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.9) 0%, rgba(139, 92, 246, 0.9) 100%);
+            color: white;
+            border: none;
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+        }
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+        }
+        .btn-secondary {
+            background: transparent;
+            color: rgba(248, 250, 252, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        .section {
+            padding: 120px 20px;
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(30, 41, 59, 0.2) 50%, rgba(15, 23, 42, 0) 100%);
+        }
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            text-align: center;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+        .section-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+            color: rgba(148, 163, 184, 0.8);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            padding: 15px 0;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #f8fafc;
+            text-decoration: none;
+        }
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        .nav-menu li a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            font-size: 0.9rem;
+        }
+        .nav-menu li a:hover {
+            color: #60a5fa;
+        }
+        .nav-menu li a.active {
+            color: #60a5fa;
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #f8fafc;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+        
+        .insight-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 28px;
+            border-radius: 14px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .insight-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.5), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .insight-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+        }
+        
+        .insight-card:hover::before {
+            opacity: 1;
+        }
+        
+        .insight-card .tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #a78bfa;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        .insight-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: rgba(248, 250, 252, 0.95);
+            font-weight: 600;
+        }
+        
+        .insight-card p {
+            color: rgba(148, 163, 184, 0.85);
+            margin: 0 0 20px;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        
+        .insight-card .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+        }
+        
+        .featured-framework {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(139, 92, 246, 0.05) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.15);
+            border-radius: 20px;
+            padding: 60px 50px;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .featured-framework::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.5), transparent);
+        }
+        
+        .featured-framework h3 {
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+            color: rgba(248, 250, 252, 0.95);
+            font-weight: 600;
+        }
+        
+        .featured-framework p {
+            color: rgba(148, 163, 184, 0.85);
+            max-width: 700px;
+            margin: 0 auto 30px;
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 100px 20px 120px;
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(30, 41, 59, 0.3) 100%);
+        }
+        
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+        
+        .cta-section p {
+            color: rgba(148, 163, 184, 0.8);
+            max-width: 500px;
+            margin: 0 auto 40px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #64748b;
+        }
+        .lang-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 10px;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 8px;
+            padding: 5px;
+        }
+        .lang-switch button {
+            background: transparent;
+            border: none;
+            color: #94a3b8;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .lang-switch button:hover {
+            color: #f8fafc;
+        }
+        .lang-switch button.active {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            color: white;
+        }
+        
+        [data-lang] {
+            display: none;
+        }
+
+        html[lang="en"] [data-lang="en"] {
+            display: inline;
+        }
+
+        html[lang="zh"] [data-lang="zh"] {
+            display: inline;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(15, 23, 42, 0.98);
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+            }
+            .nav-menu.active {
+                display: flex;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero h2 {
+                font-size: 1rem;
+            }
+            .section h2 {
+                font-size: 1.5rem;
+            }
+            .insights-grid {
+                grid-template-columns: 1fr;
+            }
+            .featured-framework {
+                padding: 40px 24px;
+            }
+            .featured-framework h3 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Ray Deng</a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html"><span data-lang="en">Home</span><span data-lang="zh">首页</span></a></li>
+                <li><a href="about.html"><span data-lang="en">About</span><span data-lang="zh">关于</span></a></li>
+                <li><a href="projects.html"><span data-lang="en">Projects</span><span data-lang="zh">项目</span></a></li>
+                <li><a href="media.html"><span data-lang="en">Media</span><span data-lang="zh">媒体</span></a></li>
+                <li><a href="insights.html" class="active"><span data-lang="en">Insights</span><span data-lang="zh">洞察</span></a></li>
+                <li><a href="index.html#contact"><span data-lang="en">Contact</span><span data-lang="zh">联系</span></a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="lang-switch">
+        <button onclick="setLanguage('en')" class="active" id="btn-en">EN</button>
+        <button onclick="setLanguage('zh')" id="btn-zh">中文</button>
+    </div>
+    
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>
+                    <span data-lang="en">Insights</span>
+                    <span data-lang="zh">洞察</span>
+                </h1>
+                <h2>
+                    <span data-lang="en">Thoughts on AI, cross-border business, migration, property, and venture building.</span>
+                    <span data-lang="zh">关于 AI、跨境商业、移民、房产与创业构建的思考与洞察。</span>
+                </h2>
+                <p>
+                    <span data-lang="en">A collection of ideas, frameworks, and observations from building across China, New Zealand, and Australia.</span>
+                    <span data-lang="zh">记录在中国、新西兰与澳大利亚之间构建项目过程中的想法、框架与观察。</span>
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2>
+                    <span data-lang="en">Latest Insights</span>
+                    <span data-lang="zh">最新洞察</span>
+                </h2>
+                <p class="section-intro">
+                    <span data-lang="en">Exploring the intersection of technology, markets, and practical venture building.</span>
+                    <span data-lang="zh">探索技术、市场与实际创业构建的交汇点。</span>
+                </p>
+                
+                <div class="insights-grid">
+                    <div class="insight-card">
+                        <span class="tag">
+                            <span data-lang="en">AI Systems</span>
+                            <span data-lang="zh">AI 系统</span>
+                        </span>
+                        <h3>
+                            <span data-lang="en">AI for Cross-Border Systems</span>
+                            <span data-lang="zh">跨境系统的 AI 应用</span>
+                        </h3>
+                        <p>
+                            <span data-lang="en">How artificial intelligence is transforming the way we build and operate cross-border business infrastructure.</span>
+                            <span data-lang="zh">人工智能如何改变我们构建和运营跨境商业基础设施的方式。</span>
+                        </p>
+                        <span class="status">
+                            <span data-lang="en">Coming Soon</span>
+                            <span data-lang="zh">即将推出</span>
+                        </span>
+                    </div>
+                    
+                    <div class="insight-card">
+                        <span class="tag">
+                            <span data-lang="en">Migration</span>
+                            <span data-lang="zh">移民</span>
+                        </span>
+                        <h3>
+                            <span data-lang="en">Building Practical Migration Platforms</span>
+                            <span data-lang="zh">构建实用的移民平台</span>
+                        </h3>
+                        <p>
+                            <span data-lang="en">Lessons from building technology solutions that simplify complex immigration processes.</span>
+                            <span data-lang="zh">从构建简化复杂移民流程的技术解决方案中学到的经验。</span>
+                        </p>
+                        <span class="status">
+                            <span data-lang="en">Coming Soon</span>
+                            <span data-lang="zh">即将推出</span>
+                        </span>
+                    </div>
+                    
+                    <div class="insight-card">
+                        <span class="tag">
+                            <span data-lang="en">Property Tech</span>
+                            <span data-lang="zh">房产科技</span>
+                        </span>
+                        <h3>
+                            <span data-lang="en">Property Technology for Chinese Users</span>
+                            <span data-lang="zh">面向中国用户的房产科技</span>
+                        </h3>
+                        <p>
+                            <span data-lang="en">Understanding the unique needs of Chinese property investors in Australasian markets.</span>
+                            <span data-lang="zh">理解中国房产投资者在澳新市场的独特需求。</span>
+                        </p>
+                        <span class="status">
+                            <span data-lang="en">Coming Soon</span>
+                            <span data-lang="zh">即将推出</span>
+                        </span>
+                    </div>
+                    
+                    <div class="insight-card">
+                        <span class="tag">
+                            <span data-lang="en">Venture Building</span>
+                            <span data-lang="zh">创业构建</span>
+                        </span>
+                        <h3>
+                            <span data-lang="en">Founder Thinking Across Markets</span>
+                            <span data-lang="zh">跨市场的创始人思维</span>
+                        </h3>
+                        <p>
+                            <span data-lang="en">How to think strategically when building ventures that span multiple countries and cultures.</span>
+                            <span data-lang="zh">在构建跨越多个国家和文化的创业项目时如何进行战略思考。</span>
+                        </p>
+                        <span class="status">
+                            <span data-lang="en">Coming Soon</span>
+                            <span data-lang="zh">即将推出</span>
+                        </span>
+                    </div>
+                    
+                    <div class="insight-card">
+                        <span class="tag">
+                            <span data-lang="en">Strategy</span>
+                            <span data-lang="zh">战略</span>
+                        </span>
+                        <h3>
+                            <span data-lang="en">Why Execution Matters</span>
+                            <span data-lang="zh">为什么执行至关重要</span>
+                        </h3>
+                        <p>
+                            <span data-lang="en">The gap between ideas and outcomes, and why execution is the ultimate competitive advantage.</span>
+                            <span data-lang="zh">想法与结果之间的差距，以及为什么执行是最终的竞争优势。</span>
+                        </p>
+                        <span class="status">
+                            <span data-lang="en">Coming Soon</span>
+                            <span data-lang="zh">即将推出</span>
+                        </span>
+                    </div>
+                    
+                    <div class="insight-card">
+                        <span class="tag">
+                            <span data-lang="en">Opportunity</span>
+                            <span data-lang="zh">机会</span>
+                        </span>
+                        <h3>
+                            <span data-lang="en">Cross-Border Opportunity Design</span>
+                            <span data-lang="zh">跨境机会设计</span>
+                        </h3>
+                        <p>
+                            <span data-lang="en">A framework for identifying and capturing opportunities at the intersection of markets.</span>
+                            <span data-lang="zh">在市场交汇点识别和捕捉机会的框架。</span>
+                        </p>
+                        <span class="status">
+                            <span data-lang="en">Coming Soon</span>
+                            <span data-lang="zh">即将推出</span>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="featured-framework">
+                    <h3>
+                        <span data-lang="en">How I Think About Cross-Border Venture Building</span>
+                        <span data-lang="zh">我如何理解跨境创业构建</span>
+                    </h3>
+                    <p>
+                        <span data-lang="en">After two decades of building businesses across China, New Zealand, and Australia, I've developed a framework for identifying opportunities, navigating complexity, and creating sustainable value. This is not theory—it's what I've learned from actually doing the work.</span>
+                        <span data-lang="zh">在中国、新西兰和澳大利亚构建商业的二十年后，我开发了一套识别机会、驾驭复杂性和创造可持续价值的框架。这不是理论——而是我从实际工作中所学到的。</span>
+                    </p>
+                    <a href="#" class="btn btn-primary">
+                        <span data-lang="en">Read Framework</span>
+                        <span data-lang="zh">阅读框架</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>
+                    <span data-lang="en">Explore More</span>
+                    <span data-lang="zh">探索更多</span>
+                </h2>
+                <p>
+                    <span data-lang="en">Discover the projects and ventures behind these insights.</span>
+                    <span data-lang="zh">发现这些洞察背后的项目和创业。</span>
+                </p>
+                <div class="cta-buttons">
+                    <a href="projects.html" class="btn btn-primary">
+                        <span data-lang="en">View Projects</span>
+                        <span data-lang="zh">查看项目</span>
+                    </a>
+                    <a href="index.html#contact" class="btn btn-secondary">
+                        <span data-lang="en">Get in Touch</span>
+                        <span data-lang="zh">联系我</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 大瑞 Ray Deng. 版权所有。</p>
+        </div>
+    </footer>
+
+    <script>
+        let currentLang = 'en';
+
+        function toggleMobileMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang;
+            
+            document.getElementById('btn-en').classList.remove('active');
+            document.getElementById('btn-zh').classList.remove('active');
+            document.getElementById('btn-' + lang).classList.add('active');
+            
+            localStorage.setItem('language', lang);
+        }
+
+        function initLanguage() {
+            const savedLang = localStorage.getItem('language');
+            if (savedLang && (savedLang === 'en' || savedLang === 'zh')) {
+                setLanguage(savedLang);
+            } else {
+                const browserLang = navigator.language || navigator.userLanguage;
+                if (browserLang && browserLang.toLowerCase().startsWith('zh')) {
+                    setLanguage('zh');
+                } else {
+                    setLanguage('en');
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initLanguage();
+        });
+    </script>
+</body>
+</html>
