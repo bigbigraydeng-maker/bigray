@@ -40,6 +40,7 @@
         "@type": "Article",
         "headline": "AI for Cross-Border Systems",
         "description": "How AI can transform cross-border systems across migration, property, and venture operations between China, New Zealand, and Australia.",
+        "inLanguage": ["en", "zh"],
         "author": {
             "@type": "Person",
             "name": "Ray Deng",
@@ -72,7 +73,7 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: #f8fafc;
-            line-height: 1.6;
+            line-height: 1.7;
         }
         .container {
             max-width: 900px;
@@ -158,12 +159,65 @@
             margin-bottom: 20px;
             font-weight: 400;
             max-width: 600px;
-            line-height: 1.6;
+            line-height: 1.7;
         }
         .hero .meta {
             font-size: 0.85rem;
             color: rgba(148, 163, 184, 0.5);
             margin-top: 24px;
+        }
+        
+        .toc {
+            max-width: 760px;
+            margin: -40px auto 0;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .toc-inner {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 20px 28px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .toc-label {
+            font-size: 0.75rem;
+            color: rgba(148, 163, 184, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+        
+        .toc-list {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        .toc-list li a {
+            color: rgba(148, 163, 184, 0.8);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .toc-list li a:hover {
+            color: #60a5fa;
+        }
+        
+        .toc-list li a::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: rgba(59, 130, 246, 0.5);
+            border-radius: 50%;
         }
         
         .btn {
@@ -203,25 +257,25 @@
         }
         
         .article-intro {
-            max-width: 700px;
+            max-width: 760px;
             margin: 0 auto 60px;
             text-align: center;
         }
         
         .article-intro p {
             color: rgba(148, 163, 184, 0.9);
-            font-size: 1.15rem;
-            line-height: 1.8;
+            font-size: 1.2rem;
+            line-height: 1.9;
         }
         
         .section {
-            max-width: 700px;
-            margin: 0 auto 60px;
+            max-width: 760px;
+            margin: 0 auto 80px;
         }
         
         .section h2 {
             font-size: 1.5rem;
-            margin-bottom: 24px;
+            margin-bottom: 28px;
             color: rgba(248, 250, 252, 0.95);
             font-weight: 600;
             padding-bottom: 16px;
@@ -230,24 +284,24 @@
         
         .section p {
             color: rgba(148, 163, 184, 0.85);
-            font-size: 1.05rem;
-            line-height: 1.8;
-            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.95;
+            margin-bottom: 28px;
         }
         
         .section ul {
             list-style: none;
             padding: 0;
-            margin: 20px 0;
+            margin: 28px 0;
         }
         
         .section ul li {
             color: rgba(148, 163, 184, 0.85);
-            padding: 12px 0;
-            padding-left: 28px;
+            padding: 14px 0;
+            padding-left: 32px;
             position: relative;
-            line-height: 1.7;
-            font-size: 1.05rem;
+            line-height: 1.8;
+            font-size: 1.1rem;
         }
         
         .section ul li:before {
@@ -255,6 +309,37 @@
             position: absolute;
             left: 0;
             color: rgba(59, 130, 246, 0.7);
+        }
+        
+        .quote-box {
+            max-width: 760px;
+            margin: 60px auto;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(139, 92, 246, 0.05) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.15);
+            border-radius: 16px;
+            padding: 40px 48px;
+            position: relative;
+        }
+        
+        .quote-box::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 24px;
+            font-size: 4rem;
+            color: rgba(59, 130, 246, 0.2);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        
+        .quote-box p {
+            color: rgba(248, 250, 252, 0.95);
+            font-size: 1.25rem;
+            line-height: 1.8;
+            font-weight: 500;
+            margin: 0;
+            position: relative;
+            z-index: 1;
         }
         
         .highlight-box {
@@ -267,31 +352,31 @@
         
         .highlight-box p {
             color: rgba(148, 163, 184, 0.9);
-            font-size: 1.05rem;
-            line-height: 1.8;
+            font-size: 1.1rem;
+            line-height: 1.9;
             margin: 0;
         }
         
         .closing {
-            max-width: 700px;
-            margin: 60px auto 0;
+            max-width: 760px;
+            margin: 80px auto 0;
             text-align: center;
-            padding-top: 40px;
+            padding-top: 48px;
             border-top: 1px solid rgba(255, 255, 255, 0.06);
         }
         
         .closing h3 {
-            font-size: 1.3rem;
-            margin-bottom: 16px;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
             color: rgba(248, 250, 252, 0.95);
             font-weight: 600;
         }
         
         .closing p {
             color: rgba(148, 163, 184, 0.8);
-            font-size: 1.05rem;
-            line-height: 1.7;
-            margin-bottom: 30px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 32px;
         }
         
         .closing-buttons {
@@ -401,6 +486,10 @@
             display: inline;
         }
         
+        html {
+            scroll-behavior: smooth;
+        }
+        
         @media (max-width: 768px) {
             .nav-menu {
                 display: none;
@@ -430,6 +519,20 @@
             }
             .article-content {
                 padding: 60px 20px 80px;
+            }
+            .toc-list {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .quote-box {
+                padding: 32px 24px;
+            }
+            .quote-box p {
+                font-size: 1.1rem;
+            }
+            .closing-buttons {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
@@ -477,6 +580,35 @@
             </div>
         </section>
 
+        <nav class="toc">
+            <div class="toc-inner">
+                <p class="toc-label">
+                    <span data-lang="en">In this article</span>
+                    <span data-lang="zh">本文目录</span>
+                </p>
+                <ul class="toc-list">
+                    <li>
+                        <a href="#section-1">
+                            <span data-lang="en">Operational Systems</span>
+                            <span data-lang="zh">运营系统</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#section-2">
+                            <span data-lang="en">Reduce Friction</span>
+                            <span data-lang="zh">减少摩擦</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#section-3">
+                            <span data-lang="en">Practical Systems</span>
+                            <span data-lang="zh">实用系统</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
         <article class="article-content">
             <div class="container">
                 <div class="article-intro">
@@ -486,7 +618,7 @@
                     </p>
                 </div>
 
-                <section class="section">
+                <section class="section" id="section-1">
                     <h2>
                         <span data-lang="en">Cross-border systems are operational systems</span>
                         <span data-lang="zh">跨境系统本质上是运营系统</span>
@@ -505,7 +637,7 @@
                     </p>
                 </section>
 
-                <section class="section">
+                <section class="section" id="section-2">
                     <h2>
                         <span data-lang="en">AI is useful when it reduces friction</span>
                         <span data-lang="zh">AI 的价值在于减少摩擦成本</span>
@@ -538,7 +670,14 @@
                     </p>
                 </section>
 
-                <section class="section">
+                <div class="quote-box">
+                    <p>
+                        <span data-lang="en">AI is most valuable when it reduces friction in real-world operations.</span>
+                        <span data-lang="zh">AI 最有价值的地方，不在于炫技，而在于减少真实业务里的摩擦成本。</span>
+                    </p>
+                </div>
+
+                <section class="section" id="section-3">
                     <h2>
                         <span data-lang="en">Practical systems beat abstract intelligence</span>
                         <span data-lang="zh">实用系统比抽象智能更重要</span>
@@ -584,17 +723,21 @@
                         <span data-lang="zh">前进之路</span>
                     </h3>
                     <p>
-                        <span data-lang="en">Cross-border systems will continue to evolve. Regulations change, markets shift, and technology advances. But the principle remains: build systems that solve real problems, use AI where it genuinely helps, and never lose sight of the humans who depend on these systems working correctly.</span>
-                        <span data-lang="zh">跨境系统将继续演进。法规变化、市场转移、技术进步。但原则不变：构建解决真实问题的系统，在真正有帮助的地方使用 AI，永远不要忘记依赖这些系统正常运行的人们。</span>
+                        <span data-lang="en">If you're building practical systems across markets, I'd be glad to connect.</span>
+                        <span data-lang="zh">如果你也在构建跨市场的实用系统，欢迎交流。</span>
                     </p>
                     <div class="closing-buttons">
+                        <a href="insights.html" class="btn btn-secondary">
+                            <span data-lang="en">Back to Insights</span>
+                            <span data-lang="zh">返回洞察</span>
+                        </a>
                         <a href="projects.html" class="btn btn-primary">
                             <span data-lang="en">View Projects</span>
                             <span data-lang="zh">查看项目</span>
                         </a>
-                        <a href="insights.html" class="btn btn-secondary">
-                            <span data-lang="en">More Insights</span>
-                            <span data-lang="zh">更多洞察</span>
+                        <a href="index.html#contact" class="btn btn-secondary">
+                            <span data-lang="en">Contact</span>
+                            <span data-lang="zh">联系</span>
                         </a>
                     </div>
                 </div>
