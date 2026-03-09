@@ -161,6 +161,20 @@
         .btn-secondary:hover {
             background: rgba(255, 255, 255, 0.2);
         }
+        .section[aria-label="Introduction"] {
+            padding: 40px 20px;
+            background: rgba(59, 130, 246, 0.05);
+            border-top: 1px solid rgba(59, 130, 246, 0.2);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+        }
+        
+        .section[aria-label="Introduction"] p {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
         .section {
             padding: 80px 20px;
         }
@@ -321,6 +335,13 @@
         }
         
         @media (max-width: 768px) {
+            .section[aria-label="Introduction"] {
+                padding: 30px 20px;
+            }
+            .section[aria-label="Introduction"] p {
+                font-size: 1rem;
+                line-height: 1.7;
+            }
             .about-section {
                 grid-template-columns: 1fr;
                 gap: 40px;
@@ -691,7 +712,8 @@
         <button onclick="setLanguage('zh')" id="btn-zh">中文</button>
     </div>
     
-    <section class="hero">
+    <main>
+        <section class="hero">
         <div class="container">
             <h1 data-lang="en">Ray Deng</h1>
             <h1 data-lang="zh">大瑞 Ray Deng</h1>
@@ -1011,6 +1033,14 @@
             </div>
         </div>
     </section>
+
+    <section class="section" aria-label="Introduction">
+        <div class="container">
+            <p data-lang="en">Ray Deng, also known as Big Ray, is a Chinese entrepreneur based in Auckland, New Zealand. He builds AI-driven ventures across migration, property, branding, and cross-border business between China, New Zealand, and Australia.</p>
+            <p data-lang="zh">Ray Deng，也被称为大瑞，是一位位于新西兰奥克兰的中国企业家。他在中国、新西兰和澳大利亚之间构建 AI 驱动的创业项目，涵盖移民、房产、品牌和跨境商业领域。</p>
+        </div>
+    </section>
+    </main>
 
     <footer>
         <div class="container">
