@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | Ray Deng</title>
     <meta name="description" content="Explore projects built by Ray Deng, including AI-driven ventures across migration, property technology, relocation, and cross-border business.">
     <meta name="keywords" content="Ray Deng, Big Ray, 大瑞老师, Projects, WorkVisas.work, Compass, MoveHub, Magic Lamp, AI Entrepreneur, New Zealand Chinese Entrepreneur, Cross-border Business, AI Strategy, Founder">
+    <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://bigray.onrender.com/projects.html">
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -16,7 +17,7 @@
     <meta property="og:url" content="https://bigray.onrender.com/projects.html">
     <meta property="og:site_name" content="Ray Deng">
     <meta property="og:locale" content="en_NZ">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=630&fit=crop">
+    <meta property="og:image" content="https://bigray.onrender.com/images/og-cover.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Projects | Ray Deng">
@@ -24,7 +25,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Projects | Ray Deng">
     <meta name="twitter:description" content="Explore projects built by Ray Deng, including AI-driven ventures across migration, property technology, relocation, and cross-border business.">
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=630&fit=crop">
+    <meta name="twitter:image" content="https://bigray.onrender.com/images/og-cover.jpg">
     
     <script type="application/ld+json">
     {
@@ -34,29 +35,41 @@
         "description": "AI-driven ventures built by Ray Deng across migration, property technology, relocation, and cross-border business.",
         "itemListElement": [
             {
-                "@type": "CreativeWork",
-                "name": "WorkVisas.work",
-                "description": "A comprehensive immigration and workforce solution platform connecting talent with opportunities in Australia and New Zealand.",
-                "url": "https://workvisas.work",
-                "workExample": "https://workvisas.work"
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@type": "CreativeWork",
+                    "name": "WorkVisas.work",
+                    "description": "A comprehensive immigration and workforce solution platform connecting talent with opportunities in Australia and New Zealand.",
+                    "url": "https://workvisas.work"
+                }
             },
             {
-                "@type": "CreativeWork",
-                "name": "Compass",
-                "description": "An AI-driven property investment platform for Chinese investors in Brisbane.",
-                "workExample": "#"
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@type": "CreativeWork",
+                    "name": "Compass",
+                    "description": "An AI-driven property investment platform for Chinese investors in Brisbane."
+                }
             },
             {
-                "@type": "CreativeWork",
-                "name": "MoveHub",
-                "description": "A comprehensive relocation and settlement platform for individuals and families moving across borders.",
-                "workExample": "#"
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@type": "CreativeWork",
+                    "name": "MoveHub",
+                    "description": "A comprehensive relocation and settlement platform for individuals and families moving across borders."
+                }
             },
             {
-                "@type": "CreativeWork",
-                "name": "Magic Lamp / Aladdin",
-                "description": "An AI-powered e-commerce and business automation system for cross-border trade.",
-                "workExample": "#"
+                "@type": "ListItem",
+                "position": 4,
+                "item": {
+                    "@type": "CreativeWork",
+                    "name": "Magic Lamp",
+                    "description": "An AI-powered e-commerce and business automation system for cross-border trade."
+                }
             }
         ]
     }
@@ -358,6 +371,14 @@
         .nav-menu li a.active {
             color: #60a5fa;
         }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #f8fafc;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
         footer {
             text-align: center;
             padding: 40px 20px;
@@ -380,8 +401,34 @@
             .build-philosophy {
                 padding: 40px 20px;
             }
+            .mobile-menu-btn {
+                display: block;
+            }
             .nav-menu {
-                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(15, 23, 42, 0.95);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                gap: 20px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                pointer-events: none;
+                transition: all 0.3s;
+            }
+            .nav-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: auto;
+            }
+            .lang-switch {
+                top: 20px;
+                right: 70px;
             }
         }
     </style>
@@ -390,7 +437,8 @@
     <nav class="nav">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">Ray Deng</a>
-            <ul class="nav-menu">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html"><span data-lang="en">Home</span><span data-lang="zh">首页</span></a></li>
                 <li><a href="about.html"><span data-lang="en">About</span><span data-lang="zh">关于</span></a></li>
                 <li><a href="projects.html" class="active"><span data-lang="en">Projects</span><span data-lang="zh">项目</span></a></li>
@@ -457,7 +505,7 @@
                         <span class="status status-development" data-lang="zh">开发中</span>
                     </div>
                     <div class="venture">
-                        <h3>Magic Lamp / Aladdin</h3>
+                        <h3>Magic Lamp</h3>
                         <span class="tag" data-lang="en">AI Systems</span>
                         <span class="tag" data-lang="zh">AI系统</span>
                         <p data-lang="en">An AI-powered e-commerce and business automation system for cross-border trade. Leverages natural language processing and predictive analytics to optimize supply chains and customer experiences. Enables businesses to operate more efficiently across international markets.</p>
@@ -472,8 +520,8 @@
         <section class="section">
             <div class="container">
                 <div class="build-philosophy">
-                    <h3 data-lang="en">Build Philosophy</h3>
-                    <h3 data-lang="zh">构建理念</h3>
+                    <h3 data-lang="en">Why These Projects</h3>
+                    <h3 data-lang="zh">为何这些项目</h3>
                     <p data-lang="en">The common thread across all projects is solving real problems through practical, AI-powered solutions that create tangible value.</p>
                     <p data-lang="zh">所有项目的共同点是通过实用的、AI 驱动的解决方案解决实际问题，创造切实的价值。</p>
                     <div class="build-principles">
@@ -529,6 +577,11 @@
     <script>
         let currentLang = 'en';
 
+        function toggleMobileMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+
         function setLanguage(lang) {
             currentLang = lang;
             document.documentElement.lang = lang;
@@ -536,23 +589,39 @@
             document.getElementById('btn-en').classList.remove('active');
             document.getElementById('btn-zh').classList.remove('active');
             document.getElementById('btn-' + lang).classList.add('active');
+
+            // Hide elements based on language
+            const elements = document.querySelectorAll('[data-lang]');
+            elements.forEach(element => {
+                if (element.getAttribute('data-lang') === lang) {
+                    element.style.display = 'block';
+                } else {
+                    element.style.display = 'none';
+                }
+            });
+
+            // Save language preference
+            localStorage.setItem('language', lang);
         }
 
-        // Check for language preference
-        const savedLang = localStorage.getItem('language');
-        if (savedLang) {
-            setLanguage(savedLang);
+        function initLanguage() {
+            const savedLang = localStorage.getItem('language');
+            if (savedLang && (savedLang === 'en' || savedLang === 'zh')) {
+                setLanguage(savedLang);
+            } else {
+                // Check browser language
+                const browserLang = navigator.language || navigator.userLanguage;
+                if (browserLang && browserLang.toLowerCase().startsWith('zh')) {
+                    setLanguage('zh');
+                } else {
+                    setLanguage('en');
+                }
+            }
         }
 
-        // Save language preference
-        document.getElementById('btn-en').addEventListener('click', function() {
-            setLanguage('en');
-            localStorage.setItem('language', 'en');
-        });
-
-        document.getElementById('btn-zh').addEventListener('click', function() {
-            setLanguage('zh');
-            localStorage.setItem('language', 'zh');
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            initLanguage();
         });
     </script>
 </body>
