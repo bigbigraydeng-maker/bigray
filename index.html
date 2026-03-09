@@ -1,30 +1,31 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ray Deng | Big Ray | AI Entrepreneur in New Zealand</title>
     <meta name="description" content="Ray Deng, also known as Big Ray, is a Chinese entrepreneur based in New Zealand, building AI-driven ventures across migration, property, branding, and cross-border business.">
     <meta name="keywords" content="Ray Deng, Big Ray, 大瑞老师, AI Entrepreneur, New Zealand Chinese Entrepreneur, MoveHub, Compass AI, Cross-border Business, AI Strategy, Founder">
+    <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://bigray.onrender.com/">
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     
     <meta property="og:title" content="Ray Deng | Big Ray | AI Entrepreneur in New Zealand">
-    <meta property="og:description" content="Chinese entrepreneur in New Zealand building AI-driven businesses across property, migration, branding, and cross-border opportunities.">
+    <meta property="og:description" content="Ray Deng, also known as Big Ray, is a Chinese entrepreneur based in New Zealand, building AI-driven ventures across migration, property, branding, and cross-border business.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bigray.onrender.com/">
     <meta property="og:site_name" content="Ray Deng">
     <meta property="og:locale" content="en_NZ">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=630&fit=crop">
+    <meta property="og:image" content="https://bigray.onrender.com/images/og-cover.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Ray Deng | Big Ray | AI Entrepreneur in New Zealand">
     
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Ray Deng | Big Ray | AI Entrepreneur in New Zealand">
-    <meta name="twitter:description" content="Chinese entrepreneur in New Zealand building AI-driven businesses across property, migration, branding, and cross-border opportunities.">
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=630&fit=crop">
+    <meta name="twitter:description" content="Ray Deng, also known as Big Ray, is a Chinese entrepreneur based in New Zealand, building AI-driven ventures across migration, property, branding, and cross-border business.">
+    <meta name="twitter:image" content="https://bigray.onrender.com/images/og-cover.jpg">
     
     <script type="application/ld+json">
     {
@@ -425,9 +426,44 @@
             color: #60a5fa;
         }
         
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #f8fafc;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
         @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
             .nav-menu {
-                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(15, 23, 42, 0.95);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                gap: 20px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                pointer-events: none;
+                transition: all 0.3s;
+            }
+            .nav-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: auto;
+            }
+            .lang-switch {
+                top: 20px;
+                right: 70px;
             }
         }
         
@@ -452,20 +488,16 @@
             color: white;
         }
         
-        [data-lang="zh"] {
+        [data-lang] {
             display: none;
         }
-        
-        html[lang="zh"] [data-lang="en"] {
-            display: none;
-        }
-        
-        html[lang="zh"] [data-lang="zh"] {
-            display: block;
-        }
-        
+
         html[lang="en"] [data-lang="en"] {
-            display: block;
+            display: inline;
+        }
+
+        html[lang="zh"] [data-lang="zh"] {
+            display: inline;
         }
         .ventures {
             display: grid;
@@ -766,7 +798,8 @@
     <nav class="nav">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">Ray Deng</a>
-            <ul class="nav-menu">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html" class="active"><span data-lang="en">Home</span><span data-lang="zh">首页</span></a></li>
                 <li><a href="about.html"><span data-lang="en">About</span><span data-lang="zh">关于</span></a></li>
                 <li><a href="projects.html"><span data-lang="en">Projects</span><span data-lang="zh">项目</span></a></li>
@@ -784,100 +817,162 @@
     <main>
         <section class="hero">
         <div class="container">
-            <h1 data-lang="en">Ray Deng</h1>
-            <h1 data-lang="zh">大瑞 Ray Deng</h1>
-            <h2 data-lang="en">Founder · Operator · Cross-border Builder</h2>
-            <h2 data-lang="zh">创始人 · 操盘者 · 跨境构建者</h2>
-            <p data-lang="en">Building ventures across China, New Zealand, and Australia. 20+ years in New Zealand. Focused on AI-powered systems, workforce mobility platforms, and cross-border business infrastructure.<br><br>New Zealand-based Chinese entrepreneur building AI-driven ventures across migration, property, and cross-border business.</p>
-            <p data-lang="zh">构建跨越中国、新西兰和澳大利亚的创业项目。在新西兰20余年。专注于AI赋能系统、劳动力流动平台和跨境商业基础设施建设。<br><br>新西兰华人企业家，致力于构建 AI 驱动的跨境业务，涵盖移民、房产和跨境商业领域。</p>
+            <h1>
+                <span data-lang="en">Ray Deng</span>
+                <span data-lang="zh">大瑞 Ray Deng</span>
+            </h1>
+            <h2>
+                <span data-lang="en">Founder · Operator · Cross-border Builder</span>
+                <span data-lang="zh">创始人 · 操盘者 · 跨境构建者</span>
+            </h2>
+            <p>
+                <span data-lang="en">Building ventures across China, New Zealand, and Australia. 20+ years in New Zealand. Focused on AI-powered systems, workforce mobility platforms, and cross-border business infrastructure.<br><br>New Zealand-based Chinese entrepreneur building AI-driven ventures across migration, property, and cross-border business.</span>
+                <span data-lang="zh">构建跨越中国、新西兰和澳大利亚的创业项目。在新西兰20余年。专注于AI赋能系统、劳动力流动平台和跨境商业基础设施建设。<br><br>新西兰华人企业家，致力于构建 AI 驱动的跨境业务，涵盖移民、房产和跨境商业领域。</span>
+            </p>
             <div class="tags">
-                <span class="tag" data-lang="en">China × New Zealand × Australia</span>
-                <span class="tag" data-lang="zh">中国 × 新西兰 × 澳大利亚</span>
-                <span class="tag" data-lang="en">AI Systems</span>
-                <span class="tag" data-lang="zh">AI系统</span>
-                <span class="tag" data-lang="en">Workforce Mobility</span>
-                <span class="tag" data-lang="zh">劳动力流动</span>
-                <span class="tag" data-lang="en">Venture Building</span>
-                <span class="tag" data-lang="zh">创业构建</span>
+                <span class="tag">
+                    <span data-lang="en">China × New Zealand × Australia</span>
+                    <span data-lang="zh">中国 × 新西兰 × 澳大利亚</span>
+                </span>
+                <span class="tag">
+                    <span data-lang="en">AI Systems</span>
+                    <span data-lang="zh">AI系统</span>
+                </span>
+                <span class="tag">
+                    <span data-lang="en">Workforce Mobility</span>
+                    <span data-lang="zh">劳动力流动</span>
+                </span>
+                <span class="tag">
+                    <span data-lang="en">Venture Building</span>
+                    <span data-lang="zh">创业构建</span>
+                </span>
             </div>
             <div class="buttons">
-                <a href="#ventures" class="btn btn-primary" data-lang="en">Explore Projects</a>
-                <a href="#ventures" class="btn btn-primary" data-lang="zh">探索项目</a>
-                <a href="#contact" class="btn btn-secondary" data-lang="en">Let's Talk</a>
-                <a href="#contact" class="btn btn-secondary" data-lang="zh">合作洽谈</a>
+                <a href="#ventures" class="btn btn-primary">
+                    <span data-lang="en">Explore Projects</span>
+                    <span data-lang="zh">探索项目</span>
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <span data-lang="en">Let's Talk</span>
+                    <span data-lang="zh">合作洽谈</span>
+                </a>
             </div>
         </div>
     </section>
 
     <section class="section" id="about">
         <div class="container">
-            <h2 data-lang="en">About Ray</h2>
-            <h2 data-lang="zh">关于 Ray</h2>
-            <p data-lang="en">Building bridges across China, New Zealand, and Australia through AI-driven innovation.</p>
-            <p data-lang="zh">通过AI驱动的创新，构建中国、新西兰和澳大利亚之间的桥梁。</p>
+            <h2>
+                <span data-lang="en">About Ray</span>
+                <span data-lang="zh">关于 Ray</span>
+            </h2>
+            <p>
+                <span data-lang="en">Building bridges across China, New Zealand, and Australia through AI-driven innovation.</span>
+                <span data-lang="zh">通过AI驱动的创新，构建中国、新西兰和澳大利亚之间的桥梁。</span>
+            </p>
             <div class="about-section">
                 <div class="about-content">
-                    <h3 data-lang="en">20+ Years of Cross-Border Experience</h3>
-                    <h3 data-lang="zh">20+ 年跨境经验</h3>
-                    <p data-lang="en">Ray Deng, also known as Big Ray, has been building businesses across the China-New Zealand-Australia corridor for over two decades. Based in Auckland, New Zealand, Ray combines deep local market knowledge with global perspectives to create innovative solutions in <span class="highlight">AI systems</span>, <span class="highlight">labor mobility</span>, and <span class="highlight">cross-border commerce</span>.</p>
-                    <p data-lang="zh">Ray Deng，也被称为大瑞，二十多年来一直在中国-新西兰-澳大利亚走廊建立业务。Ray 位于新西兰奥克兰，结合深厚的本地市场知识和全球视野，在 <span class="highlight">AI 系统</span>、<span class="highlight">劳动力流动</span> 和 <span class="highlight">跨境商业</span> 领域创造创新解决方案。</p>
-                    <p data-lang="en">As a serial entrepreneur and strategic operator, Ray focuses on leveraging AI and automation to solve complex business challenges. His ventures span workforce migration platforms, property technology, and intelligent business systems that connect markets and create opportunities across borders.</p>
-                    <p data-lang="zh">作为连续创业者和战略运营者，Ray 专注于利用 AI 和自动化解决复杂的商业挑战。他的业务涵盖劳动力迁移平台、房产技术和智能商业系统，连接市场并创造跨境机会。</p>
+                    <h3>
+                        <span data-lang="en">20+ Years of Cross-Border Experience</span>
+                        <span data-lang="zh">20+ 年跨境经验</span>
+                    </h3>
+                    <p>
+                        <span data-lang="en">Ray Deng, also known as Big Ray, has been building businesses across the China-New Zealand-Australia corridor for over two decades. Based in Auckland, New Zealand, Ray combines deep local market knowledge with global perspectives to create innovative solutions in <span class="highlight">AI systems</span>, <span class="highlight">labor mobility</span>, and <span class="highlight">cross-border commerce</span>.</span>
+                        <span data-lang="zh">Ray Deng，也被称为大瑞，二十多年来一直在中国-新西兰-澳大利亚走廊建立业务。Ray 位于新西兰奥克兰，结合深厚的本地市场知识和全球视野，在 <span class="highlight">AI 系统</span>、<span class="highlight">劳动力流动</span> 和 <span class="highlight">跨境商业</span> 领域创造创新解决方案。</span>
+                    </p>
+                    <p>
+                        <span data-lang="en">As a serial entrepreneur and strategic operator, Ray focuses on leveraging AI and automation to solve complex business challenges. His ventures span workforce migration platforms, property technology, and intelligent business systems that connect markets and create opportunities across borders.</span>
+                        <span data-lang="zh">作为连续创业者和战略运营者，Ray 专注于利用 AI 和自动化解决复杂的商业挑战。他的业务涵盖劳动力迁移平台、房产技术和智能商业系统，连接市场并创造跨境机会。</span>
+                    </p>
                 </div>
                 <div class="about-content">
-                    <h3 data-lang="en">Strategic Vision & Execution</h3>
-                    <h3 data-lang="zh">战略视野与执行</h3>
-                    <p data-lang="en">Ray's approach combines <span class="highlight">strategic thinking</span> with hands-on execution. He identifies market gaps in cross-border business and builds practical solutions that address real needs. From workforce mobility solutions to AI-powered property platforms, each venture is designed to create measurable impact.</p>
-                    <p data-lang="zh">Ray 的方法结合了 <span class="highlight">战略思维</span> 和实际执行。他识别跨境商业中的市场空白，并构建解决实际需求的实用解决方案。从劳动力流动解决方案到 AI 驱动的房产平台，每个项目都旨在产生可衡量的影响。</p>
-                    <p data-lang="en">Featured in major media outlets including NZ Herald, Chinese Herald, and Xinhua News, Ray is recognized for his contributions to strengthening business ties between China and New Zealand. His work has been highlighted for its innovation in <span class="highlight">cross-border trade</span> and <span class="highlight">digital transformation</span>.</p>
-                    <p data-lang="zh">Ray 的贡献因加强中国和新西兰之间的商业联系而受到认可，曾被 NZ Herald、Chinese Herald 和新华社等主要媒体报道。他的工作因在 <span class="highlight">跨境贸易</span> 和 <span class="highlight">数字化转型</span> 方面的创新而受到关注。</p>
+                    <h3>
+                        <span data-lang="en">Strategic Vision & Execution</span>
+                        <span data-lang="zh">战略视野与执行</span>
+                    </h3>
+                    <p>
+                        <span data-lang="en">Ray's approach combines <span class="highlight">strategic thinking</span> with hands-on execution. He identifies market gaps in cross-border business and builds practical solutions that address real needs. From workforce mobility solutions to AI-powered property platforms, each venture is designed to create measurable impact.</span>
+                        <span data-lang="zh">Ray 的方法结合了 <span class="highlight">战略思维</span> 和实际执行。他识别跨境商业中的市场空白，并构建解决实际需求的实用解决方案。从劳动力流动解决方案到 AI 驱动的房产平台，每个项目都旨在产生可衡量的影响。</span>
+                    </p>
+                    <p>
+                        <span data-lang="en">Featured in major media outlets including NZ Herald, Chinese Herald, and Xinhua News, Ray is recognized for his contributions to strengthening business ties between China and New Zealand. His work has been highlighted for its innovation in <span class="highlight">cross-border trade</span> and <span class="highlight">digital transformation</span>.</span>
+                        <span data-lang="zh">Ray 的贡献因加强中国和新西兰之间的商业联系而受到认可，曾被 NZ Herald、Chinese Herald 和新华社等主要媒体报道。他的工作因在 <span class="highlight">跨境贸易</span> 和 <span class="highlight">数字化转型</span> 方面的创新而受到关注。</span>
+                    </p>
                 </div>
             </div>
             <div class="value-proposition">
-                <h3 data-lang="en">What I Can Offer</h3>
-                <h3 data-lang="zh">我能提供的价值</h3>
-                <p data-lang="en">Ray works with founders, investors, migration-related businesses, and cross-border operators who want to build practical systems, validate new opportunities, and turn complex ideas into executable ventures.</p>
-                <p data-lang="zh">Ray 与创始人、投资者、移民相关企业和跨境运营商合作，帮助构建实用系统、验证新机会，并将复杂想法转化为可执行的创业项目。</p>
+                <h3>
+                    <span data-lang="en">What I Can Offer</span>
+                    <span data-lang="zh">我能提供的价值</span>
+                </h3>
+                <p>
+                    <span data-lang="en">Ray works with founders, investors, migration-related businesses, and cross-border operators who want to build practical systems, validate new opportunities, and turn complex ideas into executable ventures.</span>
+                    <span data-lang="zh">Ray 与创始人、投资者、移民相关企业和跨境运营商合作，帮助构建实用系统、验证新机会，并将复杂想法转化为可执行的创业项目。</span>
+                </p>
             </div>
         </div>
     </section>
 
     <section class="section" id="ventures">
         <div class="container">
-            <h2 data-lang="en">What I Build</h2>
-            <h2 data-lang="zh">我构建的项目</h2>
-            <p data-lang="en">Creating AI-driven solutions that connect markets and empower cross-border business.</p>
-            <p data-lang="zh">创建连接市场并赋能跨境业务的 AI 驱动解决方案。</p>
+            <h2>
+                <span data-lang="en">What I Build</span>
+                <span data-lang="zh">我构建的项目</span>
+            </h2>
+            <p>
+                <span data-lang="en">Creating AI-driven solutions that connect markets and empower cross-border business.</span>
+                <span data-lang="zh">创建连接市场并赋能跨境业务的 AI 驱动解决方案。</span>
+            </p>
             <div class="ventures">
                 <div class="venture">
                     <h3>WorkVisas.work</h3>
-                    <span class="tag" data-lang="en">Workforce Mobility</span>
-                    <span class="tag" data-lang="zh">劳动力流动</span>
-                    <p data-lang="en">A comprehensive immigration and workforce solution platform connecting talent with opportunities in Australia and New Zealand. The platform streamlines visa applications, job matching, and employer compliance.</p>
-                    <p data-lang="zh">一个全面的移民和劳动力解决方案平台，连接人才与澳大利亚和新西兰的机会。该平台简化签证申请、工作匹配和雇主合规。</p>
-                    <span class="status status-live" data-lang="en">Live</span>
-                    <span class="status status-live" data-lang="zh">已上线</span>
+                    <span class="tag">
+                        <span data-lang="en">Workforce Mobility</span>
+                        <span data-lang="zh">劳动力流动</span>
+                    </span>
+                    <p>
+                        <span data-lang="en">A comprehensive immigration and workforce solution platform connecting talent with opportunities in Australia and New Zealand. The platform streamlines visa applications, job matching, and employer compliance.</span>
+                        <span data-lang="zh">一个全面的移民和劳动力解决方案平台，连接人才与澳大利亚和新西兰的机会。该平台简化签证申请、工作匹配和雇主合规。</span>
+                    </p>
+                    <span class="status status-live">
+                        <span data-lang="en">Live</span>
+                        <span data-lang="zh">已上线</span>
+                    </span>
                     <br><br>
-                    <a href="https://workvisas.work" target="_blank" rel="noopener noreferrer" data-lang="en">Visit Website →</a>
-                    <a href="https://workvisas.work" target="_blank" rel="noopener noreferrer" data-lang="zh">访问网站 →</a>
+                    <a href="https://workvisas.work" target="_blank" rel="noopener noreferrer">
+                        <span data-lang="en">Visit Website →</span>
+                        <span data-lang="zh">访问网站 →</span>
+                    </a>
                 </div>
                 <div class="venture">
                     <h3>Compass</h3>
-                    <span class="tag" data-lang="en">Property Technology</span>
-                    <span class="tag" data-lang="zh">房产科技</span>
-                    <p data-lang="en">An AI-driven property investment platform for Chinese investors in Brisbane. Features intelligent property analysis, market insights, and opportunity discovery powered by advanced machine learning algorithms.</p>
-                    <p data-lang="zh">面向布里斯班华人投资者的 AI 驱动房产投资平台。具有智能房产分析、市场洞察和机会发现功能，由先进的机器学习算法驱动。</p>
-                    <span class="status status-development" data-lang="en">In Development</span>
-                    <span class="status status-development" data-lang="zh">开发中</span>
+                    <span class="tag">
+                        <span data-lang="en">Property Technology</span>
+                        <span data-lang="zh">房产科技</span>
+                    </span>
+                    <p>
+                        <span data-lang="en">An AI-driven property investment platform for Chinese investors in Brisbane. Features intelligent property analysis, market insights, and opportunity discovery powered by advanced machine learning algorithms.</span>
+                        <span data-lang="zh">面向布里斯班华人投资者的 AI 驱动房产投资平台。具有智能房产分析、市场洞察和机会发现功能，由先进的机器学习算法驱动。</span>
+                    </p>
+                    <span class="status status-development">
+                        <span data-lang="en">In Development</span>
+                        <span data-lang="zh">开发中</span>
+                    </span>
                 </div>
                 <div class="venture">
                     <h3>MoveHub</h3>
-                    <span class="tag" data-lang="en">Relocation Services</span>
-                    <span class="tag" data-lang="zh">搬迁服务</span>
-                    <p data-lang="en">A comprehensive relocation and settlement platform for individuals and families moving across borders. Provides end-to-end support from visa processing to community integration.</p>
-                    <p data-lang="zh">为跨境搬迁的个人和家庭提供全面的搬迁和定居平台。从签证处理到社区整合，提供端到端支持。</p>
-                    <span class="status status-development" data-lang="en">In Development</span>
-                    <span class="status status-development" data-lang="zh">开发中</span>
+                    <span class="tag">
+                        <span data-lang="en">Relocation Services</span>
+                        <span data-lang="zh">搬迁服务</span>
+                    </span>
+                    <p>
+                        <span data-lang="en">A comprehensive relocation and settlement platform for individuals and families moving across borders. Provides end-to-end support from visa processing to community integration.</span>
+                        <span data-lang="zh">为跨境搬迁的个人和家庭提供全面的搬迁和定居平台。从签证处理到社区整合，提供端到端支持。</span>
+                    </p>
+                    <span class="status status-development">
+                        <span data-lang="en">In Development</span>
+                        <span data-lang="zh">开发中</span>
+                    </span>
                 </div>
                 <div class="venture">
                     <h3>Magic Lamp / Aladdin</h3>
@@ -1128,6 +1223,11 @@
     <script>
         let currentLang = 'en';
 
+        function toggleMobileMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+
         function setLanguage(lang) {
             currentLang = lang;
             document.documentElement.lang = lang;
@@ -1135,23 +1235,38 @@
             document.getElementById('btn-en').classList.remove('active');
             document.getElementById('btn-zh').classList.remove('active');
             document.getElementById('btn-' + lang).classList.add('active');
+            
+            // Save language preference
+            localStorage.setItem('language', lang);
         }
 
-        // Check for language preference
-        const savedLang = localStorage.getItem('language');
-        if (savedLang) {
-            setLanguage(savedLang);
+        function initLanguage() {
+            const savedLang = localStorage.getItem('language');
+            if (savedLang && (savedLang === 'en' || savedLang === 'zh')) {
+                setLanguage(savedLang);
+            } else {
+                // Check browser language
+                const browserLang = navigator.language || navigator.userLanguage;
+                if (browserLang && browserLang.toLowerCase().startsWith('zh')) {
+                    setLanguage('zh');
+                } else {
+                    setLanguage('en');
+                }
+            }
         }
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            initLanguage();
+        });
 
         // Save language preference
         document.getElementById('btn-en').addEventListener('click', function() {
             setLanguage('en');
-            localStorage.setItem('language', 'en');
         });
 
         document.getElementById('btn-zh').addEventListener('click', function() {
             setLanguage('zh');
-            localStorage.setItem('language', 'zh');
         });
 
         // Gallery functionality

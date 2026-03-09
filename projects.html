@@ -316,17 +316,16 @@
             background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
             color: white;
         }
-        [data-lang="zh"] {
+        [data-lang] {
             display: none;
         }
-        html[lang="zh"] [data-lang="en"] {
-            display: none;
-        }
-        html[lang="zh"] [data-lang="zh"] {
-            display: block;
-        }
+
         html[lang="en"] [data-lang="en"] {
-            display: block;
+            display: inline;
+        }
+
+        html[lang="zh"] [data-lang="zh"] {
+            display: inline;
         }
         .nav {
             position: fixed;
@@ -456,62 +455,100 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h1 data-lang="en">Projects</h1>
-                <h1 data-lang="zh">项目</h1>
-                <h2 data-lang="en">Ventures and platforms built across AI, migration, property, and cross-border business.</h2>
-                <h2 data-lang="zh">围绕 AI、移民、房产与跨境商业构建的项目与平台。</h2>
-                <p data-lang="en">Explore the AI-driven ventures that connect markets and create new opportunities across China, New Zealand, and Australia.</p>
-                <p data-lang="zh">探索连接市场并在中国、新西兰和澳大利亚创造新机会的 AI 驱动项目。</p>
-                <a href="index.html#contact" class="btn btn-primary" data-lang="en">Collaborate</a>
-                <a href="index.html#contact" class="btn btn-primary" data-lang="zh">合作</a>
+                <h1>
+                    <span data-lang="en">Projects</span>
+                    <span data-lang="zh">项目</span>
+                </h1>
+                <h2>
+                    <span data-lang="en">Ventures and platforms built across AI, migration, property, and cross-border business.</span>
+                    <span data-lang="zh">围绕 AI、移民、房产与跨境商业构建的项目与平台。</span>
+                </h2>
+                <p>
+                    <span data-lang="en">Explore the AI-driven ventures that connect markets and create new opportunities across China, New Zealand, and Australia.</span>
+                    <span data-lang="zh">探索连接市场并在中国、新西兰和澳大利亚创造新机会的 AI 驱动项目。</span>
+                </p>
+                <a href="index.html#contact" class="btn btn-primary">
+                    <span data-lang="en">Collaborate</span>
+                    <span data-lang="zh">合作</span>
+                </a>
             </div>
         </section>
 
         <section class="section">
             <div class="container">
-                <h2 data-lang="en">Current Ventures</h2>
-                <h2 data-lang="zh">当前项目</h2>
-                <p data-lang="en">AI-powered solutions addressing real market needs across cross-border domains.</p>
-                <p data-lang="zh">解决跨境领域实际市场需求的 AI 驱动解决方案。</p>
+                <h2>
+                    <span data-lang="en">Current Ventures</span>
+                    <span data-lang="zh">当前项目</span>
+                </h2>
+                <p>
+                    <span data-lang="en">AI-powered solutions addressing real market needs across cross-border domains.</span>
+                    <span data-lang="zh">解决跨境领域实际市场需求的 AI 驱动解决方案。</span>
+                </p>
                 <div class="ventures">
                     <div class="venture">
                         <h3>WorkVisas.work</h3>
-                        <span class="tag" data-lang="en">Workforce Mobility</span>
-                        <span class="tag" data-lang="zh">劳动力流动</span>
-                        <p data-lang="en">A comprehensive immigration and workforce solution platform connecting talent with opportunities in Australia and New Zealand. The platform streamlines visa applications, job matching, and employer compliance, making international employment more accessible and efficient.</p>
-                        <p data-lang="zh">一个全面的移民和劳动力解决方案平台，连接人才与澳大利亚和新西兰的机会。该平台简化签证申请、工作匹配和雇主合规，使国际就业更加便捷和高效。</p>
-                        <span class="status status-live" data-lang="en">Live</span>
-                        <span class="status status-live" data-lang="zh">已上线</span>
+                        <span class="tag">
+                            <span data-lang="en">Workforce Mobility</span>
+                            <span data-lang="zh">劳动力流动</span>
+                        </span>
+                        <p>
+                            <span data-lang="en">A comprehensive immigration and workforce solution platform connecting talent with opportunities in Australia and New Zealand. The platform streamlines visa applications, job matching, and employer compliance, making international employment more accessible and efficient.</span>
+                            <span data-lang="zh">一个全面的移民和劳动力解决方案平台，连接人才与澳大利亚和新西兰的机会。该平台简化签证申请、工作匹配和雇主合规，使国际就业更加便捷和高效。</span>
+                        </p>
+                        <span class="status status-live">
+                            <span data-lang="en">Live</span>
+                            <span data-lang="zh">已上线</span>
+                        </span>
                         <br><br>
-                        <a href="https://workvisas.work" target="_blank" rel="noopener noreferrer" data-lang="en">Visit Website →</a>
-                        <a href="https://workvisas.work" target="_blank" rel="noopener noreferrer" data-lang="zh">访问网站 →</a>
+                        <a href="https://workvisas.work" target="_blank" rel="noopener noreferrer">
+                            <span data-lang="en">Visit Website →</span>
+                            <span data-lang="zh">访问网站 →</span>
+                        </a>
                     </div>
                     <div class="venture">
                         <h3>Compass</h3>
-                        <span class="tag" data-lang="en">Property Technology</span>
-                        <span class="tag" data-lang="zh">房产科技</span>
-                        <p data-lang="en">An AI-driven property investment platform for Chinese investors in Brisbane. Features intelligent property analysis, market insights, and opportunity discovery powered by advanced machine learning algorithms. Helps investors make data-driven decisions in the Australian real estate market.</p>
-                        <p data-lang="zh">面向布里斯班华人投资者的 AI 驱动房产投资平台。具有智能房产分析、市场洞察和机会发现功能，由先进的机器学习算法驱动。帮助投资者在澳大利亚房地产市场做出数据驱动的决策。</p>
-                        <span class="status status-development" data-lang="en">In Development</span>
-                        <span class="status status-development" data-lang="zh">开发中</span>
+                        <span class="tag">
+                            <span data-lang="en">Property Technology</span>
+                            <span data-lang="zh">房产科技</span>
+                        </span>
+                        <p>
+                            <span data-lang="en">An AI-driven property investment platform for Chinese investors in Brisbane. Features intelligent property analysis, market insights, and opportunity discovery powered by advanced machine learning algorithms. Helps investors make data-driven decisions in the Australian real estate market.</span>
+                            <span data-lang="zh">面向布里斯班华人投资者的 AI 驱动房产投资平台。具有智能房产分析、市场洞察和机会发现功能，由先进的机器学习算法驱动。帮助投资者在澳大利亚房地产市场做出数据驱动的决策。</span>
+                        </p>
+                        <span class="status status-development">
+                            <span data-lang="en">In Development</span>
+                            <span data-lang="zh">开发中</span>
+                        </span>
                     </div>
                     <div class="venture">
                         <h3>MoveHub</h3>
-                        <span class="tag" data-lang="en">Relocation Services</span>
-                        <span class="tag" data-lang="zh">搬迁服务</span>
-                        <p data-lang="en">A comprehensive relocation and settlement platform for individuals and families moving across borders. Provides end-to-end support from visa processing to community integration, making international relocations smoother and less stressful.</p>
-                        <p data-lang="zh">为跨境搬迁的个人和家庭提供全面的搬迁和定居平台。从签证处理到社区整合，提供端到端支持，使国际搬迁更加顺利和减少压力。</p>
-                        <span class="status status-development" data-lang="en">In Development</span>
-                        <span class="status status-development" data-lang="zh">开发中</span>
+                        <span class="tag">
+                            <span data-lang="en">Relocation Services</span>
+                            <span data-lang="zh">搬迁服务</span>
+                        </span>
+                        <p>
+                            <span data-lang="en">A comprehensive relocation and settlement platform for individuals and families moving across borders. Provides end-to-end support from visa processing to community integration, making international relocations smoother and less stressful.</span>
+                            <span data-lang="zh">为跨境搬迁的个人和家庭提供全面的搬迁和定居平台。从签证处理到社区整合，提供端到端支持，使国际搬迁更加顺利和减少压力。</span>
+                        </p>
+                        <span class="status status-development">
+                            <span data-lang="en">In Development</span>
+                            <span data-lang="zh">开发中</span>
+                        </span>
                     </div>
                     <div class="venture">
                         <h3>Magic Lamp</h3>
-                        <span class="tag" data-lang="en">AI Systems</span>
-                        <span class="tag" data-lang="zh">AI系统</span>
-                        <p data-lang="en">An AI-powered e-commerce and business automation system for cross-border trade. Leverages natural language processing and predictive analytics to optimize supply chains and customer experiences. Enables businesses to operate more efficiently across international markets.</p>
-                        <p data-lang="zh">用于跨境贸易的 AI 驱动电商和业务自动化系统。利用自然语言处理和预测分析来优化供应链和客户体验。使企业能够在国际市场更高效地运营。</p>
-                        <span class="status status-live" data-lang="en">Live</span>
-                        <span class="status status-live" data-lang="zh">已上线</span>
+                        <span class="tag">
+                            <span data-lang="en">AI Systems</span>
+                            <span data-lang="zh">AI系统</span>
+                        </span>
+                        <p>
+                            <span data-lang="en">An AI-powered e-commerce and business automation system for cross-border trade. Leverages natural language processing and predictive analytics to optimize supply chains and customer experiences. Enables businesses to operate more efficiently across international markets.</span>
+                            <span data-lang="zh">用于跨境贸易的 AI 驱动电商和业务自动化系统。利用自然语言处理和预测分析来优化供应链和客户体验。使企业能够在国际市场更高效地运营。</span>
+                        </p>
+                        <span class="status status-live">
+                            <span data-lang="en">Live</span>
+                            <span data-lang="zh">已上线</span>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -520,34 +557,54 @@
         <section class="section">
             <div class="container">
                 <div class="build-philosophy">
-                    <h3 data-lang="en">Why These Projects</h3>
-                    <h3 data-lang="zh">为何这些项目</h3>
-                    <p data-lang="en">The common thread across all projects is solving real problems through practical, AI-powered solutions that create tangible value.</p>
-                    <p data-lang="zh">所有项目的共同点是通过实用的、AI 驱动的解决方案解决实际问题，创造切实的价值。</p>
+                    <h3>
+                        <span data-lang="en">Why These Projects</span>
+                        <span data-lang="zh">为何这些项目</span>
+                    </h3>
+                    <p>
+                        <span data-lang="en">The common thread across all projects is solving real problems through practical, AI-powered solutions that create tangible value.</span>
+                        <span data-lang="zh">所有项目的共同点是通过实用的、AI 驱动的解决方案解决实际问题，创造切实的价值。</span>
+                    </p>
                     <div class="build-principles">
                         <div class="principle-item">
-                            <h4 data-lang="en">Practical Systems</h4>
-                            <h4 data-lang="zh">实用系统</h4>
-                            <p data-lang="en">Building solutions that address specific market needs with clear value propositions and measurable outcomes.</p>
-                            <p data-lang="zh">构建解决特定市场需求的解决方案，具有明确的价值主张和可衡量的成果。</p>
+                            <h4>
+                                <span data-lang="en">Practical Systems</span>
+                                <span data-lang="zh">实用系统</span>
+                            </h4>
+                            <p>
+                                <span data-lang="en">Building solutions that address specific market needs with clear value propositions and measurable outcomes.</span>
+                                <span data-lang="zh">构建解决特定市场需求的解决方案，具有明确的价值主张和可衡量的成果。</span>
+                            </p>
                         </div>
                         <div class="principle-item">
-                            <h4 data-lang="en">Real Market Needs</h4>
-                            <h4 data-lang="zh">真实市场需求</h4>
-                            <p data-lang="en">Identifying and solving genuine problems that exist in cross-border business and migration processes.</p>
-                            <p data-lang="zh">识别并解决跨境商业和移民过程中存在的真实问题。</p>
+                            <h4>
+                                <span data-lang="en">Real Market Needs</span>
+                                <span data-lang="zh">真实市场需求</span>
+                            </h4>
+                            <p>
+                                <span data-lang="en">Identifying and solving genuine problems that exist in cross-border business and migration processes.</span>
+                                <span data-lang="zh">识别并解决跨境商业和移民过程中存在的真实问题。</span>
+                            </p>
                         </div>
                         <div class="principle-item">
-                            <h4 data-lang="en">AI-powered Execution</h4>
-                            <h4 data-lang="zh">AI 驱动执行</h4>
-                            <p data-lang="en">Leveraging artificial intelligence to enhance efficiency, accuracy, and scalability in all operations.</p>
-                            <p data-lang="zh">利用人工智能提高所有运营的效率、准确性和可扩展性。</p>
+                            <h4>
+                                <span data-lang="en">AI-powered Execution</span>
+                                <span data-lang="zh">AI 驱动执行</span>
+                            </h4>
+                            <p>
+                                <span data-lang="en">Leveraging artificial intelligence to enhance efficiency, accuracy, and scalability in all operations.</span>
+                                <span data-lang="zh">利用人工智能提高所有运营的效率、准确性和可扩展性。</span>
+                            </p>
                         </div>
                         <div class="principle-item">
-                            <h4 data-lang="en">Cross-border Opportunities</h4>
-                            <h4 data-lang="zh">跨境机会</h4>
-                            <p data-lang="en">Creating value by connecting markets and leveraging the unique advantages of different regions.</p>
-                            <p data-lang="zh">通过连接市场并利用不同地区的独特优势创造价值。</p>
+                            <h4>
+                                <span data-lang="en">Cross-border Opportunities</span>
+                                <span data-lang="zh">跨境机会</span>
+                            </h4>
+                            <p>
+                                <span data-lang="en">Creating value by connecting markets and leveraging the unique advantages of different regions.</span>
+                                <span data-lang="zh">通过连接市场并利用不同地区的独特优势创造价值。</span>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -589,17 +646,7 @@
             document.getElementById('btn-en').classList.remove('active');
             document.getElementById('btn-zh').classList.remove('active');
             document.getElementById('btn-' + lang).classList.add('active');
-
-            // Hide elements based on language
-            const elements = document.querySelectorAll('[data-lang]');
-            elements.forEach(element => {
-                if (element.getAttribute('data-lang') === lang) {
-                    element.style.display = 'block';
-                } else {
-                    element.style.display = 'none';
-                }
-            });
-
+            
             // Save language preference
             localStorage.setItem('language', lang);
         }
@@ -622,6 +669,15 @@
         // Initialize language on page load
         document.addEventListener('DOMContentLoaded', function() {
             initLanguage();
+        });
+
+        // Save language preference
+        document.getElementById('btn-en').addEventListener('click', function() {
+            setLanguage('en');
+        });
+
+        document.getElementById('btn-zh').addEventListener('click', function() {
+            setLanguage('zh');
         });
     </script>
 </body>

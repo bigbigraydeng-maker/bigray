@@ -259,6 +259,18 @@
             color: #60a5fa;
             border-color: rgba(59, 130, 246, 0.5);
         }
+        
+        [data-lang] {
+            display: none;
+        }
+
+        html[lang="en"] [data-lang="en"] {
+            display: inline;
+        }
+
+        html[lang="zh"] [data-lang="zh"] {
+            display: inline;
+        }
         @media (max-width: 768px) {
             .nav-menu {
                 display: none;
@@ -313,44 +325,70 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h1 data-lang="en">About Ray Deng</h1>
-                <h1 data-lang="zh">关于 Ray Deng</h1>
-                <h2 data-lang="en">Entrepreneur based in New Zealand, working on AI-driven ventures across migration, property, and cross-border business.</h2>
-                <h2 data-lang="zh">常驻新西兰的创业者，从事移民、房产和跨境商业领域的 AI 驱动项目。</h2>
-                <p data-lang="en">Building practical solutions that connect markets and create value across China, New Zealand, and Australia.</p>
-                <p data-lang="zh">构建连接市场、在中国、新西兰和澳大利亚创造价值的实用解决方案。</p>
+                <h1>
+                    <span data-lang="en">About Ray Deng</span>
+                    <span data-lang="zh">关于 Ray Deng</span>
+                </h1>
+                <h2>
+                    <span data-lang="en">Entrepreneur based in New Zealand, working on AI-driven ventures across migration, property, and cross-border business.</span>
+                    <span data-lang="zh">常驻新西兰的创业者，从事移民、房产和跨境商业领域的 AI 驱动项目。</span>
+                </h2>
+                <p>
+                    <span data-lang="en">Building practical solutions that connect markets and create value across China, New Zealand, and Australia.</span>
+                    <span data-lang="zh">构建连接市场、在中国、新西兰和澳大利亚创造价值的实用解决方案。</span>
+                </p>
             </div>
         </section>
 
         <section class="section">
             <div class="container">
-                <h2 data-lang="en">Background</h2>
-                <h2 data-lang="zh">背景</h2>
+                <h2>
+                    <span data-lang="en">Background</span>
+                    <span data-lang="zh">背景</span>
+                </h2>
                 <div class="about-content">
                     <div class="about-section">
-                        <h3 data-lang="en">What I Do</h3>
-                        <h3 data-lang="zh">我的工作</h3>
-                        <p data-lang="en">I work on building AI-driven ventures that address real market needs across migration, property technology, and cross-border business. My focus is on creating practical solutions that connect Chinese and Australasian markets.</p>
-                        <p data-lang="zh">我致力于构建满足移民、房产技术和跨境商业领域真实市场需求的 AI 驱动项目。我的重点是创建连接中国与澳新市场的实用解决方案。</p>
+                        <h3>
+                            <span data-lang="en">What I Do</span>
+                            <span data-lang="zh">我的工作</span>
+                        </h3>
+                        <p>
+                            <span data-lang="en">I work on building AI-driven ventures that address real market needs across migration, property technology, and cross-border business. My focus is on creating practical solutions that connect Chinese and Australasian markets.</span>
+                            <span data-lang="zh">我致力于构建满足移民、房产技术和跨境商业领域真实市场需求的 AI 驱动项目。我的重点是创建连接中国与澳新市场的实用解决方案。</span>
+                        </p>
                     </div>
                     <div class="about-section">
-                        <h3 data-lang="en">Experience</h3>
-                        <h3 data-lang="zh">经验</h3>
-                        <p data-lang="en">Over the years, I've built and operated several ventures across China, New Zealand, and Australia. This includes platforms for workforce mobility, property investment technology, and cross-border business automation.</p>
-                        <p data-lang="zh">多年来，我在中国、新西兰和澳大利亚建立并运营了多个项目。这包括劳动力流动平台、房产投资技术和跨境商业自动化。</p>
+                        <h3>
+                            <span data-lang="en">Experience</span>
+                            <span data-lang="zh">经验</span>
+                        </h3>
+                        <p>
+                            <span data-lang="en">Over the years, I've built and operated several ventures across China, New Zealand, and Australia. This includes platforms for workforce mobility, property investment technology, and cross-border business automation.</span>
+                            <span data-lang="zh">多年来，我在中国、新西兰和澳大利亚建立并运营了多个项目。这包括劳动力流动平台、房产投资技术和跨境商业自动化。</span>
+                        </p>
                     </div>
                     <div class="about-section">
-                        <h3 data-lang="en">Focus Areas</h3>
-                        <h3 data-lang="zh">专注领域</h3>
+                        <h3>
+                            <span data-lang="en">Focus Areas</span>
+                            <span data-lang="zh">专注领域</span>
+                        </h3>
                         <ul>
-                            <li data-lang="en">AI strategy and implementation for business operations</li>
-                            <li data-lang="zh">商业运营的 AI 战略与实施</li>
-                            <li data-lang="en">Cross-border business development between China and Australasia</li>
-                            <li data-lang="zh">中国与澳新之间的跨境商业发展</li>
-                            <li data-lang="en">Property technology and investment platforms</li>
-                            <li data-lang="zh">房产技术与投资平台</li>
-                            <li data-lang="en">Workforce mobility and migration solutions</li>
-                            <li data-lang="zh">劳动力流动与移民解决方案</li>
+                            <li>
+                                <span data-lang="en">AI strategy and implementation for business operations</span>
+                                <span data-lang="zh">商业运营的 AI 战略与实施</span>
+                            </li>
+                            <li>
+                                <span data-lang="en">Cross-border business development between China and Australasia</span>
+                                <span data-lang="zh">中国与澳新之间的跨境商业发展</span>
+                            </li>
+                            <li>
+                                <span data-lang="en">Property technology and investment platforms</span>
+                                <span data-lang="zh">房产技术与投资平台</span>
+                            </li>
+                            <li>
+                                <span data-lang="en">Workforce mobility and migration solutions</span>
+                                <span data-lang="zh">劳动力流动与移民解决方案</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -367,6 +405,11 @@
     <script>
         let currentLang = 'en';
 
+        function toggleMobileMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+
         function setLanguage(lang) {
             currentLang = lang;
             document.documentElement.lang = lang;
@@ -374,14 +417,11 @@
             document.getElementById('btn-en').classList.remove('active');
             document.getElementById('btn-zh').classList.remove('active');
             document.getElementById('btn-' + lang).classList.add('active');
+            
+            // Save language preference
+            localStorage.setItem('language', lang);
         }
 
-        function toggleMobileMenu() {
-            const navMenu = document.getElementById('navMenu');
-            navMenu.classList.toggle('active');
-        }
-
-        // Initialize language
         function initLanguage() {
             const savedLang = localStorage.getItem('language');
             if (savedLang && (savedLang === 'en' || savedLang === 'zh')) {
@@ -397,19 +437,19 @@
             }
         }
 
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            initLanguage();
+        });
+
         // Save language preference
         document.getElementById('btn-en').addEventListener('click', function() {
             setLanguage('en');
-            localStorage.setItem('language', 'en');
         });
 
         document.getElementById('btn-zh').addEventListener('click', function() {
             setLanguage('zh');
-            localStorage.setItem('language', 'zh');
         });
-
-        // Initialize on page load
-        initLanguage();
     </script>
 </body>
 </html>
