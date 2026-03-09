@@ -234,30 +234,33 @@
         }
         .lang-switch {
             position: fixed;
-            top: 80px;
+            top: 20px;
             right: 20px;
-            z-index: 99;
+            z-index: 1000;
             display: flex;
-            gap: 5px;
+            gap: 10px;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 8px;
+            padding: 5px;
         }
         .lang-switch button {
-            padding: 8px 16px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            background: rgba(15, 23, 42, 0.8);
+            background: transparent;
+            border: none;
             color: #94a3b8;
-            cursor: pointer;
+            padding: 8px 16px;
             border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
             font-weight: 600;
             transition: all 0.3s;
         }
         .lang-switch button:hover {
-            background: rgba(59, 130, 246, 0.2);
-            color: #60a5fa;
+            color: #f8fafc;
         }
         .lang-switch button.active {
-            background: rgba(59, 130, 246, 0.3);
-            color: #60a5fa;
-            border-color: rgba(59, 130, 246, 0.5);
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            color: white;
         }
         
         [data-lang] {
@@ -289,17 +292,6 @@
             .mobile-menu-btn {
                 display: block;
             }
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .hero h2 {
-                font-size: 1.2rem;
-            }
-            .lang-switch {
-                top: 70px;
-                right: 10px;
-            }
-        }
     </style>
 </head>
 <body>
