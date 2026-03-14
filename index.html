@@ -224,12 +224,12 @@
         }
         
         .section {
-            padding: 80px 20px;
+            padding: 60px 20px;
         }
         .section h2 {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
             background: linear-gradient(135deg, #d4a574 0%, #f5cfa0 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -868,47 +868,54 @@
             gap: 8px;
         }
 
-        /* Masonry Gallery Styles */
-        .gallery-masonry {
+        /* Gallery Styles */
+        .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
-            margin-top: 40px;
+            margin-top: 30px;
         }
         .gallery-item {
-            position: relative;
+            cursor: pointer;
             border-radius: 12px;
             overflow: hidden;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            min-height: 200px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        .gallery-image-container {
+            position: relative;
+            aspect-ratio: 4/3;
+            overflow: hidden;
         }
-        .gallery-item img {
+        .gallery-image-container img {
             width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.3s ease;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .gallery-item:hover img {
-            transform: scale(1.05);
+        .gallery-item:hover .gallery-image-container img {
+            transform: scale(1.1);
         }
-        .gallery-item .overlay {
+        .gallery-overlay {
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 0;
             right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+            display: flex;
+            align-items: flex-end;
             padding: 20px;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
             opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
+            transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .gallery-item:hover .overlay {
+        .gallery-item:hover .gallery-overlay {
             opacity: 1;
+        }
+        .gallery-caption {
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
         @media (max-width: 1024px) {
@@ -1163,25 +1170,38 @@
         .contact-location {
             color: rgba(100, 116, 139, 0.7);
             font-size: 0.85rem;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
         
-        .contact .btn-primary {
-            display: inline-block;
-            background: linear-gradient(135deg, #d4a574 0%, #f5cfa0 100%);
-            color: #111;
-            padding: 14px 36px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 2px 8px rgba(212,165,116,0.2);
+        .qr-codes {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
         }
         
-        .contact .btn-primary:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 8px 24px rgba(212,165,116,0.25);
+        .qr-code-item {
+            text-align: center;
+        }
+        
+        .qr-code-placeholder {
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(212,165,116,0.2);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            margin: 0 auto 10px;
+        }
+        
+        .qr-code-placeholder span {
+            font-size: 0.75rem;
+            color: rgba(212,165,116,0.8);
+            text-align: center;
         }
         
         footer {
@@ -1316,168 +1336,7 @@
         </div>
     </section>
 
-    <section class="section" id="ventures">
-        <div class="container">
-            <h2>
-                <span data-lang="en">What I Build</span>
-                <span data-lang="zh">我构建的项目</span>
-            </h2>
-            <p>
-                <span data-lang="en">Creating AI-driven solutions that connect markets and empower cross-border business.</span>
-                <span data-lang="zh">创建连接市场并赋能跨境业务的 AI 驱动解决方案。</span>
-            </p>
-            <div class="ventures">
-                <div class="venture">
-                    <h3>WorkVisas.work</h3>
-                    <span class="tag">
-                        <span data-lang="en">Workforce Mobility</span>
-                        <span data-lang="zh">劳动力流动</span>
-                    </span>
-                    <p>
-                        <span data-lang="en">A comprehensive immigration and workforce solution platform connecting talent with opportunities in Australia and New Zealand. The platform streamlines visa applications, job matching, and employer compliance.</span>
-                        <span data-lang="zh">一个全面的移民和劳动力解决方案平台，连接人才与澳大利亚和新西兰的机会。该平台简化签证申请、工作匹配和雇主合规。</span>
-                    </p>
-                    <div class="venture-footer">
-                        <span class="status status-live">
-                            <span data-lang="en">Live</span>
-                            <span data-lang="zh">已上线</span>
-                        </span>
-                        <a href="https://workvisas.work" target="_blank" rel="noopener noreferrer">
-                            <span data-lang="en">Visit →</span>
-                            <span data-lang="zh">访问 →</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="venture">
-                    <h3>Compass</h3>
-                    <span class="tag">
-                        <span data-lang="en">Property Technology</span>
-                        <span data-lang="zh">房产科技</span>
-                    </span>
-                    <p>
-                        <span data-lang="en">An AI-driven property investment platform for Chinese investors in Brisbane. Features intelligent property analysis, market insights, and opportunity discovery powered by advanced machine learning algorithms.</span>
-                        <span data-lang="zh">面向布里斯班华人投资者的 AI 驱动房产投资平台。具有智能房产分析、市场洞察和机会发现功能，由先进的机器学习算法驱动。</span>
-                    </p>
-                    <div class="venture-footer">
-                        <span class="status status-development">
-                            <span data-lang="en">In Development</span>
-                            <span data-lang="zh">开发中</span>
-                        </span>
-                        <a href="https://www.aucompass.com.au" target="_blank" rel="noopener noreferrer">
-                            <span data-lang="en">Visit Website →</span>
-                            <span data-lang="zh">访问网站 →</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="venture">
-                    <h3>MoveHub</h3>
-                    <span class="tag">
-                        <span data-lang="en">Relocation Services</span>
-                        <span data-lang="zh">搬迁服务</span>
-                    </span>
-                    <p>
-                        <span data-lang="en">A comprehensive relocation and settlement platform for individuals and families moving across borders. Provides end-to-end support from visa processing to community integration.</span>
-                        <span data-lang="zh">为跨境搬迁的个人和家庭提供全面的搬迁和定居平台。从签证处理到社区整合，提供端到端支持。</span>
-                    </p>
-                    <div class="venture-footer">
-                        <span class="status status-development">
-                            <span data-lang="en">In Development</span>
-                            <span data-lang="zh">开发中</span>
-                        </span>
-                    </div>
-                </div>
-                <div class="venture">
-                    <h3>Magic Lamp / Aladdin</h3>
-                    <span class="tag">
-                        <span data-lang="en">AI Systems</span>
-                        <span data-lang="zh">AI系统</span>
-                    </span>
-                    <p>
-                        <span data-lang="en">An AI-powered e-commerce and business automation system for cross-border trade. Leverages natural language processing and predictive analytics to optimize supply chains and customer experiences.</span>
-                        <span data-lang="zh">用于跨境贸易的 AI 驱动电商和业务自动化系统。利用自然语言处理和预测分析来优化供应链和客户体验。</span>
-                    </p>
-                    <div class="venture-footer">
-                        <span class="status status-live">
-                            <span data-lang="en">Live</span>
-                            <span data-lang="zh">已上线</span>
-                        </span>
-                    </div>
-                </div>
-                <div class="venture">
-                    <h3>StockQueen</h3>
-                    <span class="tag">
-                        <span data-lang="en">AI Trading Strategy</span>
-                        <span data-lang="zh">AI交易策略</span>
-                    </span>
-                    <p>
-                        <span data-lang="en">AI-driven multi-factor rotation strategy focused on US stocks and ETFs. Features adaptive market state recognition, proprietary scoring engine for 80+ assets, and systematic risk management to navigate bull and bear markets.</span>
-                        <span data-lang="zh">AI驱动的多因子轮动策略，专注美股及ETF投资。自适应市场状态识别，proprietary评分引擎对80+标的进行多维度评估，系统化穿越牛熊周期创造超额收益。</span>
-                    </p>
-                    <div class="venture-footer">
-                        <span class="status status-live">
-                            <span data-lang="en">Live</span>
-                            <span data-lang="zh">已上线</span>
-                        </span>
-                        <a href="https://stockqueen-site.onrender.com/index-zh.html" target="_blank" rel="noopener noreferrer">
-                            <span data-lang="en">Visit Website →</span>
-                            <span data-lang="zh">访问网站 →</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="venture">
-                    <h3>Car Scout</h3>
-                    <span class="tag">
-                        <span data-lang="en">AI Auto Market</span>
-                        <span data-lang="zh">AI汽车市场</span>
-                    </span>
-                    <p>
-                        <span data-lang="en">An intelligent car market monitoring assistant for New Zealand used car market. Features multi-platform data collection from TradeMe and Facebook Marketplace, KNN-based price evaluation, and profit margin analysis.</span>
-                        <span data-lang="zh">新西兰二手车市场智能监测助手。具备 TradeMe 和 Facebook Marketplace 多平台数据采集、基于 KNN 的价格评估和利润空间分析功能。</span>
-                    </p>
-                    <div class="venture-footer">
-                        <span class="status status-development">
-                            <span data-lang="en">In Development</span>
-                            <span data-lang="zh">开发中</span>
-                        </span>
-                    </div>
-                </div>
-                <div class="venture">
-                    <h3>Bet King</h3>
-                    <span class="tag">
-                        <span data-lang="en">AI Sports Betting</span>
-                        <span data-lang="zh">AI体育投注</span>
-                    </span>
-                    <p>
-                        <span data-lang="en">An intelligent sports betting strategy advisor with a 4-person expert team. Features TAB odds monitoring, injury tracking, compound model risk management, and automated push notifications.</span>
-                        <span data-lang="zh">智能体育投注策略顾问，拥有4人专家团队。具备 TAB 赔率监控、伤病追踪、复利模型风险管理和自动推送通知功能。</span>
-                    </p>
-                    <div class="venture-footer">
-                        <span class="status status-development">
-                            <span data-lang="en">In Development</span>
-                            <span data-lang="zh">开发中</span>
-                        </span>
-                    </div>
-                </div>
-                <div class="venture">
-                    <h3>Warm Voyage</h3>
-                    <span class="tag">
-                        <span data-lang="en">Premium Transport</span>
-                        <span data-lang="zh">高端接送服务</span>
-                    </span>
-                    <p>
-                        <span data-lang="en">A premium transportation service company in Auckland, New Zealand. Specializes in airport transfers, day tours to Hobbiton and Waitomo, and corporate charter services with bilingual drivers.</span>
-                        <span data-lang="zh">新西兰奥克兰高端接送服务公司。专注于机场接送、霍比特村和萤火虫洞一日游，以及配备双语司机的企业包车服务。</span>
-                    </p>
-                    <div class="venture-footer">
-                        <span class="status status-live">
-                            <span data-lang="en">Live</span>
-                            <span data-lang="zh">已上线</span>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <section class="section" id="focus">
         <div class="container">
@@ -1530,52 +1389,56 @@
         <div class="container">
             <h2 data-lang="en">Gallery</h2>
             <h2 data-lang="zh">图册</h2>
-            <p data-lang="en">Photo collection of business events, conferences, and milestones. Click to view larger images.</p>
-            <p data-lang="zh">商业活动、会议和里程碑的照片集锦。点击图片查看大图。</p>
-            <div class="gallery-masonry" id="gallery-grid">
+            <p data-lang="en">Business events, conferences, and milestones.</p>
+            <p data-lang="zh">商业活动、会议和里程碑。</p>
+            <div class="gallery-grid">
                 <div class="gallery-item" onclick="openLightbox(0)">
-                    <img src="images/event-1.jpg" alt="Ray Deng attending a business event in New Zealand">
-                    <div class="overlay"></div>
+                    <div class="gallery-image-container">
+                        <img src="images/event-1.jpg" alt="Business event in New Zealand">
+                        <div class="gallery-overlay">
+                            <span class="gallery-caption">Business Event</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(1)">
-                    <img src="images/event-2.jpg" alt="Ray Deng speaking at a cross-border business meeting">
-                    <div class="overlay"></div>
+                    <div class="gallery-image-container">
+                        <img src="images/event-2.jpg" alt="Cross-border business meeting">
+                        <div class="gallery-overlay">
+                            <span class="gallery-caption">Business Meeting</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(2)">
-                    <img src="images/event-3.jpg" alt="Ray Deng with partners at a business conference">
-                    <div class="overlay"></div>
+                    <div class="gallery-image-container">
+                        <img src="images/event-3.jpg" alt="Business conference">
+                        <div class="gallery-overlay">
+                            <span class="gallery-caption">Conference</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(3)">
-                    <img src="images/event-4.jpg" alt="Ray Deng presenting AI strategy to business audience">
-                    <div class="overlay"></div>
+                    <div class="gallery-image-container">
+                        <img src="images/event-4.jpg" alt="AI strategy presentation">
+                        <div class="gallery-overlay">
+                            <span class="gallery-caption">AI Presentation</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(4)">
-                    <img src="images/event-5.jpg" alt="Ray Deng at startup launch event in Auckland">
-                    <div class="overlay"></div>
+                    <div class="gallery-image-container">
+                        <img src="images/event-5.jpg" alt="Startup launch event">
+                        <div class="gallery-overlay">
+                            <span class="gallery-caption">Startup Launch</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(5)">
-                    <img src="images/event-6.jpg" alt="Ray Deng networking with international entrepreneurs">
-                    <div class="overlay"></div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox(6)">
-                    <img src="images/event-7.jpg" alt="Ray Deng at cross-border trade summit">
-                    <div class="overlay"></div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox(7)">
-                    <img src="images/event-8.jpg" alt="Ray Deng discussing workforce mobility solutions">
-                    <div class="overlay"></div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox(8)">
-                    <img src="images/event-9.jpg" alt="Ray Deng at property technology conference">
-                    <div class="overlay"></div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox(9)">
-                    <img src="images/event-10.jpg" alt="Ray Deng with team at business milestone celebration">
-                    <div class="overlay"></div>
-                </div>
-                <div class="gallery-item" onclick="openLightbox(10)">
-                    <img src="images/event-11.jpg" alt="Ray Deng at China-New Zealand business forum">
-                    <div class="overlay"></div>
+                    <div class="gallery-image-container">
+                        <img src="images/event-6.jpg" alt="Networking with entrepreneurs">
+                        <div class="gallery-overlay">
+                            <span class="gallery-caption">Networking</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1689,8 +1552,8 @@
     <section class="contact" id="contact">
         <div class="container">
             <h2>
-                <span data-lang="en">Let's Build Together</span>
-                <span data-lang="zh">一起构建</span>
+                <span data-lang="en">Connect With Me</span>
+                <span data-lang="zh">联系我</span>
             </h2>
             <p class="contact-intro">
                 <span data-lang="en">Open to partnerships in AI, migration, property, and cross-border ventures.</span>
@@ -1718,10 +1581,20 @@
                     <span data-lang="en">Auckland, New Zealand</span>
                     <span data-lang="zh">新西兰奥克兰</span>
                 </div>
-                <a href="mailto:bigbigraydeng@gmail.com" class="btn btn-primary">
-                    <span data-lang="en">Start a Conversation</span>
-                    <span data-lang="zh">开始对话</span>
-                </a>
+                <div class="qr-codes">
+                    <div class="qr-code-item">
+                        <div class="qr-code-placeholder">
+                            <span data-lang="en">WeChat QR</span>
+                            <span data-lang="zh">微信二维码</span>
+                        </div>
+                    </div>
+                    <div class="qr-code-item">
+                        <div class="qr-code-placeholder">
+                            <span data-lang="en">Douyin QR</span>
+                            <span data-lang="zh">抖音二维码</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

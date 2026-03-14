@@ -190,11 +190,57 @@
             line-height: 1.75;
         }
         .about-content {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
         }
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .about-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 40px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .about-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212,165,116,0.5), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .about-card:hover {
+            background: rgba(255, 255, 255, 0.03);
+            border-color: rgba(212,165,116,0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(212,165,116,0.1);
+        }
+        .about-card:hover::before {
+            opacity: 1;
+        }
+        .about-card-icon {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .about-card h3 {
+            font-size: 1.3rem;
+            color: rgba(248, 250, 252, 0.95);
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
         .about-section {
-            margin-bottom: 60px;
+            margin-bottom: 40px;
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: 16px;
@@ -399,53 +445,55 @@
         <section class="section">
             <div class="container">
                 <h2>
-                    <span data-lang="en">Background</span>
-                    <span data-lang="zh">背景</span>
+                    <span data-lang="en">My Journey</span>
+                    <span data-lang="zh">我的历程</span>
                 </h2>
                 <div class="about-content">
-                    <div class="about-section">
-                        <h3>
-                            <span data-lang="en">What I Do</span>
-                            <span data-lang="zh">我的工作</span>
-                        </h3>
-                        <p>
-                            <span data-lang="en">I work on building AI-driven ventures that address real market needs across migration, property technology, and cross-border business. My focus is on creating practical solutions that connect Chinese and Australasian markets.</span>
-                            <span data-lang="zh">我致力于构建满足移民、房产技术和跨境商业领域真实市场需求的 AI 驱动项目。我的重点是创建连接中国与澳新市场的实用解决方案。</span>
-                        </p>
-                    </div>
-                    <div class="about-section">
-                        <h3>
-                            <span data-lang="en">Experience</span>
-                            <span data-lang="zh">经验</span>
-                        </h3>
-                        <p>
-                            <span data-lang="en">Over the years, I've built and operated several ventures across China, New Zealand, and Australia. This includes platforms for workforce mobility, property investment technology, and cross-border business automation.</span>
-                            <span data-lang="zh">多年来，我在中国、新西兰和澳大利亚建立并运营了多个项目。这包括劳动力流动平台、房产投资技术和跨境商业自动化。</span>
-                        </p>
-                    </div>
-                    <div class="about-section">
-                        <h3>
-                            <span data-lang="en">Focus Areas</span>
-                            <span data-lang="zh">专注领域</span>
-                        </h3>
-                        <ul>
-                            <li>
-                                <span data-lang="en">AI strategy and implementation for business operations</span>
-                                <span data-lang="zh">商业运营的 AI 战略与实施</span>
-                            </li>
-                            <li>
-                                <span data-lang="en">Cross-border business development between China and Australasia</span>
-                                <span data-lang="zh">中国与澳新之间的跨境商业发展</span>
-                            </li>
-                            <li>
-                                <span data-lang="en">Property technology and investment platforms</span>
-                                <span data-lang="zh">房产技术与投资平台</span>
-                            </li>
-                            <li>
-                                <span data-lang="en">Workforce mobility and migration solutions</span>
-                                <span data-lang="zh">劳动力流动与移民解决方案</span>
-                            </li>
-                        </ul>
+                    <div class="about-grid">
+                        <div class="about-card">
+                            <div class="about-card-icon">🎯</div>
+                            <h3>
+                                <span data-lang="en">What I Do</span>
+                                <span data-lang="zh">我的工作</span>
+                            </h3>
+                            <p>
+                                <span data-lang="en">I work on building AI-driven ventures that address real market needs across migration, property technology, and cross-border business. My focus is on creating practical solutions that connect Chinese and Australasian markets.</span>
+                                <span data-lang="zh">我致力于构建满足移民、房产技术和跨境商业领域真实市场需求的 AI 驱动项目。我的重点是创建连接中国与澳新市场的实用解决方案。</span>
+                            </p>
+                        </div>
+                        <div class="about-card">
+                            <div class="about-card-icon">📊</div>
+                            <h3>
+                                <span data-lang="en">Experience</span>
+                                <span data-lang="zh">经验</span>
+                            </h3>
+                            <p>
+                                <span data-lang="en">Over the years, I've built and operated several ventures across China, New Zealand, and Australia. This includes platforms for workforce mobility, property investment technology, and cross-border business automation.</span>
+                                <span data-lang="zh">多年来，我在中国、新西兰和澳大利亚建立并运营了多个项目。这包括劳动力流动平台、房产投资技术和跨境商业自动化。</span>
+                            </p>
+                        </div>
+                        <div class="about-card">
+                            <div class="about-card-icon">🔍</div>
+                            <h3>
+                                <span data-lang="en">Focus Areas</span>
+                                <span data-lang="zh">专注领域</span>
+                            </h3>
+                            <p>
+                                <span data-lang="en">AI strategy implementation, cross-border business development, property technology platforms, and workforce mobility solutions.</span>
+                                <span data-lang="zh">AI 战略实施、跨境商业发展、房产技术平台和劳动力流动解决方案。</span>
+                            </p>
+                        </div>
+                        <div class="about-card">
+                            <div class="about-card-icon">🌐</div>
+                            <h3>
+                                <span data-lang="en">Global Perspective</span>
+                                <span data-lang="zh">全球视野</span>
+                            </h3>
+                            <p>
+                                <span data-lang="en">With deep roots in both Eastern and Western markets, I bring a unique perspective to building ventures that bridge cultural and business differences.</span>
+                                <span data-lang="zh">凭借在东西方市场的深厚根基，我为构建连接文化和商业差异的项目带来独特视角。</span>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
