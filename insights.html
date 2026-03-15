@@ -73,15 +73,16 @@
             align-items: center;
             text-align: center;
             padding: 60px 20px;
-            background: 
-                radial-gradient(circle at 20% 20%, rgba(212,165,116,0.08), transparent 40%),
-                radial-gradient(circle at 80% 60%, rgba(212,165,116,0.06), transparent 40%),
-                linear-gradient(180deg, #0b0b0d 0%, #0f0f11 100%);
-            background-size: 100% 100%;
+            background:
+                linear-gradient(180deg, rgba(11, 11, 13, 0.35) 0%, rgba(11, 11, 13, 0.5) 50%, rgba(15, 15, 17, 0.8) 100%),
+                url('assets/images/hero-insights.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             position: relative;
             overflow: hidden;
         }
-        
+
         .hero::before {
             content: '';
             position: absolute;
@@ -89,14 +90,14 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: 
+            background-image:
                 linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
             background-size: 60px 60px;
             pointer-events: none;
-            opacity: 0.5;
+            opacity: 0.3;
         }
-        
+
         .hero::after {
             content: '';
             position: absolute;
@@ -105,13 +106,14 @@
             width: 800px;
             height: 800px;
             transform: translate(-50%, -50%);
-            background: radial-gradient(circle, rgba(212,165,116,0.03) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(212,165,116,0.06) 0%, transparent 70%);
             pointer-events: none;
         }
-        
+
         .hero .container {
             position: relative;
             z-index: 1;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
         }
         .hero h1 {
             font-size: 2.5rem;
@@ -403,16 +405,13 @@
             color: #64748b;
         }
         .lang-switch {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1001;
             display: flex;
-            gap: 10px;
-            background: rgba(15, 23, 42, 0.9);
-            border: 1px solid rgba(59, 130, 246, 0.3);
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(212,165,116,0.2);
             border-radius: 8px;
-            padding: 5px;
+            padding: 3px;
+            margin-left: 20px;
         }
         .lang-switch button {
             background: transparent;
@@ -446,9 +445,6 @@
         }
         
         @media (max-width: 768px) {
-            .lang-switch {
-                top: 75px;
-            }
             .nav-menu {
                 display: none;
                 position: absolute;
@@ -500,13 +496,12 @@
                 <li><a href="insights.html" class="active"><span data-lang="en">Insights</span><span data-lang="zh">洞察</span></a></li>
                 <li><a href="index.html#contact"><span data-lang="en">Contact</span><span data-lang="zh">联系</span></a></li>
             </ul>
+            <div class="lang-switch">
+                <button onclick="setLanguage('en')" class="active" id="btn-en">EN</button>
+                <button onclick="setLanguage('zh')" id="btn-zh">中文</button>
+            </div>
         </div>
     </nav>
-    
-    <div class="lang-switch">
-        <button onclick="setLanguage('en')" class="active" id="btn-en">EN</button>
-        <button onclick="setLanguage('zh')" id="btn-zh">中文</button>
-    </div>
     
     <main>
         <section class="hero">
@@ -607,54 +602,60 @@
                             <span data-lang="zh">创业构建</span>
                         </span>
                         <h3>
-                            <span data-lang="en">Founder Thinking Across Markets</span>
-                            <span data-lang="zh">跨市场的创始人思维</span>
+                            <a href="insight-founder-thinking.html">
+                                <span data-lang="en">Founder Thinking Across Markets</span>
+                                <span data-lang="zh">跨市场的创始人思维</span>
+                            </a>
                         </h3>
                         <p>
                             <span data-lang="en">How to think strategically when building ventures that span multiple countries and cultures.</span>
                             <span data-lang="zh">在构建跨越多个国家和文化的创业项目时如何进行战略思考。</span>
                         </p>
-                        <span class="status">
-                            <span data-lang="en">Coming Soon</span>
-                            <span data-lang="zh">即将推出</span>
+                        <span class="status read">
+                            <span data-lang="en">Read Article</span>
+                            <span data-lang="zh">阅读文章</span>
                         </span>
                     </div>
-                    
+
                     <div class="insight-card">
                         <span class="tag">
                             <span data-lang="en">Strategy</span>
                             <span data-lang="zh">战略</span>
                         </span>
                         <h3>
-                            <span data-lang="en">Why Execution Matters</span>
-                            <span data-lang="zh">为什么执行至关重要</span>
+                            <a href="insight-why-execution-matters.html">
+                                <span data-lang="en">Why Execution Matters</span>
+                                <span data-lang="zh">为什么执行至关重要</span>
+                            </a>
                         </h3>
                         <p>
                             <span data-lang="en">The gap between ideas and outcomes, and why execution is the ultimate competitive advantage.</span>
                             <span data-lang="zh">想法与结果之间的差距，以及为什么执行是最终的竞争优势。</span>
                         </p>
-                        <span class="status">
-                            <span data-lang="en">Coming Soon</span>
-                            <span data-lang="zh">即将推出</span>
+                        <span class="status read">
+                            <span data-lang="en">Read Article</span>
+                            <span data-lang="zh">阅读文章</span>
                         </span>
                     </div>
-                    
+
                     <div class="insight-card">
                         <span class="tag">
                             <span data-lang="en">Opportunity</span>
                             <span data-lang="zh">机会</span>
                         </span>
                         <h3>
-                            <span data-lang="en">Cross-Border Opportunity Design</span>
-                            <span data-lang="zh">跨境机会设计</span>
+                            <a href="insight-cross-border-opportunity.html">
+                                <span data-lang="en">Cross-Border Opportunity Design</span>
+                                <span data-lang="zh">跨境机会设计</span>
+                            </a>
                         </h3>
                         <p>
                             <span data-lang="en">A framework for identifying and capturing opportunities at the intersection of markets.</span>
                             <span data-lang="zh">在市场交汇点识别和捕捉机会的框架。</span>
                         </p>
-                        <span class="status">
-                            <span data-lang="en">Coming Soon</span>
-                            <span data-lang="zh">即将推出</span>
+                        <span class="status read">
+                            <span data-lang="en">Read Article</span>
+                            <span data-lang="zh">阅读文章</span>
                         </span>
                     </div>
                 </div>
