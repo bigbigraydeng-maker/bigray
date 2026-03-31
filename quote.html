@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>新西兰商务考察 | 定制报价</title>
     <meta name="description" content="新西兰商务考察定制报价系统 — 为中国企业家量身打造的高端商务考察服务">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -675,8 +677,8 @@ function showQuoteCard() {
     modal.innerHTML = `
     <div style="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.8);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;overflow:auto;">
         <div style="position:relative;max-width:520px;width:100%;">
-            <div style="text-align:center;margin-bottom:16px;display:flex;gap:10px;justify-content:center;">
-                <button onclick="downloadCard()" style="padding:10px 28px;background:linear-gradient(135deg,#d4a574,#c49060);color:#0b0b0d;font-weight:700;border:none;border-radius:8px;cursor:pointer;font-size:0.95rem;">保存图片</button>
+            <div id="save-hint" style="text-align:center;margin-bottom:10px;font-size:13px;color:#d4a574;font-weight:600;">正在生成报价图片…</div>
+            <div id="card-buttons" style="text-align:center;margin-bottom:16px;display:flex;gap:10px;justify-content:center;">
                 <button onclick="document.getElementById('quote-modal').remove()" style="padding:10px 28px;background:rgba(255,255,255,0.1);color:#ccc;font-weight:600;border:1px solid rgba(255,255,255,0.2);border-radius:8px;cursor:pointer;font-size:0.95rem;">关闭</button>
             </div>
             <div id="quote-card" style="background:linear-gradient(160deg,#0e0e12 0%,#161620 50%,#0e0e12 100%);border-radius:20px;padding:36px 32px;border:1px solid rgba(212,165,116,0.25);box-shadow:0 20px 60px rgba(0,0,0,0.5);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Helvetica','Arial',sans-serif;">
@@ -774,22 +776,53 @@ function showQuoteCard() {
         colorLight: '#0e0e12',
         correctLevel: QRCode.CorrectLevel.M
     });
+
+    // Wait for QR code to render, then auto-generate image
+    setTimeout(renderCardImage, 500);
 }
 
-function downloadCard() {
+function renderCardImage() {
     const card = document.getElementById('quote-card');
+    const buttons = document.getElementById('card-buttons');
+    const hint = document.getElementById('save-hint');
+    if (hint) hint.textContent = '正在生成图片…';
+
     html2canvas(card, {
         backgroundColor: '#0e0e12',
         scale: 2,
         useCORS: true,
         logging: false
     }).then(canvas => {
-        const link = document.createElement('a');
-        const today = new Date();
-        const fname = 'NZ商务考察报价_' + today.getFullYear() + String(today.getMonth()+1).padStart(2,'0') + String(today.getDate()).padStart(2,'0') + '.png';
-        link.download = fname;
-        link.href = canvas.toDataURL('image/png');
-        link.click();
+        // Hide the card DOM, show the image instead
+        card.style.display = 'none';
+
+        const imgUrl = canvas.toDataURL('image/png');
+        const img = document.createElement('img');
+        img.src = imgUrl;
+        img.style.cssText = 'width:100%;border-radius:20px;display:block;';
+        img.id = 'quote-card-img';
+        card.parentNode.insertBefore(img, card.nextSibling);
+
+        // Update hint
+        if (hint) hint.textContent = '长按上方图片即可保存到手机相册';
+
+        // Also try download for desktop browsers
+        const isWeChat = /MicroMessenger/i.test(navigator.userAgent);
+        if (!isWeChat) {
+            const dlBtn = document.createElement('button');
+            dlBtn.textContent = '下载图片';
+            dlBtn.style.cssText = 'padding:10px 28px;background:linear-gradient(135deg,#d4a574,#c49060);color:#0b0b0d;font-weight:700;border:none;border-radius:8px;cursor:pointer;font-size:0.95rem;';
+            dlBtn.onclick = function() {
+                const link = document.createElement('a');
+                const today = new Date();
+                link.download = 'NZ商务考察报价_' + today.getFullYear() + String(today.getMonth()+1).padStart(2,'0') + String(today.getDate()).padStart(2,'0') + '.png';
+                link.href = imgUrl;
+                link.click();
+            };
+            buttons.insertBefore(dlBtn, buttons.firstChild);
+        }
+    }).catch(function() {
+        if (hint) hint.textContent = '图片生成失败，请截屏保存';
     });
 }
 
@@ -797,9 +830,6 @@ function downloadCard() {
 calc();
 </script>
 
-<!-- External libs for image generation -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <!-- Print styles -->
 <style>
