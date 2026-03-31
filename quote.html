@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新西兰商务考察 | 定制报价</title>
+    <meta name="description" content="新西兰商务考察定制报价系统 — 为中国企业家量身打造的高端商务考察服务">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0b0b0d 0%, #111113 100%);
+            color: #e6e6e6;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* ── Nav ── */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(11,11,13,0.92);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(212,165,116,0.15);
+            padding: 16px 0;
+        }
+        .nav .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+        .nav-brand { font-size: 1.2rem; font-weight: 700; background: linear-gradient(135deg, #d4a574, #f5cfa0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
+        .nav-back { color: #d4a574; text-decoration: none; font-size: 0.9rem; border: 1px solid rgba(212,165,116,0.3); padding: 6px 16px; border-radius: 20px; transition: all 0.3s; }
+        .nav-back:hover { background: rgba(212,165,116,0.15); }
+
+        /* ── Layout ── */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .page-header { text-align: center; padding: 120px 20px 50px; }
+        .page-header h1 { font-size: 2.8rem; font-weight: 700; background: linear-gradient(135deg, #d4a574, #f5cfa0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 12px; }
+        .page-header p { color: #999; font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+        .layout { display: grid; grid-template-columns: 1fr 380px; gap: 30px; padding-bottom: 80px; align-items: start; }
+
+        /* ── Section ── */
+        .section { margin-bottom: 30px; }
+        .section-title {
+            font-size: 1.1rem; font-weight: 600; color: #d4a574; margin-bottom: 16px;
+            padding-bottom: 10px; border-bottom: 1px solid rgba(212,165,116,0.2);
+            display: flex; align-items: center; gap: 10px;
+        }
+        .section-icon { font-size: 1.3rem; }
+
+        /* ── Cards ── */
+        .item-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 18px 20px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            user-select: none;
+        }
+        .item-card:hover { background: rgba(212,165,116,0.06); border-color: rgba(212,165,116,0.25); }
+        .item-card.selected { background: rgba(212,165,116,0.1); border-color: rgba(212,165,116,0.4); }
+
+        .item-check {
+            width: 22px; height: 22px; border-radius: 6px; flex-shrink: 0;
+            border: 2px solid rgba(255,255,255,0.2);
+            display: flex; align-items: center; justify-content: center;
+            transition: all 0.3s; font-size: 13px; color: transparent;
+        }
+        .item-card.selected .item-check { background: #d4a574; border-color: #d4a574; color: #0b0b0d; }
+
+        .item-info { flex: 1; }
+        .item-name { font-weight: 600; font-size: 0.95rem; margin-bottom: 2px; }
+        .item-desc { font-size: 0.8rem; color: #888; }
+
+        .item-price { font-weight: 700; font-size: 1rem; color: #f5cfa0; white-space: nowrap; }
+        .item-price-unit { font-size: 0.75rem; color: #888; font-weight: 400; }
+
+        /* ── Number input ── */
+        .num-control {
+            display: flex; align-items: center; gap: 8px; margin-top: 8px;
+        }
+        .num-btn {
+            width: 28px; height: 28px; border-radius: 6px; border: 1px solid rgba(212,165,116,0.3);
+            background: rgba(212,165,116,0.1); color: #d4a574; font-size: 1rem;
+            cursor: pointer; display: flex; align-items: center; justify-content: center;
+            transition: all 0.2s;
+        }
+        .num-btn:hover { background: rgba(212,165,116,0.25); }
+        .num-val { font-size: 0.9rem; font-weight: 600; min-width: 20px; text-align: center; }
+        .num-label { font-size: 0.75rem; color: #888; }
+
+        /* ── Sidebar ── */
+        .sidebar { position: sticky; top: 100px; }
+        .quote-box {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(212,165,116,0.2);
+            border-radius: 16px;
+            padding: 28px 24px;
+        }
+        .quote-box h3 { font-size: 1.1rem; color: #d4a574; margin-bottom: 20px; }
+
+        .quote-line {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 8px 0; font-size: 0.85rem; color: #ccc;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+        .quote-line:last-of-type { border-bottom: none; }
+
+        .quote-total {
+            margin-top: 20px; padding-top: 16px;
+            border-top: 2px solid rgba(212,165,116,0.3);
+            display: flex; justify-content: space-between; align-items: baseline;
+        }
+        .quote-total-label { font-size: 1rem; font-weight: 600; color: #e6e6e6; }
+        .quote-total-price { font-size: 1.6rem; font-weight: 700; color: #f5cfa0; }
+        .quote-total-cny { font-size: 0.85rem; color: #999; text-align: right; margin-top: 4px; }
+
+        .quote-persons {
+            margin-top: 20px; padding: 16px; background: rgba(212,165,116,0.06);
+            border-radius: 10px; display: flex; flex-direction: column; gap: 10px;
+        }
+        .person-row { display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; }
+        .person-label { color: #ccc; }
+
+        .btn-submit {
+            width: 100%; margin-top: 20px; padding: 14px;
+            background: linear-gradient(135deg, #d4a574, #c49060);
+            color: #0b0b0d; font-weight: 700; font-size: 1rem;
+            border: none; border-radius: 10px; cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(212,165,116,0.3); }
+
+        .quote-note { margin-top: 14px; font-size: 0.75rem; color: #666; text-align: center; line-height: 1.5; }
+
+        /* ── Per-person badge ── */
+        .per-person-cost {
+            margin-top: 10px; padding: 12px 16px;
+            background: rgba(100,200,120,0.08); border: 1px solid rgba(100,200,120,0.2);
+            border-radius: 10px; text-align: center;
+        }
+        .per-person-cost .label { font-size: 0.8rem; color: #8bca8b; }
+        .per-person-cost .value { font-size: 1.2rem; font-weight: 700; color: #8bca8b; }
+
+        /* ── Responsive ── */
+        @media (max-width: 860px) {
+            .layout { grid-template-columns: 1fr; }
+            .sidebar { position: relative; top: 0; }
+            .page-header h1 { font-size: 2rem; }
+        }
+
+        /* ── Day selector ── */
+        .day-selector {
+            display: flex; align-items: center; gap: 12px;
+            margin-bottom: 20px; padding: 14px 18px;
+            background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+        }
+        .day-selector label { font-size: 0.9rem; color: #ccc; }
+        .day-input {
+            width: 60px; padding: 6px 10px; border-radius: 8px;
+            background: rgba(255,255,255,0.06); border: 1px solid rgba(212,165,116,0.3);
+            color: #f5cfa0; font-size: 1rem; font-weight: 600; text-align: center;
+        }
+        .day-input:focus { outline: none; border-color: #d4a574; }
+        .day-hint { font-size: 0.75rem; color: #666; }
+
+        /* ── Toggle ── */
+        .toggle-row {
+            display: flex; align-items: center; gap: 12px; padding: 12px 18px;
+            background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px; margin-bottom: 10px; cursor: pointer; transition: all 0.3s;
+        }
+        .toggle-row:hover { border-color: rgba(212,165,116,0.25); }
+        .toggle-row.active { background: rgba(212,165,116,0.08); border-color: rgba(212,165,116,0.3); }
+        .toggle-switch {
+            width: 44px; height: 24px; border-radius: 12px; background: rgba(255,255,255,0.15);
+            position: relative; transition: all 0.3s; flex-shrink: 0;
+        }
+        .toggle-switch::after {
+            content: ''; position: absolute; top: 2px; left: 2px;
+            width: 20px; height: 20px; border-radius: 50%; background: #666;
+            transition: all 0.3s;
+        }
+        .toggle-row.active .toggle-switch { background: rgba(212,165,116,0.4); }
+        .toggle-row.active .toggle-switch::after { left: 22px; background: #d4a574; }
+        .toggle-text { font-size: 0.9rem; color: #ccc; }
+        .toggle-text span { font-size: 0.75rem; color: #888; display: block; }
+
+        /* ── Hotel select ── */
+        .hotel-options { display: flex; gap: 10px; margin-bottom: 20px; }
+        .hotel-opt {
+            flex: 1; padding: 14px; border-radius: 12px; text-align: center; cursor: pointer;
+            background: rgba(255,255,255,0.03); border: 2px solid rgba(255,255,255,0.08);
+            transition: all 0.3s;
+        }
+        .hotel-opt:hover { border-color: rgba(212,165,116,0.25); }
+        .hotel-opt.selected { border-color: #d4a574; background: rgba(212,165,116,0.1); }
+        .hotel-opt .stars { font-size: 0.8rem; color: #d4a574; margin-bottom: 4px; }
+        .hotel-opt .h-name { font-size: 0.85rem; font-weight: 600; margin-bottom: 2px; }
+        .hotel-opt .h-price { font-size: 0.75rem; color: #888; }
+        .hotel-opt.selected .h-price { color: #f5cfa0; }
+    </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav">
+    <div class="container">
+        <a href="index.html" class="nav-brand">Ray Deng</a>
+        <a href="index.html" class="nav-back">← 返回首页</a>
+    </div>
+</nav>
+
+<!-- Header -->
+<header class="page-header">
+    <h1>新西兰商务考察</h1>
+    <p>为中国企业家量身定制 · 自由选择服务模块 · 实时计算费用</p>
+</header>
+
+<div class="container">
+<div class="layout">
+
+<!-- ═══════ LEFT: Service Modules ═══════ -->
+<div class="modules">
+
+    <!-- 基础设置 -->
+    <div class="section">
+        <div class="section-title"><span class="section-icon">⚙</span> 基础设置</div>
+
+        <div class="day-selector">
+            <label>考察天数</label>
+            <input type="number" class="day-input" id="days" value="8" min="3" max="21" onchange="calc()">
+            <span class="day-hint">天（建议 7-10 天）</span>
+        </div>
+
+        <div class="toggle-row" id="toggle-family" onclick="toggleFamily()">
+            <div class="toggle-switch"></div>
+            <div class="toggle-text">
+                携带家属（妻子 + 1子女）
+                <span>住宿升级家庭房 · 家属白天活动安排 · 旅游餐饮按3人计</span>
+            </div>
+        </div>
+
+        <div class="hotel-options">
+            <div class="hotel-opt selected" data-hotel="4" onclick="selectHotel(this)">
+                <div class="stars">★★★★</div>
+                <div class="h-name">商务四星</div>
+                <div class="h-price">$250/晚 · 家庭$380</div>
+            </div>
+            <div class="hotel-opt" data-hotel="5" onclick="selectHotel(this)">
+                <div class="stars">★★★★★</div>
+                <div class="h-name">豪华五星</div>
+                <div class="h-price">$450/晚 · 家庭$620</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 交通 -->
+    <div class="section">
+        <div class="section-title"><span class="section-icon">🚘</span> 交通服务</div>
+        <div class="item-card selected" data-id="car" data-price="300" data-type="daily" onclick="toggleItem(this)">
+            <div class="item-check">✓</div>
+            <div class="item-info">
+                <div class="item-name">全程专车（奔驰GLS400 / 埃尔法7座）</div>
+                <div class="item-desc">含中文司机 · 机场接送 · 全程随行</div>
+            </div>
+            <div class="item-price">$300<span class="item-price-unit">/天</span></div>
+        </div>
+    </div>
+
+    <!-- 商务核心 -->
+    <div class="section">
+        <div class="section-title"><span class="section-icon">💼</span> 商务核心服务</div>
+
+        <div class="item-card selected" data-id="solar" data-price="500" data-type="fixed" onclick="toggleItem(this)">
+            <div class="item-check">✓</div>
+            <div class="item-info">
+                <div class="item-name">行业考察 — 太阳能/新能源</div>
+                <div class="item-desc">光伏企业参访 · 政府绿能政策 · 项目合作洽谈</div>
+            </div>
+            <div class="item-price">$500</div>
+        </div>
+
+        <div class="item-card selected" data-id="school-visit" data-price="500" data-type="fixed" onclick="toggleItem(this)">
+            <div class="item-check">✓</div>
+            <div class="item-info">
+                <div class="item-name">行业考察 — 学校/教育</div>
+                <div class="item-desc">私立+公立学校 · 大学参访 · 留学/办学合作</div>
+            </div>
+            <div class="item-price">$500</div>
+        </div>
+
+        <div class="item-card selected" data-id="ecommerce" data-price="500" data-type="fixed" onclick="toggleItem(this)">
+            <div class="item-check">✓</div>
+            <div class="item-info">
+                <div class="item-name">行业考察 — 跨境电商</div>
+                <div class="item-desc">电商平台对接 · 物流仓储 · 合规与税务咨询</div>
+            </div>
+            <div class="item-price">$500</div>
+        </div>
+
+        <div class="item-card" data-id="custom-industry" data-price="600" data-type="fixed" onclick="toggleItem(this)">
+            <div class="item-check">✓</div>
+            <div class="item-info">
+                <div class="item-name">定制行业考察</div>
+                <div class="item-desc">农牧业 / 房地产 / 旅游业 / 食品加工 — 按需定制</div>
+            </div>
+            <div class="item-price">$600</div>
+        </div>
+
+        <div class="item-card selected" data-id="finance" data-price="800" data-type="fixed" onclick="toggleItem(this)">
+            <div class="item-check">✓</div>
+            <div class="item-info">
+                <div class="item-name">投资·银行·外汇 专题讲座</div>
+                <div class="item-desc">新西兰投资环境 · 开户指导 · 外汇管理策略</div>
+            </div>
+            <div class="item-price">$800</div>
+        </div>
+    </div>
+
+    <!-- 高端人脉 -->
+    <div class="section">
+        <div class="section-title"><span class="section-icon">🤝</span> 高端人脉 & 政商资源</div>
+
+        <div class="item-card selected" data-id="minister-dinner" data-price="1000" data-type="fixed" onclick="toggleItem(this)">
+            <div class="item-check">✓</div>
+            <div class="item-info">
+                <div class="item-name">部长级晚宴（含1张门票）</div>
+                <div class="item-desc">政界高层交流 · 拍照留念 · 名片交换</div>
+            </div>
+            <div class="item-price">$1,000</div>
+        </div>
+
+        <div class="item-card" data-id="minister-extra" data-price="800" data-type="fixed" onclick="toggleItem(this)">
+            <div class="item-check">✓</div>
+            <div class="item-info">
+                <div class="item-name">部长晚宴加座（配偶同行）</div>
+                <div class="item-desc">为携带家属的客户增加1个席位</div>
+            </div>
+            <div class="item-price">+$800</div>
+        </div>
+
+        <div class="item-card selected" data-id="networking" data-price="600" data-type="fixed" onclick="toggleItem(this)">
+            <div class="item-check">✓</div>
+            <div class="item-info">
+                <div class="item-name">政商人脉交流晚宴</div>
+                <div class="item-desc">本地华商圈 · 行业协会代表 · 精准社交</div>
+            </div>
+            <div class="item-price">$600</div>
+        </div>
+
+        <div class="item-card selected" data-id="chamber" data-price="500" data-type="fixed" onclick="toggleItem(this)">
+            <div class="item-check">✓</div>
+            <div class="item-info">
+                <div class="item-name">地方商会申请协助</div>
+                <div class="item-desc">材料准备 · 申请提交 · 至少1家地方级商会</div>
+            </div>
+            <div class="item-price">$500</div>
+        </div>
+    </div>
+
+    <!-- 教育参观 -->
+    <div class="section">
+        <div class="section-title"><span class="section-icon">🎓</span> 学校参观</div>
+
+        <div class="item-card selected" data-id="schools" data-price="600" data-type="fixed" onclick="toggleItem(this)">
+            <div class="item-check">✓</div>
+            <div class="item-info">
+                <div class="item-name">学校参观（小学 + 中学 + 大学）</div>
+                <div class="item-desc">校方对接 · 全程陪同讲解 · 适合有子女家庭</div>
+            </div>
+            <div class="item-price">$600</div>
+        </div>
+    </div>
+
+    <!-- 签证 -->
+    <div class="section">
+        <div class="section-title"><span class="section-icon">📋</span> 签证与咨询</div>
+
+        <div class="item-card selected" data-id="visa" data-price="300" data-type="fixed" onclick="toggleItem(this)">
+            <div class="item-check">✓</div>
+            <div class="item-info">
+                <div class="item-name">签证咨询服务</div>
+                <div class="item-desc">专业持牌移民顾问 · 商务签/访问签指导</div>
+            </div>
+            <div class="item-price">$300</div>
+        </div>
+
+        <div class="item-card" data-id="visa-family" data-price="200" data-type="fixed" onclick="toggleItem(this)">
+            <div class="item-check">✓</div>
+            <div class="item-info">
+                <div class="item-name">家属签证咨询（+2人）</div>
+                <div class="item-desc">配偶及子女签证材料指导</div>
+            </div>
+            <div class="item-price">+$200</div>
+        </div>
+    </div>
+
+    <!-- 旅游 -->
+    <div class="section">
+        <div class="section-title"><span class="section-icon">🏔</span> 奥克兰周边旅游（3天）</div>
+
+        <div class="item-card selected" data-id="tour" data-price="500" data-type="fixed" onclick="toggleItem(this)">
+            <div class="item-check">✓</div>
+            <div class="item-info">
+                <div class="item-name">3天旅游套餐</div>
+                <div class="item-desc">Hobbiton / Waiheke岛 / Piha黑沙滩 / 酒庄品鉴</div>
+            </div>
+            <div class="item-price">$500</div>
+        </div>
+
+        <div class="item-card" data-id="tour-rotorua" data-price="400" data-type="fixed" onclick="toggleItem(this)">
+            <div class="item-check">✓</div>
+            <div class="item-info">
+                <div class="item-name">加选：罗托鲁瓦地热温泉（+1天）</div>
+                <div class="item-desc">毛利文化村 · 地热公园 · 温泉体验</div>
+            </div>
+            <div class="item-price">+$400</div>
+        </div>
+    </div>
+
+    <!-- 陪同 -->
+    <div class="section">
+        <div class="section-title"><span class="section-icon">🗣</span> 陪同与翻译</div>
+
+        <div class="item-card selected" data-id="interpreter" data-price="280" data-type="daily" onclick="toggleItem(this)">
+            <div class="item-check">✓</div>
+            <div class="item-info">
+                <div class="item-name">全程中文商务陪同/翻译</div>
+                <div class="item-desc">商务场合专业翻译 · 生活陪同 · 协调安排</div>
+            </div>
+            <div class="item-price">$280<span class="item-price-unit">/天</span></div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ═══════ RIGHT: Quote Summary ═══════ -->
+<div class="sidebar">
+    <div class="quote-box">
+        <h3>费用清单</h3>
+
+        <div class="quote-persons">
+            <div class="person-row">
+                <span class="person-label">出行人数</span>
+                <span id="person-count" style="color:#f5cfa0;font-weight:600;">1人</span>
+            </div>
+            <div class="person-row">
+                <span class="person-label">考察天数</span>
+                <span id="day-count" style="color:#f5cfa0;font-weight:600;">8天7晚</span>
+            </div>
+            <div class="person-row">
+                <span class="person-label">酒店档次</span>
+                <span id="hotel-level" style="color:#f5cfa0;font-weight:600;">四星商务</span>
+            </div>
+        </div>
+
+        <div id="quote-lines" style="margin-top:16px;"></div>
+
+        <div class="quote-total">
+            <span class="quote-total-label">总计</span>
+            <div style="text-align:right;">
+                <div class="quote-total-price" id="total-nzd">$0</div>
+                <div class="quote-total-cny" id="total-cny">≈ ¥0</div>
+            </div>
+        </div>
+
+        <div class="per-person-cost" id="per-person-box" style="display:none;">
+            <div class="label">人均费用</div>
+            <div class="value" id="per-person-price">$0</div>
+        </div>
+
+        <button class="btn-submit" onclick="generatePDF()">生成报价单 PDF</button>
+        <div class="quote-note">* 费用为 NZD（新西兰元），按 1 NZD ≈ ¥4.3 估算<br>* 不含国际机票 · 最终价格以合同为准</div>
+    </div>
+</div>
+
+</div>
+</div>
+
+<script>
+// ── State ──
+let familyMode = false;
+let hotelStar = 4;
+const NZD_TO_CNY = 4.3;
+
+// Hotel prices per night
+const hotelPrices = {
+    4: { single: 250, family: 380 },
+    5: { single: 450, family: 620 }
+};
+
+// ── Toggle family ──
+function toggleFamily() {
+    const el = document.getElementById('toggle-family');
+    familyMode = !familyMode;
+    el.classList.toggle('active', familyMode);
+    calc();
+}
+
+// ── Select hotel ──
+function selectHotel(el) {
+    document.querySelectorAll('.hotel-opt').forEach(o => o.classList.remove('selected'));
+    el.classList.add('selected');
+    hotelStar = parseInt(el.dataset.hotel);
+    calc();
+}
+
+// ── Toggle service item ──
+function toggleItem(card) {
+    card.classList.toggle('selected');
+    calc();
+}
+
+// ── Calculate ──
+function calc() {
+    const days = parseInt(document.getElementById('days').value) || 8;
+    const nights = days - 1;
+    const persons = familyMode ? 3 : 1;
+
+    const lines = [];
+    let total = 0;
+
+    // 1. Transport
+    const carCard = document.querySelector('[data-id="car"]');
+    if (carCard && carCard.classList.contains('selected')) {
+        const cost = 300 * days;
+        lines.push({ name: '专车 (' + days + '天)', price: cost });
+        total += cost;
+    }
+
+    // 2. Hotel
+    const nightRate = familyMode ? hotelPrices[hotelStar].family : hotelPrices[hotelStar].single;
+    const hotelCost = nightRate * nights;
+    const hotelLabel = (hotelStar === 5 ? '五星' : '四星') + (familyMode ? '家庭房' : '标间') + ' (' + nights + '晚)';
+    lines.push({ name: hotelLabel, price: hotelCost });
+    total += hotelCost;
+
+    // 3. Meals
+    const mealPerDay = familyMode ? 440 : 200;
+    const mealCost = mealPerDay * days;
+    lines.push({ name: '餐饮 (' + persons + '人×' + days + '天)', price: mealCost });
+    total += mealCost;
+
+    // 4. Selected fixed items
+    const fixedItems = document.querySelectorAll('.item-card.selected[data-type="fixed"]');
+    fixedItems.forEach(card => {
+        const price = parseInt(card.dataset.price);
+        const name = card.querySelector('.item-name').textContent;
+        // Shorten name
+        const shortName = name.length > 18 ? name.substring(0, 18) + '…' : name;
+        lines.push({ name: shortName, price: price });
+        total += price;
+    });
+
+    // 5. Daily items (interpreter)
+    const dailyItems = document.querySelectorAll('.item-card.selected[data-type="daily"]:not([data-id="car"])');
+    dailyItems.forEach(card => {
+        const price = parseInt(card.dataset.price);
+        const name = card.querySelector('.item-name').textContent;
+        const shortName = name.length > 14 ? name.substring(0, 14) + '…' : name;
+        const cost = price * days;
+        lines.push({ name: shortName + ' (' + days + '天)', price: cost });
+        total += cost;
+    });
+
+    // 6. Family extras (auto-add if family mode)
+    if (familyMode) {
+        const familyExtra = 600; // Family daytime activities
+        lines.push({ name: '家属白天活动安排', price: familyExtra });
+        total += familyExtra;
+    }
+
+    // 7. Miscellaneous
+    const misc = familyMode ? 800 : 500;
+    lines.push({ name: '杂费预留', price: misc });
+    total += misc;
+
+    // ── Render ──
+    const linesEl = document.getElementById('quote-lines');
+    linesEl.innerHTML = lines.map(l =>
+        '<div class="quote-line"><span>' + l.name + '</span><span style="color:#f5cfa0;font-weight:600;">$' + l.price.toLocaleString() + '</span></div>'
+    ).join('');
+
+    document.getElementById('total-nzd').textContent = '$' + total.toLocaleString();
+    document.getElementById('total-cny').textContent = '≈ ¥' + Math.round(total * NZD_TO_CNY).toLocaleString();
+
+    document.getElementById('person-count').textContent = familyMode ? '3人（含妻女）' : '1人';
+    document.getElementById('day-count').textContent = days + '天' + nights + '晚';
+    document.getElementById('hotel-level').textContent = hotelStar === 5 ? '豪华五星' : '四星商务';
+
+    // Per person
+    const ppBox = document.getElementById('per-person-box');
+    if (familyMode) {
+        ppBox.style.display = 'block';
+        document.getElementById('per-person-price').textContent = '$' + Math.round(total / persons).toLocaleString() + ' / 人';
+    } else {
+        ppBox.style.display = 'none';
+    }
+}
+
+// ── PDF generation (simple print) ──
+function generatePDF() {
+    window.print();
+}
+
+// ── Init ──
+calc();
+</script>
+
+<!-- Print styles -->
+<style>
+@media print {
+    .nav, .btn-submit, .quote-note { display: none !important; }
+    body { background: #fff !important; color: #222 !important; }
+    .page-header h1 { -webkit-text-fill-color: #8B6914 !important; }
+    .section-title { color: #8B6914 !important; border-color: #8B6914 !important; }
+    .item-card { border-color: #ddd !important; background: #fafafa !important; }
+    .item-card:not(.selected) { display: none !important; }
+    .item-price { color: #8B6914 !important; }
+    .quote-box { border-color: #8B6914 !important; background: #fafafa !important; }
+    .quote-total-price { color: #8B6914 !important; }
+    .sidebar { position: relative !important; top: 0 !important; }
+    .toggle-row, .hotel-options, .day-selector { display: none !important; }
+}
+</style>
+
+</body>
+</html>
